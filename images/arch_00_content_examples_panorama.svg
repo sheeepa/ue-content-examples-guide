@@ -36,20 +36,20 @@
   <text x="54" y="137" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">① 材质与着色 (Materials)</text>
   <text x="298" y="136" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">10 Maps</text>
   <text x="54" y="169" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Properties / Nodes / Instances</text>
-  <text x="54" y="190" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Advanced & Substrate 次世代板材</text>
+  <text x="54" y="190" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Advanced &amp; Substrate 次世代板材</text>
   <text x="54" y="211" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• POM 视差遮蔽 / Decals 延迟贴花</text>
-  <text x="54" y="232" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Skin 次表面 / PivotPainter 1&2</text>
+  <text x="54" y="232" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Skin 次表面 / PivotPainter 1&amp;2</text>
   <rect x="330" y="115" width="270" height="165" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#818cf8" stroke-width="1.8"/>
   <rect x="330" y="115" width="270" height="32" rx="10" fill="#818cf8" fill-opacity="0.18"/>
-  <text x="344" y="137" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">② 数学与几何 (Math & Geo)</text>
+  <text x="344" y="137" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">② 数学与几何 (Math &amp; Geo)</text>
   <text x="588" y="136" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#818cf8">5 Maps</text>
   <text x="344" y="169" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Math_Hall 向量与函数直觉长廊</text>
-  <text x="344" y="190" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• StaticMeshes & FBX 导入规范</text>
+  <text x="344" y="190" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• StaticMeshes &amp; FBX 导入规范</text>
   <text x="344" y="211" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Geometry_Nanite 虚拟微多边形</text>
   <text x="344" y="232" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• ModelingTools 内置建模与烘焙</text>
   <rect x="620" y="115" width="270" height="165" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.8"/>
   <rect x="620" y="115" width="270" height="32" rx="10" fill="#f59e0b" fill-opacity="0.18"/>
-  <text x="634" y="137" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">③ 光照与后期 (Light & PP)</text>
+  <text x="634" y="137" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">③ 光照与后期 (Light &amp; PP)</text>
   <text x="878" y="136" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#f59e0b">2 Maps</text>
   <text x="634" y="169" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Lighting_Realtime 实时光源体系</text>
   <text x="634" y="190" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Lumen 全局光照与 VSM 虚拟阴影</text>
@@ -75,7 +75,7 @@
   <rect x="330" y="300" width="270" height="32" rx="10" fill="#a855f7" fill-opacity="0.18"/>
   <text x="344" y="322" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑥ 角色动画全栈 (Animation)</text>
   <text x="588" y="321" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#a855f7">11 Maps</text>
-  <text x="344" y="354" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Basics / Morph / IKRig & 重定向</text>
+  <text x="344" y="354" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Basics / Morph / IKRig &amp; 重定向</text>
   <text x="344" y="375" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• ControlRig 引擎内程序化绑定</text>
   <text x="344" y="396" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Choosers 动态上下文资产选择器</text>
   <text x="344" y="417" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Deformer GPU变形 / Grooms 毛发</text>
@@ -89,7 +89,7 @@
   <text x="634" y="417" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 力场锚点与 Chaos→Niagara 事件联动</text>
   <rect x="910" y="300" width="250" height="165" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#14b8a6" stroke-width="1.8"/>
   <rect x="910" y="300" width="250" height="32" rx="10" fill="#14b8a6" fill-opacity="0.18"/>
-  <text x="924" y="322" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑧ 现代 AI 架构 (AI & Crowd)</text>
+  <text x="924" y="322" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑧ 现代 AI 架构 (AI &amp; Crowd)</text>
   <text x="1148" y="321" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#14b8a6">4 Maps</text>
   <text x="924" y="354" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• AI_NavMesh 动态寻路网格与代理链</text>
   <text x="924" y="375" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• AI_StateTree 高性能状态树基础</text>
@@ -97,12 +97,12 @@
   <text x="924" y="417" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• AI_Mass 基于ECS的万级群体模拟</text>
   <rect x="40" y="485" width="365" height="155" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#06b6d4" stroke-width="1.8"/>
   <rect x="40" y="485" width="365" height="32" rx="10" fill="#06b6d4" fill-opacity="0.18"/>
-  <text x="54" y="507" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑨ UI 与次世代音频 (UI & Audio)</text>
+  <text x="54" y="507" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑨ UI 与次世代音频 (UI &amp; Audio)</text>
   <text x="393" y="506" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#06b6d4">5 Maps</text>
-  <text x="54" y="539" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• UI_UMG & MSDF 多通道有向距离场矢量文字</text>
+  <text x="54" y="539" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• UI_UMG &amp; MSDF 多通道有向距离场矢量文字</text>
   <text x="54" y="560" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• UI_CommonUI 跨平台焦点栈与输入图标自动路由</text>
   <text x="54" y="581" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• UI_SlatePostBuffer 实时背景毛玻璃与屏幕滤镜</text>
-  <text x="54" y="602" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Audio 空间衰减 & Audio_Metasounds DSP合成</text>
+  <text x="54" y="602" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Audio 空间衰减 &amp; Audio_Metasounds DSP合成</text>
   <rect x="425" y="485" width="395" height="155" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#eab308" stroke-width="1.8"/>
   <rect x="425" y="485" width="395" height="32" rx="10" fill="#eab308" fill-opacity="0.18"/>
   <text x="439" y="507" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑩ 内置 Niagara 原理实验室 (VFX Labs)</text>
@@ -113,7 +113,7 @@
   <text x="439" y="602" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Niagara_Data_Channels 数据通道跨系统通信原语</text>
   <rect x="840" y="485" width="320" height="155" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#64748b" stroke-width="1.8"/>
   <rect x="840" y="485" width="320" height="32" rx="10" fill="#64748b" fill-opacity="0.18"/>
-  <text x="854" y="507" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑪ 展厅基础设施与 2D (Hub & Misc)</text>
+  <text x="854" y="507" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">⑪ 展厅基础设施与 2D (Hub &amp; Misc)</text>
   <text x="1148" y="506" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#64748b">4 Maps</text>
   <text x="854" y="539" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• ExampleProjectWelcome 欢迎大厅与地图索引</text>
   <text x="854" y="560" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• BP_DemoRoom 程序化展厅拼接系统</text>

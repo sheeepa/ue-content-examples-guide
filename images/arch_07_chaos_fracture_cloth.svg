@@ -45,7 +45,7 @@
   <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#ef4444">建筑坍塌管线</text>
   <text x="634" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 离线预切割树（Fracture Hierarchy）：Level 0 完整模型 → Level 1 大石块簇 →</text>
   <text x="634" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Level 2 细碎砖渣。连接关系存为隐式连接图（Connectivity Graph）。</text>
-  <text x="634" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 应力与锚点场（Strain & Anchor Field）：地基插入静态 Anchor Field 锁定不动；</text>
+  <text x="634" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 应力与锚点场（Strain &amp; Anchor Field）：地基插入静态 Anchor Field 锁定不动；</text>
   <text x="634" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  炮弹命中施加外部应变（External Strain）超过 Damage Threshold 即刻断键解聚！</text>
   <text x="634" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Chaos→Niagara 闭环：断裂瞬间抛出 Break/Trailing 事件写入 NS_Chaos_NDC 生成烟尘！</text>
 

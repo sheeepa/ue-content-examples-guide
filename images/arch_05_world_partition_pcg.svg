@@ -61,7 +61,7 @@
   <text x="824" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  权重的空间点云流 (PCG Point Data)！</text>
   <text x="824" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Surface/Spline Sampler 采样地形与道路</text>
   <text x="824" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  ──► Difference 挖空道路/建筑占地包围盒</text>
-  <text x="824" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  ──► Density Noise & Normal Filter 坡度过滤</text>
+  <text x="824" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  ──► Density Noise &amp; Normal Filter 坡度过滤</text>
   <text x="824" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  ──► Static Mesh Spawner 实例化海量植被岩石</text>
 
 </svg>

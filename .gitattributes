@@ -443,7 +443,7 @@
 # gif
 *.[gG][iI][fF] filter=lfs diff=lfs merge=binary -text
 # svg
-*.svg text eol=lf
+*.svg binary
 # svgz
 *.svgz binary
 # bmp

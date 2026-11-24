@@ -44,7 +44,7 @@
   <line x1="405" y1="290" x2="425" y2="290" stroke="#eab308" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
   <rect x="430" y="120" width="365" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
   <rect x="430" y="120" width="365" height="32" rx="10" fill="#38bdf8" fill-opacity="0.18"/>
-  <text x="444" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">2. Simulation Stages & NeighborGrid3D</text>
+  <text x="444" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">2. Simulation Stages &amp; NeighborGrid3D</text>
   <text x="783" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">粒子群体社交</text>
   <text x="444" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 打破粒子孤岛！在单帧内插入多趟 GPU Compute Pass：</text>
   <text x="444" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Pass 1：将所有粒子坐标哈希填入 3D 空间网格桶</text>
