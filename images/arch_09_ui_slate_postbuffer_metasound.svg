@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8953fc2b38236e03494e54215d71d0ce493c025851b861f4846dc51846af6ee7
-size 5770
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="480" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="448" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">次世代交互体验层：CommonUI + Slate Post Buffer 毛玻璃 × MetaSounds 采样级音频</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">UI_CommonUI / UI_SlatePostBuffer / Audio_Metasounds 核心架构</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="550" height="320" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#06b6d4" stroke-width="1.8"/>
+  <rect x="40" y="120" width="550" height="32" rx="10" fill="#06b6d4" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">CommonUI 焦点路由栈 & Slate Post Buffer 实时背景滤镜</text>
+  <text x="578" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#06b6d4">现代UI工业栈</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• CommonActivatableWidget 栈：自动管理弹窗压栈/出栈焦点归还与手柄返回键路由，</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  监听键鼠/Xbox/PS手柄切换毫秒级自动刷新按键图标！</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Slate Post Buffer（UE 5.4+ 革命性特性）：</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  在渲染完 3D 场景、开始绘制 Slate/UMG 前，拷贝并经 PostBufferProcessor（如高斯模糊）</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  处理场景缓冲！UI 控件材质直接采样 PostProcessBuffer 实现真·毛玻璃、残血故障与VHS波纹！</text>
+  <rect x="610" y="120" width="550" height="320" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#a855f7" stroke-width="1.8"/>
+  <rect x="610" y="120" width="550" height="32" rx="10" fill="#a855f7" fill-opacity="0.18"/>
+  <text x="624" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">MetaSounds（媲美材质编辑器的采样级精度程序化音频图）</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#a855f7">程序化DSP音频</text>
+  <text x="624" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 为什么从 Sound Cue 进化到 MetaSounds？</text>
+  <text x="624" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Sound Cue 只能在游戏帧率（30/60Hz）级别触发整段音频资产；MetaSounds 运行在</text>
+  <text x="624" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  48,000 Hz 音频采样率级别（Sample-Accurate），可实时合成振荡器、滤波器、包络与波表！</text>
+  <text x="624" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 核心优势：一个 MetaSound 图即可靠引擎参数（车速/风力/弹壳材质）合成无穷无尽不重复的音效，</text>
+  <text x="624" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  彻底消灭机关枪连射“突突突”录音重复机械感（Machine-Gun Effect），大幅节省包体内存！</text>
+
+</svg>

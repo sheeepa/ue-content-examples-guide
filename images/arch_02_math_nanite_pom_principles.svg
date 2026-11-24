@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94af6639b9252afa650078bddf93bd3e94a354a0deb2c249b2f944d014ec3018
-size 6601
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="468" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">几何细节的双重魔法：POM 像素级高度场步进 vs Nanite 虚拟微多边形管线</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">何时用着色器欺骗眼睛？何时直接渲染千万级真实三角面？</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="540" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#f59e0b" stroke-width="1.8"/>
+  <rect x="40" y="120" width="540" height="32" rx="10" fill="#f59e0b" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Parallax Occlusion Mapping (切线空间光线步进)</text>
+  <text x="568" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#f59e0b">像素着色器欺骗</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">1. 坐标变换：将世界空间视线向量 V 转换至表面切线空间 (Tangent Space)。</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">2. 分层步进 (Steep Raymarching)：沿切线视线按 Min~Max Steps 等距切片，</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   逐步采样 Heightmap，直至光线高度低于纹素高度（首次穿透点）。</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">3. 线性反求交：取穿透前后两步做一次线性插值，精确定位伪交点 UV_offset。</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">4. 深度修正 (PDO)：写入 Pixel Depth Offset 推后硬件深度缓冲，实现</text>
+  <text x="54" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   平面砖墙与真实插入几何体的正确前后遮挡及自阴影！</text>
+  <text x="54" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 适用：平整地面/墙面高频凹凸、贴花弹坑（零额外顶点开销，但边缘剪影仍平）。</text>
+  <rect x="620" y="120" width="540" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#10b981" stroke-width="1.8"/>
+  <rect x="620" y="120" width="540" height="32" rx="10" fill="#10b981" fill-opacity="0.18"/>
+  <text x="634" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Nanite 虚拟化几何体 (Cluster DAG + 软光栅)</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#10b981">真实微多边形</text>
+  <text x="634" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">1. 离线构建：将百万面模型切分为每簇 ≤128 三角面的 Cluster，构建多层级</text>
+  <text x="634" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   有向无环图 (Cluster Group DAG)，保证父子边界严丝合缝无裂缝。</text>
+  <text x="634" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">2. GPU 驱动裁剪：Compute Shader 执行双遍层次深度缓冲 (HZB) 遮挡剔除</text>
+  <text x="634" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   与视锥剔除，按屏幕像素误差动态挑选切割层级（1像素 ≈ 1微三角形）。</text>
+  <text x="634" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">3. 双路光栅化：大三角形走硬件光栅化；亚像素微三角形走 Compute 软光栅</text>
+  <text x="634" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   64位原子写入 VisBuffer (InstanceID + ClusterID + TriID)！</text>
+  <text x="634" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 适用：真实立体剪影、巨型雕像/岩壁、程序化置换（支持可控 WPO 与遮罩）。</text>
+
+</svg>

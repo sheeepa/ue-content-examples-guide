@@ -443,9 +443,9 @@
 # gif
 *.[gG][iI][fF] filter=lfs diff=lfs merge=binary -text
 # svg
-*.[sS][vV][gG] filter=lfs diff=lfs merge=binary -text
+*.svg text eol=lf
 # svgz
-*.[sS][vV][gG][zZ] filter=lfs diff=lfs merge=binary -text
+*.svgz binary
 # bmp
 *.[bB][mM][pP] filter=lfs diff=lfs merge=binary -text
 # png

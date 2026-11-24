@@ -1,3 +1,52 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0745c5bebacc6d6ab418e25ea08789386395995446b69c7b8edbf0dab1dc06f2
-size 5595
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="480" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="448" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Chaos 物理引擎双雄：蒙皮布料解算 (Cloth) × 层级几何体破碎 (Destruction)</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">Physics / Physics_Cloth / Physics_Destruction 三张地图的物理管线</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="540" height="320" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#f97316" stroke-width="1.8"/>
+  <rect x="40" y="120" width="540" height="32" rx="10" fill="#f97316" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Chaos Cloth（基于 XPBD 扩展位置动力学的实时布料）</text>
+  <text x="568" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#f97316">布料防穿模精髓</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Max Distance 顶点绘制遮罩：绘制为 0 的顶点死死钉在骨骼蒙皮位置（如披风领口），</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  绘制为 >0 的区域释放给物理粒子受重力与空气动力升阻比（Lift/Drag）飘动。</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Backstop（后挡面防穿模）：限制物理顶点向角色身体内部法线反向穿透的极限。</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 轻量碰撞体：严禁用高面数三角网格碰撞布料，统一采用低开销胶囊体组（PhysicsAsset）！</text>
+  <rect x="620" y="120" width="540" height="320" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#ef4444" stroke-width="1.8"/>
+  <rect x="620" y="120" width="540" height="32" rx="10" fill="#ef4444" fill-opacity="0.18"/>
+  <text x="634" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Chaos Destruction（Geometry Collection 预破碎簇层级）</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#ef4444">建筑坍塌管线</text>
+  <text x="634" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 离线预切割树（Fracture Hierarchy）：Level 0 完整模型 → Level 1 大石块簇 →</text>
+  <text x="634" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Level 2 细碎砖渣。连接关系存为隐式连接图（Connectivity Graph）。</text>
+  <text x="634" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 应力与锚点场（Strain & Anchor Field）：地基插入静态 Anchor Field 锁定不动；</text>
+  <text x="634" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  炮弹命中施加外部应变（External Strain）超过 Damage Threshold 即刻断键解聚！</text>
+  <text x="634" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Chaos→Niagara 闭环：断裂瞬间抛出 Break/Trailing 事件写入 NS_Chaos_NDC 生成烟尘！</text>
+
+</svg>

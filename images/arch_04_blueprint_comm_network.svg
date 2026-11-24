@@ -1,3 +1,58 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb962d9b827ab73d327f576fe09e3e96b316ba8035c34ffae65cd23e6b28683b
-size 6755
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="468" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">蓝图工程化双翼：四大解耦通信范式 × 主从权威网络复制架构</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">Blueprint_Communication 与 Blueprint_Network 的核心架构思想</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="550" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+  <rect x="40" y="120" width="550" height="32" rx="10" fill="#38bdf8" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Actor 间通信四大范式（耦合度由紧到松）</text>
+  <text x="578" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">解耦心法</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">① 直接引用 / Cast 强转（1对1，已知确定类型）：</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   最快最直观，但硬引用目标蓝图类会导致资产依赖链膨胀（牵一发加载全身）！</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">② 蓝图接口 Blueprint Interface (BPI_*，1对1多态契约)：</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   发送方只调接口消息（如 BPI_Interact），不在乎对方是门、开关还是宝箱——零硬引用！</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">③ 事件分发器 Event Dispatcher（1对多广播观察者模式）：</text>
+  <text x="54" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   Boss 血量归零只需 Call 一次 OnBossDied，UI、成就、大门各自 Bind 监听响应。</text>
+  <text x="54" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">④ 数据通道 / 子系统中间件（多对多全局总线）：</text>
+  <text x="54" y="321" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   Gameplay Message / NDC 数据通道，彻底隔离高频事件发送者与接收者。</text>
+  <rect x="610" y="120" width="550" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#10b981" stroke-width="1.8"/>
+  <rect x="610" y="120" width="550" height="32" rx="10" fill="#10b981" fill-opacity="0.18"/>
+  <text x="624" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Dedicated / Listen Server 权威网络同步铁律</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#10b981">网络铁律</text>
+  <text x="624" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 铁律一：Server Is King（权威端唯一裁决）</text>
+  <text x="624" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  伤害结算、拾取判定、生成复制 Actor 必须在 Switch Has Authority (Authority) 执行！</text>
+  <text x="624" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 铁律二：状态用属性复制，瞬时表现用 RPC</text>
+  <text x="624" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - Replicated / RepNotify 变量：后加入视野的玩家（断线重连/走近相关性范围）</text>
+  <text x="624" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">    自动同步最新状态（如门已打开），并在客户端触发 OnRep_ 补播表现！</text>
+  <text x="624" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - Run on Server RPC：客户端上报操作意图（请求开火/按开关，需 PlayerController 拥有权）。</text>
+  <text x="624" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - NetMulticast RPC：服务器向相关性范围内客户端广播一次性瞬态事件（如爆炸音效）。</text>
+
+</svg>

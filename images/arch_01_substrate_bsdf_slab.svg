@@ -1,3 +1,63 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05de7cebedf6d8dfb8de7efe2d27ff0ff54075ea6ec59a2b59471c0bd3fe1740
-size 7462
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="488" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">材质范式跃迁：传统固定 Shading Model vs Substrate 次世代物质板 (Slab BSDF)</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">从“黑盒枚举切换”走向“基于物理能量守恒的积木式物质组合”</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="490" height="350" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#64748b" stroke-width="1.8"/>
+  <rect x="40" y="120" width="490" height="32" rx="10" fill="#64748b" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">传统材质管线 (Legacy Shading Models)</text>
+  <text x="518" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#64748b">UE4 ~ UE5早期</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 痛点：Shading Model 是互斥枚举（Default Lit / Clear Coat /</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Subsurface / Cloth / Hair），无法自然混合“带清漆的次表面玉石</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  上覆着一层灰尘绒毛”这类复合真实材质。</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 参数耦合：BaseColor 同时承担金属F0反射色与非金属漫反射反照率。</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 能量不守恒隐患：多层自定义混合（Material Attributes Blend）</text>
+  <text x="54" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  只是对输入引脚做线性插值，而非对底层 BSDF 光线散射积分做合成。</text>
+  <text x="54" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1"></text>
+  <text x="54" y="321" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  [BaseColor / Metallic / Roughness] ──► 单一黑盒枚举着色器</text>
+  <text x="54" y="342" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  （若切 ClearCoat 则丢失 Cloth 绒毛；若切 Cloth 则丢失 SSS）</text>
+  <line x1="545" y1="295" x2="635" y2="295" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrowCyan)"/>
+  <text x="590" y="280" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#38bdf8">范式升级</text>
+  <rect x="650" y="120" width="510" height="350" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+  <rect x="650" y="120" width="510" height="32" rx="10" fill="#38bdf8" fill-opacity="0.18"/>
+  <text x="664" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">Substrate 物质板架构 (Matter + Surface Operators)</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">Material_Substrate</text>
+  <text x="664" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 基本单元 Substrate Slab：显式分离界面反射 F0/F90、粗糙度各向异性、</text>
+  <text x="664" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  内部漫反射反照率 Diffuse Albedo 与次表面平均自由程 MFP！</text>
+  <text x="664" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 纵向分层 Vertical Layer (Top Over Bottom)：自动计算顶层透射率</text>
+  <text x="664" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  与厚度吸收（Beer-Lambert 定律），精确传递到底层 Slab（如清漆/水膜）。</text>
+  <text x="664" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 横向混合 Horizontal Mix / Weight：按面积覆盖率并列组合不同 BSDF</text>
+  <text x="664" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  （如金丝刺绣 + 丝绸基底 + 表面闪粉 Glints + 薄膜干涉 Thin Film）。</text>
+  <text x="664" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1"></text>
+  <text x="664" y="321" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  [底层玉石 Slab (MFP)] + [顶层水膜 Slab] ──► Vertical Layer</text>
+  <text x="664" y="342" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  ──► 自动能量守恒积分 ──► 自适应多字节 Substrate GBuffer 写入</text>
+
+</svg>

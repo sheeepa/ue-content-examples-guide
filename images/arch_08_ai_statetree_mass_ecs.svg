@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d048723c8b5794b915824918b5c8e6b252ff5a17cd084194731f8940caf45ad3
-size 6480
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" width="1200" height="490">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="490" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="458" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">现代游戏 AI 双擎：StateTree 响应式决策树 × MassEntity 数据导向万级群体</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">AI_NavMesh / AI_StateTree / AI_StateTreeAIController / AI_Mass 四图核心架构</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="540" height="330" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+  <rect x="40" y="120" width="540" height="32" rx="10" fill="#38bdf8" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">StateTree（融合行为树选择器与状态机转换的轻量决策核）</text>
+  <text x="568" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">个体精巧决策</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 为什么取代传统臃肿行为树 + 黑板（Blackboard）？</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  传统 Blackboard 弱类型键值查找慢且易拼错；StateTree 直接采用强类型</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  属性绑定（Property Binding），零哈希查表开销！</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 三大核心构件：</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  1. Evaluators（评估器）：常驻更新感知/距离等上下文数据。</text>
+  <text x="54" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  2. States & Tasks（层级状态与任务）：EnterState / Tick / ExitState 清晰闭环。</text>
+  <text x="54" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  3. Transitions & Conditions（转换条件）：事件驱动或条件触发精确跳转状态。</text>
+  <rect x="620" y="120" width="540" height="330" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#10b981" stroke-width="1.8"/>
+  <rect x="620" y="120" width="540" height="32" rx="10" fill="#10b981" fill-opacity="0.18"/>
+  <text x="634" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">MassEntity / MassAI（纯正 ECS 缓存友好型万级人群架构）</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#10b981">万级群体吞吐</text>
+  <text x="634" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 为什么 10,000 个 ACharacter 会卡爆主线程？</text>
+  <text x="634" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  UObject 指针离散跳转导致严重 CPU Cache Miss + 逐 Actor Tick 虚函数开销。</text>
+  <text x="634" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Mass ECS 内存布局革命：</text>
+  <text x="634" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - Fragment（纯数据切片）：TransformFragment, VelocityFragment 紧凑连续数组。</text>
+  <text x="634" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - Tag（零字节标签）& Archetype（原型）：同构实体打包进连续 64KB Memory Chunk。</text>
+  <text x="634" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  - Processor（批处理器）：SIMD 友好的无分支循环一次性扫过成千上万实体，</text>
+  <text x="634" y="300" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">    远景自动降级为 ISM 实例化静态网格体，近景无缝升格为高精骨骼角色 (LOD Representation)！</text>
+
+</svg>

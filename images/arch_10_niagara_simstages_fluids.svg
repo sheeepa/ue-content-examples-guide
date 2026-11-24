@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1276f8a3daa1516dac6eb958a1d19185ed47639bcae11eb0aa4419068c368fa6
-size 7826
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="accentEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" rx="16" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="1168" height="468" rx="12" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="40" y="54" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Niagara 高阶计算引擎：六大脚本阶段 × NeighborGrid3D 邻域查询 × 欧拉网格流体</text>
+  <text x="40" y="80" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">Niagara_Particles / Niagara_Advanced_Particles / Niagara_Fluids 底层GPU计算模型</text>
+  <line x1="40" y1="96" x2="1160" y2="96" stroke="#334155" stroke-width="1"/>
+  <rect x="40" y="120" width="360" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#eab308" stroke-width="1.8"/>
+  <rect x="40" y="120" width="360" height="32" rx="10" fill="#eab308" fill-opacity="0.18"/>
+  <text x="54" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">1. 标准六大执行阶段 (Standard Stack)</text>
+  <text x="388" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#eab308">粒子独立并行</text>
+  <text x="54" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• System Spawn / System Update（系统级单次/每帧）</text>
+  <text x="54" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Emitter Spawn / Emitter Update（发射速率/生命周期）</text>
+  <text x="54" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Particle Spawn（粒子诞生初始化位置/速度/颜色）</text>
+  <text x="54" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• Particle Update（每粒子每帧独立受力积分）</text>
+  <text x="54" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">⚠️ 局限：传统 Particle Update 中粒子彼此“失明”，</text>
+  <text x="54" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">   第 i 号粒子默认无法互相排斥或组队！</text>
+  <line x1="405" y1="290" x2="425" y2="290" stroke="#eab308" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+  <rect x="430" y="120" width="365" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+  <rect x="430" y="120" width="365" height="32" rx="10" fill="#38bdf8" fill-opacity="0.18"/>
+  <text x="444" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">2. Simulation Stages & NeighborGrid3D</text>
+  <text x="783" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">粒子群体社交</text>
+  <text x="444" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 打破粒子孤岛！在单帧内插入多趟 GPU Compute Pass：</text>
+  <text x="444" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Pass 1：将所有粒子坐标哈希填入 3D 空间网格桶</text>
+  <text x="444" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">          (NeighborGrid3D，O(1) 邻域查找复杂度！)</text>
+  <text x="444" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  Pass 2：每个粒子仅查询周围 3×3×3 网格桶内的邻居，</text>
+  <text x="444" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">          实现 Boids 鸟群分离/对齐/凝聚、Plexus 连线、</text>
+  <text x="444" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">          PBD 粒子刚性碰撞挤压与链条动力学约束！</text>
+  <line x1="800" y1="290" x2="820" y2="290" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+  <rect x="825" y="120" width="335" height="340" rx="10" fill="#1e293b" fill-opacity="0.92" stroke="#10b981" stroke-width="1.8"/>
+  <rect x="825" y="120" width="335" height="32" rx="10" fill="#10b981" fill-opacity="0.18"/>
+  <text x="839" y="142" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">3. Niagara Fluids (2D/3D 气液解算器)</text>
+  <text x="1148" y="141" text-anchor="end" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#10b981">物理场求解器</text>
+  <text x="839" y="174" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 欧拉网格气态 (2D/3D Gas)：求解 Navier-Stokes</text>
+  <text x="839" y="195" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  平流 (Advection) + 压力泊松投影无散场 + 涡度限制</text>
+  <text x="839" y="216" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  (Vorticity Confinement)，结合光线步进体积渲染火烟。</text>
+  <text x="839" y="237" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">• 液态解算 (2D Shallow Water / 3D FLIP)：</text>
+  <text x="839" y="258" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  浅水方程实时河面涟漪尾迹；粒子+网格混合 FLIP</text>
+  <text x="839" y="279" font-family="'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif" font-size="12.5" fill="#cbd5e1">  解算飞溅翻涌水池并生成等值面网格 (Surfacing)！</text>
+
+</svg>
