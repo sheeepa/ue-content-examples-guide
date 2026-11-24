@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：从 Slate 底层绘制原语到 UMG 可视化运动图形架构
 
-![UI_UMG 展厅总览实拍](../images/maps/UI_UMG_00_overview.png)
+![UI_UMG 展厅总览实拍](../images/maps/UI_UMG_00_overview.webp)
 
 许多刚接触虚幻引擎 UI 系统的开发者，常常把 **UMG（Unreal Motion Graphics）** 当成一套孤立的拖拽式画布工具，却在项目进入中后期时接连踩中三大工程深坑：
 1. **多分辨率排版崩塌**：在 1920×1080 开发机上严丝合缝的界面，一放到 21:9 超宽带鱼屏、Steam Deck（1280×800）或 4K 电视上，血条飞到屏幕中央、字体糊成锯齿马赛克；
@@ -124,7 +124,7 @@ sequenceDiagram
 - **官方展牌原文**：
   > *Sliders are great for allowing the user to input scalar values*
 
-![展台 #2 Sliders 实拍](../images/maps/UI_UMG_01_stand_02.png)
+![展台 #2 Sliders 实拍](../images/maps/UI_UMG_01_stand_02.webp)
 
 #### 1. `UMG_Sliders` 完整控件层级树（Widget Tree）还原
 打开 `UMG_Sliders`，其控件树由双层 `CanvasPanel` 承载三组 RGB 调色滑块、实时数值读数文本与预览虚幻引擎 Logo 图像：
@@ -275,7 +275,7 @@ WidgetTree (UMG_ProgressBars)
 - **官方展牌原文**：
   > *Progress bars can read variables that exist outside of UMG such as a character's health or energy.*
 
-![展台 #7 Progress Bars (External) 实拍](../images/maps/UI_UMG_02_stand_07.png)
+![展台 #7 Progress Bars (External) 实拍](../images/maps/UI_UMG_02_stand_07.webp)
 
 #### 1. `UMG_ProgressBars_External` 控件树与跨蓝图通信拆解
 控件树结构与展台 #6 完全对称（`ProgressBar_114` + 增减双按钮 `Button_191 / Button_192` + 说明文本 `TextBlock_158`: *"This progress bar is following a variable on the character blueprint called 'Health'..."*），但数据源彻底移出了 UI 自身：
@@ -471,7 +471,7 @@ WidgetTree (UMG_LoadingIcons)
 - **官方展牌原文**：
   > *UMG widgets can be aligned and organized with several alignment tools.*
 
-![展台 #13 Alignment Options 实拍](../images/maps/UI_UMG_03_stand_13.png)
+![展台 #13 Alignment Options 实拍](../images/maps/UI_UMG_03_stand_13.webp)
 
 #### 1. `Widget_Alignment` 33 按钮交互实验室拆解
 为了直观展示各种弹性容器与子槽位对齐组合的效果，`Widget_Alignment` 构建了一个包含 **33 个点击事件按钮** 与 **3 套可切换容器视图**（通过 `HorizVis`、`VertVis`、`GridVis` 三个 `ESlateVisibility` 枚举变量切换显隐，顶部 `TextBlock_882` 同步解释当前选中槽位的对齐行为）的交互沙盒：

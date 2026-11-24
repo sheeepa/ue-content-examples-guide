@@ -16,7 +16,7 @@
 
 虚幻引擎自 UE4 时代起深度集成了业界公认的导航黄金搭档——由 Mikko Mononen 缔造并经 Epic 大幅工程化改造的 **Recast（体素化导航网格构建器）+ Detour（多边形走廊寻路与漏斗拉直运行库）**。任意凹凸不平的三维网格、楼梯、斜坡与碎石堆，只需拖入一个 **`NavMeshBoundsVolume`** 并按下键盘 **`P`** 键，引擎便会自动烘焙出一层严丝合缝的翠绿色凸多边形可通行表面。
 
-![AI_NavMesh 导航网格寻路展厅总览实拍](../images/maps/AI_NavMesh_00_overview.png)
+![AI_NavMesh 导航网格寻路展厅总览实拍](../images/maps/AI_NavMesh_00_overview.webp)
 
 ### 1.1 Recast 体素化烘焙五步流水线与“墙边内缩腐蚀带”真相
 
@@ -78,7 +78,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(2000, -900, 0)`
 
-![展台 #2 Simple navigation around obstacles 静态障碍绕行实拍](../images/maps/AI_NavMesh_01_stand_02.png)
+![展台 #2 Simple navigation around obstacles 静态障碍绕行实拍](../images/maps/AI_NavMesh_01_stand_02.webp)
 
 #### 2.1 展台陈列 Actor 空间拓扑与 MCP 实测参数（共 5 个）
 在第二间展室地面上，两个错位摆放的立方体挡住了左右两端目标点之间的直线通路：
@@ -125,7 +125,7 @@ sequenceDiagram
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(3500, -900, 0)`
 
-![展台 #3 Navigation using a Nav Link Proxy 断崖单向跳台与斜坡回环实拍](../images/maps/AI_NavMesh_02_stand_03.png)
+![展台 #3 Navigation using a Nav Link Proxy 断崖单向跳台与斜坡回环实拍](../images/maps/AI_NavMesh_02_stand_03.webp)
 
 #### 3.1 为什么连续斜坡能自己连上绿网，而高台断崖必须靠 `NavLinkProxy`？
 Recast 体素化算法只能将高度差小于等于 **`AgentMaxStepHeight`**（默认约 `35 cm`）且坡角小于等于 **`AgentMaxSlope`**（默认约 `44°`）的相邻体素合并为连通区域。一旦遇到二楼阳台、断桥、战壕、矮墙翻越或跳台边缘，上下两块平面的绿色多边形在拓扑图上就是**两个互不相连的孤岛（Disconnected Islands）**。
@@ -168,7 +168,7 @@ Recast 体素化算法只能将高度差小于等于 **`AgentMaxStepHeight`**（
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(5010, -890, 0)`
 
-![展台 #4 Navmesh rebuild after moving actors 动态障碍物实时切割重烘绿网实拍](../images/maps/AI_NavMesh_03_stand_04.png)
+![展台 #4 Navmesh rebuild after moving actors 动态障碍物实时切割重烘绿网实拍](../images/maps/AI_NavMesh_03_stand_04.webp)
 
 #### 4.1 展台陈列 Actor 与关卡脚本动态障碍机制（共 6 个）
 在最后一间双倍长度的宽敞展室中，西东两侧各有一座 `15°` 缓坡桥面（`SM_DemoCube_10` 位于 `(5272.24, 0, -58.98)`，`Roll = -15°`；`SM_DemoCube_11` 位于 `(5712.24, 0, -58.98)`，`Roll = -15°, Yaw = 90°`），`BP_AI_Pawn_3` `(5024.63, -10.35, 88.06)` 在西端 **`TargetPoint6`** `(5100, -7.5, 60)` 与东端 **`TargetPoint5`** `(5990, -7.5, 60)` 之间不断折返。

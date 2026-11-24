@@ -8,7 +8,7 @@
 
 ## 一、 架构总纲：为什么“蓝图通信”是区分初级连线员与首席玩法架构师的分水岭？
 
-![Blueprint_Communication 展厅总览实拍](../images/maps/Blueprint_Communication_00_overview.png)
+![Blueprint_Communication 展厅总览实拍](../images/maps/Blueprint_Communication_00_overview.webp)
 
 如果说上一章 `Blueprint_Overview` 教你如何打造一颗功能完备的“单细胞神经元”，那么本章 `Blueprint_Communication` 教你搭建的就是整座游戏的**“中枢神经系统”**。
 
@@ -63,7 +63,7 @@
   > *This example features a button Blueprint that toggles a light Blueprint on and off via a custom event. Approach the button while playing to activate it.*
 - **展台陈列核心资产**：按钮实例 `BP_Generic_Button`（类：`BP_ButtonLight_Bulb_Basic_C`）通过金属管道连接墙上的白炽灯泡 `BP_Light_Bulb_Basic`（类：`BP_Light_Bulb_Basic_C`）。
 
-![展台 #2 目标蓝图基础直连通信实拍](../images/maps/Blueprint_Communication_01_stand_02.png)
+![展台 #2 目标蓝图基础直连通信实拍](../images/maps/Blueprint_Communication_01_stand_02.webp)
 
 #### 1. 接收方拆解：白炽灯泡 `BP_Light_Bulb_Basic` 内部节点链
 灯泡蓝图不依赖任何按钮，它只管把自己封装成一台“提供标准开关接口的家用电器”：
@@ -162,7 +162,7 @@ flowchart LR
   > *This collection of lightbulb Blueprints are all turned on and off by one button. The button Blueprint finds all instances of the lightbulb class and calls the "Toggle light" custom event in each of them.*
 - **展台陈列资产**：1 枚总控按钮 `BP_Pulse_Button_6`（`BP_Button_Light_Bulb_Pulse_C`）与墙上阵列排布的 **6 盏脉动呼吸灯** `BP_Light_Bulb_Pulse_2 ~ 7`（`BP_Light_Bulb_Pulse_C`）。
 
-![展台 #5 获取特定类的全部 Actor 批量通信实拍](../images/maps/Blueprint_Communication_02_stand_05.png)
+![展台 #5 获取特定类的全部 Actor 批量通信实拍](../images/maps/Blueprint_Communication_02_stand_05.webp)
 
 #### 1. 发送方拆解：`BP_Button_Light_Bulb_Pulse` 内部节点链
 注意看实测变量表——这枚按钮身上**没有任何公开变量**（无需美术用吸管连 6 次线）！它的 `EventGraph` 直接利用引擎全局静态库搜寻目标：
@@ -274,7 +274,7 @@ sequenceDiagram
 - **官方展牌原文**：
   > *In this example, a button Blueprint activates an array of different Blueprints via a Blueprint Interface message. Although each Blueprint is a different class, the fact that they employ the same Blueprint Interface Event makes it possible to activate them all with a single function, without the need to cast to each class first.*
 
-![展台 #9 使用蓝图接口多态激活异构蓝图数组实拍](../images/maps/Blueprint_Communication_03_stand_09.png)
+![展台 #9 使用蓝图接口多态激活异构蓝图数组实拍](../images/maps/Blueprint_Communication_03_stand_09.webp)
 
 #### 1. 契约资产拆解：`BPI_Player_Interactions`（蓝图接口）
 打开 `/Game/ExampleContent/Blueprint_Communication/Blueprints/BPI_Player_Interactions`，这是一个**纯函数签名契约（没有任何实现代码、没有任何成员变量）**，内部声明了两个接口函数：

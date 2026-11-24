@@ -27,7 +27,7 @@
 | **原生 C++ 专属任务库** | 仅基础 `Delay`、`DebugText`、`RunParallel` | **直接解锁引擎原生 C++ 高性能 AI 任务**：`FStateTreeMoveToTask`（支持动态追踪移动 Actor、自动重寻路、导航过滤器）、`FStateTreeRunEnvQueryTask`（原生异步 EQS 采样打分）等 |
 | **AI 子系统打通** | 需手动跨对象查找控制器 | 原生直通 `UAIPerceptionComponent`（视听刺激）、`SetFocus`（朝向锁定）与 `SmartObjects`（智能交互对象申领） |
 
-![AI_StateTreeAIController AI控制器状态树战术展厅总览实拍](../images/maps/AI_StateTreeAIController_00_overview.png)
+![AI_StateTreeAIController AI控制器状态树战术展厅总览实拍](../images/maps/AI_StateTreeAIController_00_overview.webp)
 
 打开长达 155 米的 `/Game/Maps/AI/AI_StateTreeAIController` 展厅，你会看到一个令人拍案叫绝的工程设计：**从展台 #2 到展台 #11，整整 10 个行为迥异的 AI 哨兵，竟然 100% 共用同一个角色蓝图类 `BP_EnemyAIWComponant` 与同一个控制器类 `BP_AIController`**！它们之间唯一的区别，仅仅是在关卡实例细节面板里换了一棵不同的 `StateTree` 资产！
 
@@ -53,7 +53,7 @@
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay5` | 坐标 `(3001, -900, 0)`
 
-![展台 #2 State Tree AI Componant 控制器状态树宿主架构实拍](../images/maps/AI_StateTreeAIController_01_stand_02.png)
+![展台 #2 State Tree AI Componant 控制器状态树宿主架构实拍](../images/maps/AI_StateTreeAIController_01_stand_02.webp)
 
 #### 2.1 官方展牌说明与“一壳十魂”宿主蓝图深拆
 > *The 'State Tree AI' component differs from the 'State Tree' Component and is designed to be used on an AIController. This AI Character spawns a StateTreeAI Component in the AIController. The State Tree contains one 'Idle' state with a debug value set to run forever.*
@@ -89,7 +89,7 @@
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay7` | 坐标 `(4991, -900, 0)`
 
-![展台 #4 Idle Location Move 远端路点评估与原生AI移动任务实拍](../images/maps/AI_StateTreeAIController_02_stand_04.png)
+![展台 #4 Idle Location Move 远端路点评估与原生AI移动任务实拍](../images/maps/AI_StateTreeAIController_02_stand_04.webp)
 
 #### 4.1 官方展牌说明与四级嵌套状态树 `ST_AI_IdleAndMove` 深拆
 > *This State Tree uses the Context Actor Class to get the location of the character. It then runs a State Tree Task to find the furthest of the 2 given Vector Parameter Locations and outputs the results into a MoveTo Task. See each State Description for more information.*
@@ -131,7 +131,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay9` | 坐标 `(6981, -900, 0)`
 
-![展台 #6 Parent States 父状态速度递增折返跑测试实拍](../images/maps/AI_StateTreeAIController_03_stand_06.png)
+![展台 #6 Parent States 父状态速度递增折返跑测试实拍](../images/maps/AI_StateTreeAIController_03_stand_06.webp)
 
 #### 6.1 官方展牌说明与陈列 Actor 拆解（共 4 个）
 > *Parent states can transition / run while a child state is running. This State tree increases the movement speed each time it swaps location states. Once hitting a speed limit, it will reset.*
@@ -185,7 +185,7 @@ EQS 的底层工作流由三大算子组成：
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay11` | 坐标 `(9931, -50, 0)`
 
-![展台 #8 EQS Context Run Away from Player 自定义玩家上下文战术逃生实拍](../images/maps/AI_StateTreeAIController_04_stand_08.png)
+![展台 #8 EQS Context Run Away from Player 自定义玩家上下文战术逃生实拍](../images/maps/AI_StateTreeAIController_04_stand_08.webp)
 
 #### 8.1 官方展牌说明与实时热力图预览器 `BP_EQSVis` 深拆（共 4 个 Actor）
 > *This EQS uses a custom Environment Query System Context blueprint to pass in the player character's location. A distance test is then applied, then filtered and scored based on how far they are from that context point. Press the apostrophe ( ' ) key and then Numpad 3 to visualize EQS-generated locations.*
@@ -228,7 +228,7 @@ EQS 的底层工作流由三大算子组成：
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay13` | 坐标 `(14531, -900, 0)`
 
-![展台 #10 State Tree Delegates With Perception 视听感知刺激与遗忘委托实拍](../images/maps/AI_StateTreeAIController_05_stand_10.png)
+![展台 #10 State Tree Delegates With Perception 视听感知刺激与遗忘委托实拍](../images/maps/AI_StateTreeAIController_05_stand_10.webp)
 
 #### 10.1 架构师必考：什么时候用 `Events`（展台 #9），什么时候用 `Delegates`（展台 #10）？
 > *Delegates are better for internal communication within the State Tree. A task can broadcast a delegate as a signal, and other tasks (or parent states) can bind to it and respond without constant polling. In this example, AI Perception delegates spotted and heard events, showing symbols to indicate what the AI detects. Press the apostrophe ( ' ) key and Numpad 4 to visualize perception. Stimulus Forgetting is enabled in Project Settings so AI Perception doesn’t remember stimuli forever. Another Delegate is triggered when the AI has forgotton the player.*

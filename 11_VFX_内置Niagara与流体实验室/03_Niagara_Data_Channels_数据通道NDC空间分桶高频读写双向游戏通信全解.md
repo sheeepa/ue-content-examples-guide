@@ -15,7 +15,7 @@
 2. **RenderThread & RHI 合批粉碎**：300 个独立的 `UNiagaraSystem` 实例意味着 300 套完全隔离的粒子属性缓冲区！哪怕每个弹孔只喷出区区 **8 颗火星**，GPU 也无法将不同组件合并进同一个 Compute Dispatch 和同一个 Draw Call——显卡算力全浪费在几百次零碎的微型内核启动与绘制状态切换上！
 3. **跨系统“次元壁”**：此前在 `Niagara_Advanced_Particles` 展台 `#8` 中学到的 `Particle Attribute Reader`，只能读取**同一个 `UNiagaraSystem` 内部**其他发射器的粒子；如果场景里飞过来一颗独立系统的火球 Actor，怎么无耦合地唤醒脚下另一套草地系统的燃烧粒子或搅动远处的体积烟雾系统？
 
-![Niagara_Data_Channels 数据通道实验室展厅总览实拍](../images/maps/Niagara_Data_Channels_00_overview.png)
+![Niagara_Data_Channels 数据通道实验室展厅总览实拍](../images/maps/Niagara_Data_Channels_00_overview.webp)
 
 **Niagara Data Channels（简称 NDC，数据通道）** 正是虚幻引擎 5.3 ~ 5.5 为彻底终结这三大痛点而打造的**强类型、零耦合、空间感知的帧级流式消息总线（Pub-Sub Stream Bus）**！
 
@@ -76,7 +76,7 @@ flowchart LR
 - **官方展牌原文**：
   > *"Position and Color is written into a Niagara Data Channel from blueprint. The data is available to CPU emitters, GPU emitters and other blueprints and game code. The NDC is used by a SINGLE Niagara emitter to spawn multiple particles per data entry. In this demo the NDC data is being read by a GPU emitter. The data is used to set the position and color of each new particle at spawn."*
 
-![展台 #2 Write into a NDC from Blueprint 蓝图向全局通道写入位置与颜色驱动单发射器合批生成实拍](../images/maps/Niagara_Data_Channels_01_stand_02.png)
+![展台 #2 Write into a NDC from Blueprint 蓝图向全局通道写入位置与颜色驱动单发射器合批生成实拍](../images/maps/Niagara_Data_Channels_01_stand_02.webp)
 
 #### 2.1 MCP 实测双端资产深拆
 1. **生产者蓝图 `BP_WriteToGlobalNDC`**（`/Game/ExampleContent/Niagara/DataChannels/Blueprint/BP_WriteToGlobalNDC`）：
@@ -118,7 +118,7 @@ flowchart LR
 - **官方展牌原文**：
   > *"Data channels can be written to directly from Niagara. As of UE5.5 data can be written from CPU and GPU emitters. In this demo the blue CPU emitter and green GPU emitter are in their own system. The trailing particles are in a separate system, spawned from a GPU emitter reading all spawn information from the data channel. If you are using a CPU emitter or a GPU emitter, the act of spawning new particles always happens on the CPU. As a result, for both ring emitters, the NDC visibility is set to CPU. Any data required by the GPU for spawning is automatically sent by this process."*
 
-![展台 #4 Write into a NDC from Niagara 蓝色CPU环与绿色GPU环跨系统向独立尾迹系统写入数据实拍](../images/maps/Niagara_Data_Channels_02_stand_04.png)
+![展台 #4 Write into a NDC from Niagara 蓝色CPU环与绿色GPU环跨系统向独立尾迹系统写入数据实拍](../images/maps/Niagara_Data_Channels_02_stand_04.webp)
 
 #### 4.1 MCP 实测跨系统双 Actor 拓扑深拆
 展台上放置了两个在场景树里**毫无父子或引用关系、彻底解耦的独立 `NiagaraActor`**：
@@ -160,7 +160,7 @@ flowchart LR
 - **官方展牌原文**：
   > *"Niagara Data Channels can be used as an Iteration Source for Simulation Stages. In this case the fluid source data is read from a NDC and splatted directly into the grid. Simulation Stages run on the GPU. By using a GPU system to write to the data channel we can avoid any data having to go to the CPU. On write the data is only made visible to GPU."*
 
-![展台 #6 Read from a Simulation Stage GPU 粒子通过纯显存 NDC 直接向三维气态流体网格注入烟雾源实拍](../images/maps/Niagara_Data_Channels_03_stand_06.png)
+![展台 #6 Read from a Simulation Stage GPU 粒子通过纯显存 NDC 直接向三维气态流体网格注入烟雾源实拍](../images/maps/Niagara_Data_Channels_03_stand_06.webp)
 
 #### 6.1 MCP 实测粒子-流体跨界耦合拓扑深拆
 1. **源粒子发送方 `NS_WriteToNDCFluid`**（`/Game/ExampleContent/Niagara/DataChannels/Niagara/NS_WriteToNDCFluid`）：

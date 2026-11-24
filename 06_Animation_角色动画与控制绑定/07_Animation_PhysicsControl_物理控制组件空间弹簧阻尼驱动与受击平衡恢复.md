@@ -16,7 +16,7 @@
 
 为了彻底终结这一痛点，虚幻引擎 5 推出了次世代物理与动画融合架构——**`Physics Control`（物理控制系统）**！
 
-![Animation_PhysicsControl 物理控制组件展厅总览实拍](../images/maps/Animation_PhysicsControl_00_overview.png)
+![Animation_PhysicsControl 物理控制组件展厅总览实拍](../images/maps/Animation_PhysicsControl_00_overview.webp)
 
 欢迎来到全教程规模最宏大的物理动画实验室之一：**`/Game/Maps/Animation/Animation_PhysicsControl`**。这条全长 **240 米**（`X` 坐标从 `500` 一路延伸至 `24000`）、纵跨 **四大主题展厅、整整 26 座受控实验展台** 的走廊，将 `Physics Control` 的三大基石原语与三种工程承载形态拆解得淋漓尽致。
 
@@ -103,7 +103,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(1500, -900, 0)`
 
-![展台 #2 Body Modifier 刚体修饰器实拍](../images/maps/Animation_PhysicsControl_01_stand_02.png)
+![展台 #2 Body Modifier 刚体修饰器实拍](../images/maps/Animation_PhysicsControl_01_stand_02.webp)
 
 #### 2.1 核心原理解析
 如果在传统蓝图里直接暴力调用 `SetSimulatePhysics(true/false)`，当一个正在被代码推着走的运动学物体切入物理模拟时，经常会出现原地顿挫丢失动量，或者切回运动学时发生生硬瞬移。
@@ -230,7 +230,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(9000, -900, 0)`
 
-![展台 #10 Combining Many Controls 物理驾驶员多部位差异化控制实拍](../images/maps/Animation_PhysicsControl_02_stand_10.png)
+![展台 #10 Combining Many Controls 物理驾驶员多部位差异化控制实拍](../images/maps/Animation_PhysicsControl_02_stand_10.webp)
 
 #### 10.1 分部位精细化控制教科书（`BP_PhysicsControlDriver`）
 请仔细端详上面这张视口实拍图！角色 Manny 坐在一辆简易敞篷车架上，底层其实**只播放了一段静态的坐姿循环动画 `SitChairLoop`**，全身没有任何打方向盘动画，也没有挂载任何 Control Rig 或 IK 节点！但当你踩下 `BP_PressureButton_PhysicsControl7` 让车身开始剧烈颠簸晃动（`position Amplitude = 20`）并转动方向盘时，他却做出了一整套鲜活无比的驾驶动作——秘诀全在**分部位差异化物理策略**：
@@ -361,7 +361,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay10` | 坐标 `(16500, -900, 0)`
 
-![展台 #19 Physics Control Actor 远程接管纯动画骨骼网格实拍](../images/maps/Animation_PhysicsControl_03_stand_19.png)
+![展台 #19 Physics Control Actor 远程接管纯动画骨骼网格实拍](../images/maps/Animation_PhysicsControl_03_stand_19.webp)
 
 - **展台陈列 Actor 与实验拆解（共 3 个）**：
   - 看视口中央正在迎着旋转横杆 `BP_RotatingObstacle3` 行走的 **`SKM_Manny`**：注意它的类是纯正的引擎原生 **`/Script/Engine.SkeletalMeshActor`**！它身上没有一行蓝图代码，也没有挂 `PhysicsControlComponent`，只是傻傻地循环播着一段走路动画。

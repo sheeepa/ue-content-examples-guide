@@ -20,7 +20,7 @@
 
 打开 **`/Game/Maps/Audio/Audio`** 展厅，Epic 官方音频团队在一条长达 **105 米** 的受控声学走廊中，用 **20 座递进式实验展台（`#1` ~ `#20`）** 与 `/Game/ExampleContent/Audio/` 目录下完整的混音工程资产，为我们立下了虚幻引擎空间音频管线的全部工业基石。
 
-![Audio 传统空间声学与音频体积展厅总览实拍](../images/maps/Audio_00_overview.png)
+![Audio 传统空间声学与音频体积展厅总览实拍](../images/maps/Audio_00_overview.webp)
 
 ---
 
@@ -104,7 +104,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay15` | 坐标 `(994, -710, 75)`
 - **陈列示例 Actor（1 个）**：`Audio Content Examples Documentation` [`/Script/Engine.DocumentationActor`]
 
-![展台 #2 Useful Audio Console Commands 实用音频控制台调试指令实拍](../images/maps/Audio_01_stand_02.png)
+![展台 #2 Useful Audio Console Commands 实用音频控制台调试指令实拍](../images/maps/Audio_01_stand_02.webp)
 
 - **官方展牌原文**：
   > - `'stat soundwaves'` — *List the playing Soundwaves and their volumes*
@@ -210,7 +210,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(4520, -900, 0)`
 
-![展台 #6 Attenuation 距离衰减内外半径与渐变实拍](../images/maps/Audio_02_stand_06.png)
+![展台 #6 Attenuation 距离衰减内外半径与渐变实拍](../images/maps/Audio_02_stand_06.webp)
 
 - **官方展牌原文**：
   > *Fade a sound in and out based on the listeners distance from the Sound Actor. Override Attenuation property is set to true.*
@@ -265,7 +265,7 @@ flowchart TB
 
 走到 `X = 6500` 处，我们迎来了整座展厅最精妙的一组空间对照实验台：母展牌 **`#8 Attenuation Shapes`** 统领全局，台面前方（`Y = -474, Z = 9`）一字排开四座微型子展台（按 X 坐标从左至右依次为 `#9 Sphere`、`#11 Capsule`、`#10 Box`、`#12 Cone`），全部复用同一条测试音源 **`Basic_AttenuationShape01`**，纯粹对比几何体拓扑！
 
-![展台 #8~#12 Attenuation Shapes 四大衰减几何体（Sphere / Capsule / Box / Cone）实拍](../images/maps/Audio_03_stand_10.png)
+![展台 #8~#12 Attenuation Shapes 四大衰减几何体（Sphere / Capsule / Box / Cone）实拍](../images/maps/Audio_03_stand_10.webp)
 
 #### 展台 #8：`Attenuation Shapes`（几何体衰减母展台总纲）
 - **空间元数据**：展牌 Label `BP_DemoDisplay5` | 坐标 `(6500, -900, 0)`
@@ -286,7 +286,7 @@ flowchart TB
 ---
 
 #### 展台 #10：`Box`（盒体衰减子展台）
-- **空间元数据**：展牌 Label `BP_DemoDisplay19` | 坐标 `(6576, -474, 9)` | 官方展牌说明：`Box` | 📷 专属实拍图见上方 `Audio_03_stand_10.png`
+- **空间元数据**：展牌 Label `BP_DemoDisplay19` | 坐标 `(6576, -474, 9)` | 官方展牌说明：`Box` | 📷 专属实拍图见上方 `Audio_03_stand_10.webp`
 - **陈列 Actor（3 个）**：`Attenuation Shapes Sound Actor_2`（`Basic_AttenuationShape01`）、`BP_Button_ToggleAudio6`、`1.6 Emitter_4`。
 - **数学定义与工程选型**：由三维半边长向量 `Extents = (X, Y, Z)` 定义的有向包围盒（OBB，随 Actor 旋转变换）。先将听者坐标逆变换至盒体局部空间 $\mathbf{p}_{\text{local}} = \mathbf{R}^T(\mathbf{P}_L - \mathbf{P}_S)$，再对三轴执行分量钳制 $\mathbf{q}_{\text{local}} = \text{clamp}(\mathbf{p}_{\text{local}}, -\mathbf{E}, +\mathbf{E})$ 即可极速求得最近表面点！
 - **黄金实战场景**：矩形机房/变电站的嗡鸣底噪、室内空调风幕、方形泳池水面环境音——整间屋子只放 **1 个** Box `AmbientSound`，室内任意角落音量均匀恒定，跨出门槛沿 `FalloffDistance` 自然消退！
@@ -314,7 +314,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay6` | 坐标 `(7496, -900, 0)`
 
-![展台 #13 Shared Attenuation Settings 共享衰减模板资产实拍](../images/maps/Audio_04_stand_13.png)
+![展台 #13 Shared Attenuation Settings 共享衰减模板资产实拍](../images/maps/Audio_04_stand_13.webp)
 
 - **官方展牌原文**：
   > *A single SoundAttenuation asset can be created for multiple Sound Actors: Content browser > New > Sounds > Sound Attenuation. Double Click the SoundAttenuation asset to change its properties. Assign SoundAttenuation asset to any AmbientSound Actor's Attenuation Setting.*
@@ -380,7 +380,7 @@ flowchart LR
 
 来到 `X = 9501` 处，走廊右侧被一圈醒目的黄色线框 BSP 体积画刷（`AAudioVolume`）包围。母展牌 **`#15 Reverb Volume`** 居中指引，内部设有 **`#16 Reverb`**，而一墙之隔的画刷外部设有对照组 **`#17 No Reverb`**！
 
-![展台 #15~#17 Reverb Volume 礼堂混响区与外部无混响干声对照实拍](../images/maps/Audio_05_stand_17.png)
+![展台 #15~#17 Reverb Volume 礼堂混响区与外部无混响干声对照实拍](../images/maps/Audio_05_stand_17.webp)
 
 #### 展台 #15：`Reverb Volume`（空间混响体积总纲）
 - **空间元数据**：展牌 Label `BP_DemoDisplay8` | 坐标 `(9501, -900, 0)`
@@ -405,7 +405,7 @@ flowchart LR
 ---
 
 #### 展台 #17：`No Reverb`（无混响干声对照区）
-- **空间元数据**：展牌 Label `BP_DemoDisplay12` | 坐标 `(9501, -221, 4)` | 官方展牌说明：`Default` | 📷 专属实拍图见上方 `Audio_05_stand_17.png`
+- **空间元数据**：展牌 Label `BP_DemoDisplay12` | 坐标 `(9501, -221, 4)` | 官方展牌说明：`Default` | 📷 专属实拍图见上方 `Audio_05_stand_17.webp`
 - **对照实测体验**：站在 `#17` 展牌前（位于 `ReverbVolume_Reverb_Effects` 画刷边界之外），摄像机脱离 `AudioVolume` 管辖，Master Reverb 湿声发送按照 `Fade Time` 平滑归零，人声瞬间退回纯净无染的自由场干声（Dry Signal）。反复在 `#16`（`Y = -724`）与 `#17`（`Y = -221`）之间前后迈步，你能亲耳验证房间边界混响切入/切出的丝滑插值过渡！
 
 ---

@@ -45,7 +45,7 @@
 | **5. Archetype & Chunk（同构连续内存页 + SoA）** | `FMassArchetypeData` | 拥有完全相同 Fragment + Tag 组合的所有实体被归入同一个 **Archetype（原型）**，底层按固定大小（如 `128 KB`）的连续内存页 **Chunk** 存储，并在页内采用 **SoA（Structure of Arrays，数组结构）** 紧密排布：<br>`[Pos_0, Pos_1, ..., Pos_N]` 紧接着 `[Vel_0, Vel_1, ..., Vel_N]`！ |
 | **6. Processor & Trait（批处理器与配方积木）** | `UMassProcessor` / `UMassEntityTraitBase` | **Trait** 是设计师在编辑器里搭积木的“声明式配方”（声明本类实体需要哪些 Fragment 与 Tag）；**Processor** 则是每帧**全局只调用 1 次 `Execute()`** 的无状态流水线算子——通过 `FMassEntityQuery` 顺序横扫所有匹配 Chunk，**L1 Cache 命中率逼近 100%，满血跑满多核 TaskGraph 并行线程与 SIMD 向量单元**！ |
 
-![AI_Mass 面向数据ECS大规模群体模拟展厅总览实拍](../images/maps/AI_Mass_00_overview.png)
+![AI_Mass 面向数据ECS大规模群体模拟展厅总览实拍](../images/maps/AI_Mass_00_overview.webp)
 
 ---
 
@@ -89,7 +89,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(3507, -4695, 0)`
 
-![展台 #2 Zone Graph Tags and Lane Profiles 双向车道标签与流向箭头实拍](../images/maps/AI_Mass_01_stand_02.png)
+![展台 #2 Zone Graph Tags and Lane Profiles 双向车道标签与流向箭头实拍](../images/maps/AI_Mass_01_stand_02.webp)
 
 - **官方展牌原文**：
   > *Zone shape uses the Hunmans Tag. Arrows show this Zone is set for Forwards and Backwards.* *(注：保留官方展牌原文拼写 `Hunmans`)*
@@ -163,7 +163,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(490, -885, 0)`
 
-![展台 #8 Plugins and Zone Graph Tags 核心插件栈与全局车道数据实拍](../images/maps/AI_Mass_02_stand_08.png)
+![展台 #8 Plugins and Zone Graph Tags 核心插件栈与全局车道数据实拍](../images/maps/AI_Mass_02_stand_08.webp)
 
 #### 8.1 官方展牌说明与四大插件分工矩阵
 > *To access Mass AI features, enable the following plugins:*
@@ -295,7 +295,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay17`（过道详注副牌，对应北壁 **展台 #5 `Splines`**） | 坐标 `(9876, -255, 0)`
 
-![展台 #15 Create a Zone Shape 样条曲线车道创建与参数编辑实拍](../images/maps/AI_Mass_03_stand_15.png)
+![展台 #15 Create a Zone Shape 样条曲线车道创建与参数编辑实拍](../images/maps/AI_Mass_03_stand_15.webp)
 
 - **官方展牌原文**：
   > *Create a Zone Shape via Add > All > Zone Shape. You can then edit its spline, including curve settings, Shape Profile, Lane Type, and Tags.*

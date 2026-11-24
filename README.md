@@ -11,7 +11,7 @@
 - **逐展台源码级拆解**：将全部 **1,106+ 座编号展台** 与展位内的示例 Actor、3D 文字标签、`2,270+` 项材质表达式节点、`510` 个蓝图/UMG/ControlRig 逻辑图、Niagara 模块栈、PCG 拓扑、StateTree 状态树与 Sequencer 轨道逐一还原；
 - **高清实拍图文并茂**：正文总计 **25,300+ 行（约 179.4 万字符）**，内嵌 **287+ 张实时视口展厅与展台正对特写实拍图** 及 **12 幅定制原理架构图**。
 
-![Welcome 欢迎大厅实拍总览](./images/maps/ExampleProjectWelcome_00_overview.png)
+![Welcome 欢迎大厅实拍总览](./images/maps/ExampleProjectWelcome_00_overview.webp)
 
 ---
 
@@ -178,7 +178,7 @@
 下列材料**明确排除在本仓库 `CC BY-SA 4.0` 许可协议的授权范围之外**，本仓库作者不对该等材料主张著作权，亦不对其授予任何开源代码许可或再分发权利：
 
 1. **引擎与官方示例短代码/配置引用**：教程正文中为技术评述与教学解说之必要而少量引用的 Unreal Engine 接口名称、官方示例材质 `Custom` 节点 HLSL 短片段（全库严格控制在 UE EULA 允许公开讨论的不超过 30 行短代码片段范围内）、蓝图节点标识及 `.ini` 配置参数；
-2. **视口截图中的官方示例资产画面**：教程内嵌视口实拍截图（`images/maps/*.png` 等）中所呈现的三维网格模型、材质球、贴图纹理、粒子特效与展厅关卡场景（源自 Epic Games, Inc. 发布的 *Content Examples* 官方示例工程）。
+2. **视口截图中的官方示例资产画面**：教程内嵌视口实拍截图（`images/maps/*.webp` 等）中所呈现的三维网格模型、材质球、贴图纹理、粒子特效与展厅关卡场景（源自 Epic Games, Inc. 发布的 *Content Examples* 官方示例工程）。
 3. **权利归属与合规义务**：上述被排除材料的全部著作权、专利权及其他知识产权均归 **Epic Games, Inc.** 及其许可方所有。任何在实际软件、游戏或商业项目中使用、复制或分发 Unreal Engine 源码及官方示例工程资产的行为，均须自行向 Epic Games 获取合法授权并严格遵守 **[Unreal Engine 最终用户许可协议（Unreal Engine End User License Agreement, UE EULA）](https://www.unrealengine.com/eula)** 及 **[Epic Games 粉丝内容政策（Fan Content Policy）](https://www.epicgames.com/site/en-US/fan-art-policy)**。
 4. **非官方背书与商标声明**：本仓库仅包含独立编写的教学文档与配图，**不包含亦不分发任何原始 `.uasset`、`.umap` 或引擎源码文件**。`Unreal®`、`Unreal Engine™` 及相关标识是 Epic Games, Inc. 在美国及其他国家或地区的商标或注册商标；本项目系社区独立创作的技术学习解析，与 Epic Games, Inc. 不存在任何隶属、合作、赞助或官方背书关系。
 

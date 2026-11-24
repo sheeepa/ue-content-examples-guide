@@ -21,7 +21,7 @@ $$\mathbf{R}_{\text{blend}} = 0.5 \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 
 
 为了把影视级角色变形管线（双四元数蒙皮、Delta Mush 平滑肌肉体积保持、FFD 自由晶格形变、碰撞推挤变形乃至 **ML Deformer 神经网络肌肉拟合**）彻底搬上实时 60 帧的显卡，虚幻引擎 5 构建了底层代号为 **Optimus** 的现代可编程 GPU 计算框架——**`Deformer Graph`（网格变形器图，`UOptimusDeformer`）**！
 
-![Animation_Deformer 网格变形器展厅总览实拍](../images/maps/Animation_Deformer_00_overview.png)
+![Animation_Deformer 网格变形器展厅总览实拍](../images/maps/Animation_Deformer_00_overview.webp)
 
 ### 1.1 直击内核：Optimus `Deformer Graph` 是如何在 GPU Compute Shader 上重塑几何的？
 
@@ -80,7 +80,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1501.5, -900, 0)`
 
-![展台 #2 Simple Deformer Graph 骨骼网格挂载变形器实拍](../images/maps/Animation_Deformer_01_stand_02.png)
+![展台 #2 Simple Deformer Graph 骨骼网格挂载变形器实拍](../images/maps/Animation_Deformer_01_stand_02.webp)
 
 #### 2.1 如何把一张变形器图挂到角色身上？
 最直接的静态挂载方式就在展台中央的 **`SKM_Manny_Simple`**（`SkeletalMeshActor`，坐标 `(1500, -610, 30)`，实际内部骨骼资产为 `SKM_Manny`）上：打开 `SkeletalMeshComponent0` 的 Details 面板，在 **`MeshDeformer`** 属性槽中直接指定 **`/Game/ExampleContent/AnimationDeformer/AnimBlueprints/DG_SimpleDeformer`**！（注：本展台旁还放置了 1 个预计算可见性体积 `PrecomputedVisibilityVolume1`。）
@@ -112,7 +112,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(3500, -900, 0)`
 
-![展台 #4 Dual Quaternion Skinning 双四元数保体积蒙皮与LBS糖纸坍缩对比实拍](../images/maps/Animation_Deformer_02_stand_04.png)
+![展台 #4 Dual Quaternion Skinning 双四元数保体积蒙皮与LBS糖纸坍缩对比实拍](../images/maps/Animation_Deformer_02_stand_04.webp)
 
 #### 4.1 视口震撼实拍对比：左边浑圆饱满 vs 右边拧成麻花死结！
 请看上方 `#4` 号展台的实拍截图！关卡序列 **`LS_DualQuatDeformerDemo`**（`30 fps`，区间 `0 ~ 270` 帧）通过两条 `CR_Cylinder` Control Rig 轨道，同步将左右两根拥有 4 节骨骼（`SK_Cylinder`）且贴有黑白棋盘格材质（`M_Cylinder`，调用材质函数 `CheckerPattern`）的圆柱体 **`SKM_Cylinder`** 大幅度往复旋转扭曲：
@@ -135,7 +135,7 @@ $$\hat{\mathbf{b}} = \frac{\sum_{i=1}^{K} w_i s_i \hat{\mathbf{q}}_i}{\left\| \s
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(4500, -900, 0)`
 
-![展台 #5 Delta Mush Deformer 弯曲防折痕与体积保持对比实拍](../images/maps/Animation_Deformer_03_stand_05.png)
+![展台 #5 Delta Mush Deformer 弯曲防折痕与体积保持对比实拍](../images/maps/Animation_Deformer_03_stand_05.webp)
 
 #### 5.1 为什么 DQS 还不够？弯曲折痕（Creasing）与关节膨胀怎么破？
 虽然 `#4` 的双四元数（DQS）完美解决了绕轴旋转坍缩，但在手肘、膝盖、腹股沟做大幅度**横向折弯（Bending）**时：LBS 会导致关节内侧顶点生硬对穿形成“死折痕”（如上图右侧 **`BP_Cylinder_DM_Off`** 弯折内侧明显的硬角凹陷！），而纯 DQS 有时又会在肘部外侧产生轻微的“关节鼓包（Joint Bulging）”。

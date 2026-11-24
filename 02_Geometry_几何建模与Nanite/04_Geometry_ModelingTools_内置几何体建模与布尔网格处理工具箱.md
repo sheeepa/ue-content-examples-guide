@@ -13,7 +13,7 @@
 
 **Unreal Engine 5 内置建模模式（Modeling Mode，底层由 `GeometryProcessing` / `DynamicMesh` C++ 几何内核驱动）** 彻底终结了这种割裂！它直接把一整座现代 DCC 多边形建模工坊、三维布尔切割机、全功能二维 UV 编辑器（`UVEditor`）、烘焙工坊（`Bake`）与类似 ZBrush Sculptris Pro 的自适应动态拓扑雕刻机（`Dynamic Sculpting`）搬进了关卡视口！
 
-![Geometry_ModelingTools 展厅全景实拍](../images/maps/Geometry_ModelingTools_00_overview.png)
+![Geometry_ModelingTools 展厅全景实拍](../images/maps/Geometry_ModelingTools_00_overview.webp)
 
 `/Game/Maps/Geometry/Geometry_ModelingTools` 是一座设计极其精巧的**“工业道具全流程流水线博物馆”**。它采用了独特的 **“墙面主概念展牌（`Y = -900`） + 地面工具参数处方地牌（`Y = -795`）”** 双轨配对布局，用整整 **36 座展台**、15 代演进网格资产（`SM_MT_One` 直至 `SM_MT_Fifteen_StylisedDeform`），手把手演示了如何**不离开虚幻编辑器一步，从一颗最原始的基础圆柱体出发，完整打造出一只带金属箍、环形铆钉、单材质 ORM 烘焙贴图、配套木盖、有机绿色粘液雕刻乃至夸张卡通风格化的游戏级木桶资产**！
 
@@ -61,7 +61,7 @@ flowchart LR
   - `ExponentialHeightFog`（`HeightFogComponent0`）
   - `Actor`（挂载 `ChaosDebugDrawComponent_0`）
 
-![展台 #2 Parameters 地面参数地牌实拍](../images/maps/Geometry_ModelingTools_01_stand_02.png)
+![展台 #2 Parameters 地面参数地牌实拍](../images/maps/Geometry_ModelingTools_01_stand_02.webp)
 
 #### 展厅双排阅读约定说明
 正如 2 号实拍图所示，本展厅从第 4 站开始，几乎每一组工序都由**一高一低两座展牌**协同呈现：后方墙面大牌（如 `#4, #6, #8...`）阐述造型设计思想与拓扑原理；前方脚下斜置的地面小牌（如 `#5, #7, #9...`）则精确列出在 Modeling Mode 面板中点击的子菜单路径与每一项数值参数，方便你随时在旁边空地上 1:1 动手复刻！
@@ -156,7 +156,7 @@ flowchart LR
 - **陈列示例 Actor（2 个）**：
   - `SM_MT_Three`（着色）与 `SM_MT_Three2`（线框），引用第三代鼓腹网格 `/Game/ExampleContent/Geometry_ModelingTools/Meshes/ModelingTools/SM_MT_Three`。
 
-![展台 #9 Deform Lattice 晶格塑形实拍](../images/maps/Geometry_ModelingTools_02_stand_09.png)
+![展台 #9 Deform Lattice 晶格塑形实拍](../images/maps/Geometry_ModelingTools_02_stand_09.webp)
 
 ---
 
@@ -236,7 +236,7 @@ flowchart LR
 - **展牌标识与空间坐标**：`BP_DemoDisplay16` | `(9524, -900, 0)`
 - **官方展牌原文**：`To improve the clarity of the model, it is divided into two Material IDs rather than just one. This allows for different materials to be applied to distinct parts of the mesh, such as the barrel and the metal bands, enhancing the visual distinction between these elements.`
 
-![展台 #16 Material ID 双材质槽分配实拍](../images/maps/Geometry_ModelingTools_03_stand_16.png)
+![展台 #16 Material ID 双材质槽分配实拍](../images/maps/Geometry_ModelingTools_03_stand_16.webp)
 
 ---
 
@@ -321,7 +321,7 @@ flowchart LR
 - **陈列示例 Actor（1 个）**：
   - `SM_MT_Nine3`：合并后的完整单一体网格 `/Game/ExampleContent/Geometry_ModelingTools/Meshes/ModelingTools/SM_MT_Eleven_Combined`（此时暂保留 `[0] MI_Blue`、`[1] MI_BasicWood`、`[2] MI_BasicMetal` 三槽过渡，准备进入下一步统一拆 UV）。
 
-![展台 #23 XForm Merge 多网格合并实拍](../images/maps/Geometry_ModelingTools_04_stand_23.png)
+![展台 #23 XForm Merge 多网格合并实拍](../images/maps/Geometry_ModelingTools_04_stand_23.webp)
 
 ---
 
@@ -402,7 +402,7 @@ flowchart LR
   - `SM_MT_Fourteen_Textured7`：敞口桶身，切换挂载手绘风格化材质 `/Game/ExampleContent/Geometry_ModelingTools/Materials/M_Barrel_Modeling_Stylized`。
   - `SM_MT_Lid_Barrel`：新建的独立圆形带把手木桶盖 `/Game/ExampleContent/Geometry_ModelingTools/Meshes/ModelingTools/SM_MT_Lid_Barrel`，挂载**完全同一份材质** `M_Barrel_Modeling_Stylized`！
 
-![展台 #30 Extras 复用贴图空间的独立桶盖实拍](../images/maps/Geometry_ModelingTools_05_stand_30.png)
+![展台 #30 Extras 复用贴图空间的独立桶盖实拍](../images/maps/Geometry_ModelingTools_05_stand_30.webp)
 
 #### 关卡美术省显存绝技：逆向贴图对齐（Unwrapping to Existing Texture / Trim Workflow）
 30 号展台展示了一个极其聪明的省资源技巧：做完木桶后临时决定加一个独立的可掀开木盖子 `SM_MT_Lid_Barrel`，难道要为这一个小盖子再单独画一套新的 2K BaseColor + ORM + Normal 三张贴图吗？**完全不需要！** 直接在 `UVEditor` 中把新木盖的背景图设为已有的木桶贴图 `T_Barrel_Modeling_Stylized_A`，把盖板 UV 岛挪到桶底木板纹理区、把盖沿铁圈 UV 挪到铁箍纹理区——**显存增量 0 MB、新增材质球 0 个**，风格还 100% 浑然一体！

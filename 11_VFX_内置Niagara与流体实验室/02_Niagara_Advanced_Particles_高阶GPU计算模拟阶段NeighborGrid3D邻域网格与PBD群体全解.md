@@ -13,7 +13,7 @@
 1. **数据竞争（Data Race）**：如果线程 `i` 正在修改位置，线程 `j` 同时来读它的位置，谁先谁后完全取决于 GPU 硬件调度，结果必定闪烁崩坏；
 2. **$O(N^2)$ 复杂度爆炸**：如果有 $N = 10,000$ 颗粒子，每颗粒子都去遍历另外 $9,999$ 颗找邻居，单帧就要跑 **$10^8$（一亿次）** 距离平方根比较，顶级显卡也会当场卡死！
 
-![Niagara_Advanced_Particles 高阶 GPU 计算与邻域网格展厅总览实拍](../images/maps/Niagara_Advanced_Particles_00_overview.png)
+![Niagara_Advanced_Particles 高阶 GPU 计算与邻域网格展厅总览实拍](../images/maps/Niagara_Advanced_Particles_00_overview.webp)
 
 推开 `/Game/Maps/VFX/Niagara_Advanced_Particles` 长达 **260 米**（`X` 从 `500` 延伸至 `25991`）的大门，Epic 的图形程序员给出了破局的三大核武器：
 - **`Particle Attribute Reader`（粒子属性读取器）**：允许跨发射器或同发射器按确定性索引（Index）或持久 ID 安全只读上一拍的粒子属性；
@@ -41,7 +41,7 @@
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1500, -900, 0)`
 
-![展台 #2 Simulation Stage Fill Render Target 模拟阶段逐像素填充二维网格实拍](../images/maps/Niagara_Advanced_Particles_01_stand_02.png)
+![展台 #2 Simulation Stage Fill Render Target 模拟阶段逐像素填充二维网格实拍](../images/maps/Niagara_Advanced_Particles_01_stand_02.webp)
 
 #### 2.1 MCP 实测资产深拆：`FIllRenderTarget`
 - **陈列 Actor**：`FIllRenderTarget`（`/Game/ExampleContent/Niagara/Grid2D/FIllRenderTarget`）
@@ -179,7 +179,7 @@ $$q^{n+1}(\mathbf{x}) = \text{BilinearSample}\Big( q^n,\; \mathbf{x} - \Delta t 
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay7` | 坐标 `(10050, -900, 0)`
 
-![展台 #10 Spawn Particles From Another Emitter 跨 GPU 发射器读取属性生成绚丽彩带拖尾实拍](../images/maps/Niagara_Advanced_Particles_02_stand_10.png)
+![展台 #10 Spawn Particles From Another Emitter 跨 GPU 发射器读取属性生成绚丽彩带拖尾实拍](../images/maps/Niagara_Advanced_Particles_02_stand_10.webp)
 
 #### 10.1 MCP 实测资产深拆：`AttributeReaderStreamers`
 - **陈列 Actor**：`AttributeReaderStreamers`（`/Game/ExampleContent/Niagara/AttributeReader/AttributeReaderStreamers`）
@@ -327,7 +327,7 @@ Müller 等人提出的 **PBD（Position-Based Dynamics）** 彻底绕过了力�
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay23` | 坐标 `(18508, -900, 0)`
 
-![展台 #18 Plexus 基于 NeighborGrid3D 实时搜索近邻构建三维神经元连线网格实拍](../images/maps/Niagara_Advanced_Particles_03_stand_18.png)
+![展台 #18 Plexus 基于 NeighborGrid3D 实时搜索近邻构建三维神经元连线网格实拍](../images/maps/Niagara_Advanced_Particles_03_stand_18.webp)
 
 #### 18.1 MCP 实测资产深拆：`Plexus`
 - **陈列 Actor（共 8 个）**：`PBD2`（引用 `/Game/ExampleContent/Niagara/NeighborGrid3D/Plexus/Plexus`） + 6 面 `HideGeo` 隐形边界墙。

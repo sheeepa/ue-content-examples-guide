@@ -79,7 +79,7 @@ flowchart TD
 
 步入 `/Game/Maps/Material/Material_ParallaxOcclusionMapping`，整座展厅沿 $X$ 轴从 `X = 480` 延伸至 `X = 11010`，共设 **11 座专题展台**，从最基础的开关对比、光线步进实时横截面示波器、TAA 时域抖动降噪、动态自阴影、PDO 深度穿插、几何曲率限制、参考平面推拉、陡壁拉伸修复、多图层单高度混合，一路讲到最前沿的圆柱曲面曲率修正实验。
 
-![Material_ParallaxOcclusionMapping 展厅总览实拍](../images/maps/Material_ParallaxOcclusionMapping_00_overview.png)
+![Material_ParallaxOcclusionMapping 展厅总览实拍](../images/maps/Material_ParallaxOcclusionMapping_00_overview.webp)
 
 | 展台编号 | 官方展台标题 (`BP_DemoDisplay`) | 空间坐标 `(X, Y, Z)` | 核心陈列资产与调试器蓝图 | 攻克的核心技术痛点 |
 | :---: | :--- | :---: | :--- | :--- |
@@ -105,7 +105,7 @@ flowchart TD
 > *Parallax Occlusion Mapping (POM) is a function to give textures the appearance of displacement using the pixel shader. It is similar to Bump Offset but gives more accurate intersections by ray tracing through a height map. This level will demonstrate how it works as well as examples.*  
 > （视差遮蔽映射 POM 是一项利用像素着色器赋予纹理置换凹凸外观的功能。它类似于 Bump Offset，但通过对高度图进行光线追踪获得了精确得多的交点。本关卡将演示其工作原理与实战示例。）
 
-在总览实拍图 `Material_ParallaxOcclusionMapping_00_overview.png` 左下角，你可以清晰看到 `#1` 展台台面上并排摆放着两块完全相同的引擎基础立方体（`/Engine/BasicShapes/Cube.Cube`，顶部仅 2 个三角形），上方悬停着一盏高亮度聚光灯 `SpotLight`（强度 `100000`，暖白光 `(1.0, 0.969, 0.929)`，衰减半径 `800`），同时世界原点挂载着全局 `DirectionalLight`（强度 `3.14`）、`SkyLight`（强度 `3.0`）、`SkyAtmosphere` 与 `ExponentialHeightFog`：
+在总览实拍图 `Material_ParallaxOcclusionMapping_00_overview.webp` 左下角，你可以清晰看到 `#1` 展台台面上并排摆放着两块完全相同的引擎基础立方体（`/Engine/BasicShapes/Cube.Cube`，顶部仅 2 个三角形），上方悬停着一盏高亮度聚光灯 `SpotLight`（强度 `100000`，暖白光 `(1.0, 0.969, 0.929)`，衰减半径 `800`），同时世界原点挂载着全局 `DirectionalLight`（强度 `3.14`）、`SkyLight`（强度 `3.0`）、`SkyAtmosphere` 与 `ExponentialHeightFog`：
 
 1. **左侧对比块 `Cube`（关闭 POM 的纯法线基准）**：
    - 绑定材质实例 `/Game/ExampleContent/ParallaxOcclusionMapping/Materials/M_Parallax_Simple_off`（继承自母材质 `M_Parallax_Simple`）；
@@ -125,10 +125,10 @@ flowchart TD
 > - `Click the graph and select the widget to move/rotate it.`（在编辑器中点击图表并选中三维操纵杆平移/旋转射线。）  
 > - `Use details panel to adjust number of steps.`（使用细节面板动态调整光线步进次数。）
 
-![展台 #2 Tracing 横截面光线步进实时示波器实拍图](../images/maps/Material_ParallaxOcclusionMapping_01_stand_02.png)
+![展台 #2 Tracing 横截面光线步进实时示波器实拍图](../images/maps/Material_ParallaxOcclusionMapping_01_stand_02.webp)
 
 > [!NOTE]
-> **空间配对勘误说明**：由于交互式横截面调试器 Actor `BP_POM_CrossSectionDebug_02_box2` 的原点坐标位于 `(2012.21, -193.20, 74.52)`（恰好处于 `#2` 展台 `X=1520` 与 `#3` 展台 `X=2500` 正中间偏右 4 厘米处），自动化空间聚类将其归入了 `#3` 展台清单；但正如上方 `#2` 展台专属实拍图 `Material_ParallaxOcclusionMapping_01_stand_02.png` 所证实的，它的发光蓝红示波器面板 `Debug Plane` 正好横跨在 `#2` 展台正前方，是专供 `#2` 展台演示 `Tracing` 步进原理的核心教学教具！
+> **空间配对勘误说明**：由于交互式横截面调试器 Actor `BP_POM_CrossSectionDebug_02_box2` 的原点坐标位于 `(2012.21, -193.20, 74.52)`（恰好处于 `#2` 展台 `X=1520` 与 `#3` 展台 `X=2500` 正中间偏右 4 厘米处），自动化空间聚类将其归入了 `#3` 展台清单；但正如上方 `#2` 展台专属实拍图 `Material_ParallaxOcclusionMapping_01_stand_02.webp` 所证实的，它的发光蓝红示波器面板 `Debug Plane` 正好横跨在 `#2` 展台正前方，是专供 `#2` 展台演示 `Tracing` 步进原理的核心教学教具！
 
 #### 深度拆解：`BP_POM_CrossSectionDebug_02_box` 蓝图与 227 节点 `POM_Debug` 示波器材质
 这台堪称“图形学教科书级神器”的调试器蓝图 `/Game/ExampleContent/ParallaxOcclusionMapping/Blueprint/BP_POM_CrossSectionDebug_02_box`（父类 `Actor`）由两大平面组件与两套动态材质实例（MID）协同运作：
@@ -189,7 +189,7 @@ flowchart TD
 > *Note: Currently PDO affects shadow Receiving but not shadow Casting. This means meshes with PDO will self shadow themselves whenever the heightfield is below the surface, unless shadow casting is disabled.*  
 > **展台 3D 悬浮文字**：左侧绿字 `PDO ON` | 右侧红字 `PDO OFF`
 
-![展台 #5 Pixel Depth Offset (PDO) 实拍对比图](../images/maps/Material_ParallaxOcclusionMapping_02_stand_05.png)
+![展台 #5 Pixel Depth Offset (PDO) 实拍对比图](../images/maps/Material_ParallaxOcclusionMapping_02_stand_05.webp)
 
 #### （1） 四件套穿插实验拆解
 展台左右各摆放了一组“白格凹槽方块 + 地面乱石薄片网格（`S_PDO_Sheet_03`）”相互穿插的组合：
@@ -201,7 +201,7 @@ flowchart TD
   - **物理奇迹诞生**：看实拍图左下角白墙与乱石交界处！高耸的鹅卵石立体地漫过并遮挡住了白墙底边，低矮的石缝则退让到白墙后方，呈现出宛如百万面实体雕刻模型般的锯齿状真实三维咬合轮廓！
 
 #### （2） 深度解惑：为什么实拍图左侧 `PDO ON` 的凹坑和乱石在 UE5 下变黑了？！
-仔细观察实拍图 `Material_ParallaxOcclusionMapping_02_stand_05.png` 左侧（以及后面 `#9` 展台的实拍图），很多升级到 UE5 的读者第一眼都会惊呼：**“左边 `PDO ON` 怎么黑成一团了？是不是材质坏了？”**
+仔细观察实拍图 `Material_ParallaxOcclusionMapping_02_stand_05.webp` 左侧（以及后面 `#9` 展台的实拍图），很多升级到 UE5 的读者第一眼都会惊呼：**“左边 `PDO ON` 怎么黑成一团了？是不是材质坏了？”**
 
 **不！这恰恰是官方展牌第二段警告在 UE5 虚拟阴影贴图（Virtual Shadow Maps, VSM）下被极致放大的经典铁证！** 让我们把这个价值千金的渲染底层机制彻底讲透：
 1. **保守深度偏移铁律**：在硬件光栅化中，`Pixel Depth Offset` 只能接收正数（把像素往远离相机的屏幕深处推远：$Z_{\text{final}} = Z_{\text{mesh}} + \Delta d$），以保证硬件深度裁剪的保守性；
@@ -264,7 +264,7 @@ flowchart TD
 > **官方展牌原文**：  
 > *When possible, share single POM heightmap for all textures in a material. When multiple heightmaps needed, try to make the color ranges as similar as possible to reduce the appearance of 'floating'. This Rock/Grass example uses only one heightmap for two separate texture layers.*
 
-![展台 #9 Blending POM mats 实拍图](../images/maps/Material_ParallaxOcclusionMapping_03_stand_09.png)
+![展台 #9 Blending POM mats 实拍图](../images/maps/Material_ParallaxOcclusionMapping_03_stand_09.webp)
 
 #### 核心资产 46 节点全拆解：`/Game/ExampleContent/ParallaxOcclusionMapping/Materials/M_POM_PerfExample_01`
 展台上陈列的 `S_PDO_Sheet_9` 搭载的正是贯穿 `#5`、`#6`、`#7`、`#9` 四大展台的标杆性能材质 `M_POM_PerfExample_01`（共 **46 个表达式节点**，注：实拍图中因默认 `PDO = 1` 且网格开启了阴影投射，在 UE5 VSM 下同样触发了 `#5` 展台所述的未关投影自阴影现象）。拆解其内部精妙的“一次步进、双层复用”拓扑：

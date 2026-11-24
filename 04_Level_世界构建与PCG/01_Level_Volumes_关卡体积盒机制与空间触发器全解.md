@@ -12,7 +12,7 @@
 
 打开 `/Game/Maps/Level/Level_Volumes`，整座长廊沿着 X 轴从 `505` 延伸至 `9510`，依次陈列了 **10 座展台**，用半透明的笔刷包络线将引擎最核心的空间规则体直观地呈现在开发者眼前：
 
-![Level_Volumes 展厅总览：沿长廊依次排开的十大关卡体积盒实拍](../images/maps/Level_Volumes_00_overview.png)
+![Level_Volumes 展厅总览：沿长廊依次排开的十大关卡体积盒实拍](../images/maps/Level_Volumes_00_overview.webp)
 
 ### 1.1 底层血统揭秘：为什么 `AVolume` 继承自 `ABrush` 而不是 `StaticMeshActor`？
 
@@ -91,7 +91,7 @@ classDiagram
 
 ### 展台 #2：`Placement` — 体积盒的放置与几何笔刷塑形工作流
 
-![展台 #2 Placement：体积盒放置入口与几何笔刷编辑模式实拍](../images/maps/Level_Volumes_01_stand_02.png)
+![展台 #2 Placement：体积盒放置入口与几何笔刷编辑模式实拍](../images/maps/Level_Volumes_01_stand_02.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay1`，位于 `(1515, -900, 0)`
 - **展台内 3D 悬浮文字标签（`TextRenderActor`）**：
@@ -173,7 +173,7 @@ classDiagram
 
 ### 展台 #5：`Lightmass Importance Volume` — 离线全局光照能量聚焦与体积光照贴图核心域
 
-![展台 #5 Lightmass Importance Volume：包围可玩区域的光照重要度体积实拍](../images/maps/Level_Volumes_02_stand_05.png)
+![展台 #5 Lightmass Importance Volume：包围可玩区域的光照重要度体积实拍](../images/maps/Level_Volumes_02_stand_05.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay4`，位于 `(4500, -900, 0)`
 - **展台内 3D 悬浮文字标签（`TextRenderActor`）**：
@@ -250,7 +250,7 @@ flowchart LR
 
 ### 展台 #8：`Precomputed Visibility Override Volume` — PVS 可见性位掩码的手术刀覆写
 
-![展台 #8 Precomputed Visibility Override Volume：手动强制修正预计算可见性结果的体积实拍](../images/maps/Level_Volumes_03_stand_08.png)
+![展台 #8 Precomputed Visibility Override Volume：手动强制修正预计算可见性结果的体积实拍](../images/maps/Level_Volumes_03_stand_08.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay8`，位于 `(7498, -900, 0)`
 - **展台内 3D 悬浮文字标签（`TextRenderActor`）**：

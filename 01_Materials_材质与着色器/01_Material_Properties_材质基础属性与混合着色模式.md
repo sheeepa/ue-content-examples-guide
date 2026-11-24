@@ -13,7 +13,7 @@
 
 其实，**真正决定一个材质在 GPU 渲染管线中“走哪条高速公路、写哪几张缓冲区、按什么物理方程受光”的总开关，根本不在节点图表里，而在材质编辑器左下角的 `Details`（细节属性面板）中！**
 
-![Material_Properties 材质基础属性展厅总览实拍](../images/maps/Material_Properties_00_overview.png)
+![Material_Properties 材质基础属性展厅总览实拍](../images/maps/Material_Properties_00_overview.webp)
 
 欢迎来到材质专题的第一座殿堂——**`/Game/Maps/Material/Material_Properties`**。这条长达 **105 米**（`X` 坐标从 `505` 延伸至 `10498`）、包含 **11 座受控对照展台** 的长廊，几乎不用复杂的连线（绝大多数示例材质只有 **1~3 个常量节点**，并且统一使用标志性的琥珀橙色 `RGB = (1.0, 0.49358, 0)` 作为固定基准色！），纯粹通过切换根材质属性，将虚幻延迟/前向混合渲染管线的底层分流逻辑扒得清清楚楚。
 
@@ -58,7 +58,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay19` | 坐标 `(1505, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Opaque` | `Masked` | `Translucent` | `Additive` | `Modulated`
 
-![展台 #2 BlendMode 五大混合模式实拍对比](../images/maps/Material_Properties_01_stand_02.png)
+![展台 #2 BlendMode 五大混合模式实拍对比](../images/maps/Material_Properties_01_stand_02.webp)
 
 #### 2.1 为什么要分出五种混合模式？GPU 光栅化合并阶段（Output Merger）在算什么？
 当一个像素通过像素着色器（Pixel Shader）算出源颜色 $C_{\text{src}}$ 和不透明度 $\alpha$ 后，GPU 并不会无脑覆盖屏幕原来已经画好的背景颜色 $C_{\text{dst}}$，而是根据 **`BlendMode`（混合模式）** 执行不同的硬件混合公式，并决定**是否更新深度缓冲（Z-Buffer）**。
@@ -142,7 +142,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay14` | 坐标 `(4490, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`One Sided` | `Two Sided`
 
-![展台 #5 Two Sided 单面剔除与双面渲染实拍对比](../images/maps/Material_Properties_02_stand_05.png)
+![展台 #5 Two Sided 单面剔除与双面渲染实拍对比](../images/maps/Material_Properties_02_stand_05.webp)
 
 #### 5.1 为什么左边的半透明立方体看起来像“少了三面墙的破盒子”，右边才有厚重玻璃盒的质感？
 在光栅化图形学中，为了节省一半的像素填充算力，GPU 默认开启 **背面剔除（Back-face Culling）**：通过检查投影到屏幕上的三角形三个顶点是顺时针还是逆时针绕序（Winding Order），只要判定是背朝摄像机的内壁面，硬件直接一刀剪掉不画！
@@ -246,7 +246,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay18` | 坐标 `(8485, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Greyscale Mask` | `0.01` | `0.33` | `0.8`
 
-![展台 #9 Opacity Mask Clip Value 遮罩裁剪阈值梯度对比实拍](../images/maps/Material_Properties_03_stand_09.png)
+![展台 #9 Opacity Mask Clip Value 遮罩裁剪阈值梯度对比实拍](../images/maps/Material_Properties_03_stand_09.webp)
 
 #### 9.1 为什么同一张遮罩贴图，改一个数字就能让树叶“变胖”或“枯萎变瘦”？
 在 `BLEND_Masked` 模式下，哪怕你连入 `Opacity Mask` 引脚的是一张带有柔和灰阶过渡（`0.0 ~ 1.0`）的灰度图，最终屏幕像素也绝对没有半透明中间态——全凭 **`Opacity Mask Clip Value`** 这把手术刀一刀切：

@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：样条线（Spline）背后的埃尔米特曲线数学与 GPU 几何变形魔法
 
-![Blueprint_Splines 展厅总览实拍](../images/maps/Blueprint_Splines_00_overview.png)
+![Blueprint_Splines 展厅总览实拍](../images/maps/Blueprint_Splines_00_overview.webp)
 
 在大型三维关卡制作中，如果让美术纯靠手动旋转摆放静态模型去拼一条蜿蜒曲折的盘山铁轨、错综复杂的工厂管道、随风摇曳的吊桥灯笼绳，甚至是攀爬古堡墙面的螺旋藤蔓，无异于一场工期灾难。
 
@@ -51,7 +51,7 @@ $$\mathbf{P}(u) = (2u^3 - 3u^2 + 1)\mathbf{P}_0 + (u^3 - 2u^2 + u)\mathbf{T}_0 +
 - **展牌标识**：`BP_DemoDisplay` | **空间坐标**：`(1500, -900, 0)`
 - **核心陈列资产**：`BP_Spline_Example`（路径：`/Game/ExampleContent/Blueprint_Splines/Blueprints/BP_Spline_Example`，父类：`Actor`）
 
-![展台 #2 Blueprint spline component 基础样条线组件实拍](../images/maps/Blueprint_Splines_01_stand_02.png)
+![展台 #2 Blueprint spline component 基础样条线组件实拍](../images/maps/Blueprint_Splines_01_stand_02.webp)
 
 #### 资产内部结构拆解
 实测提取 `BP_Spline_Example.uasset` 显示，它的 `Construction Script` 与 `EventGraph` **完全为空**，内部仅挂载了广告牌根组件 `Billboard1` 与样条组件 **`Spline1`**。
@@ -91,7 +91,7 @@ flowchart LR
 - **展牌标识**：`BP_DemoDisplay3` | **空间坐标**：`(3500, -900, 0)`
 - **核心陈列资产**：`BP_Spline_Mesh`（路径：`/Game/ExampleContent/Blueprint_Splines/Blueprints/BP_Spline_Mesh`，父类：`Actor`）
 
-![展台 #4 Spline mesh components 样条网格体实时弯曲金属管道实拍](../images/maps/Blueprint_Splines_02_stand_04.png)
+![展台 #4 Spline mesh components 样条网格体实时弯曲金属管道实拍](../images/maps/Blueprint_Splines_02_stand_04.webp)
 
 #### 1. `Show 3D Widget` 视口三维菱形操纵手柄
 选中关卡中的 `BP_Spline_Mesh` 实例，你不需要进蓝图改数字，视口里直接浮现出两个可自由拖拽、旋转、缩放的三维坐标轴控件！这是因为它的两个公开 `Transform` 变量 **`Start transform`** 与 **`End transform`** 同时勾选了 `Instance Editable` 与 **`Show 3D Widget`**。
@@ -154,7 +154,7 @@ flowchart LR
 - **展牌标识**：`BP_DemoDisplay2` | **空间坐标**：`(6980, -900, 0)`
 - **核心陈列资产**：`BP_Spline_Mesh_Animated`（路径：`/Game/ExampleContent/Blueprint_Splines/Blueprints/BP_Spline_Mesh_Animated`，挂载引导轨道 `Spline path`、变形藤蔓网格 `Vine mesh`（`S_Vine`）与生长时间轴 `Vine growth`）
 
-![展台 #7 Animating a spline mesh 动态生长螺旋藤蔓实拍](../images/maps/Blueprint_Splines_03_stand_07.png)
+![展台 #7 Animating a spline mesh 动态生长螺旋藤蔓实拍](../images/maps/Blueprint_Splines_03_stand_07.webp)
 
 #### “轨道样条 + 变形网格”黄金搭档：四维生长节点链拆解
 如何做出电影里魔法植物顺着墙壁蜿蜒疯长的特效？`BP_Spline_Mesh_Animated` 给出了零骨骼、纯靠单个 `SplineMeshComponent` 沿着 `SplineComponent` 爬行的经典配方：

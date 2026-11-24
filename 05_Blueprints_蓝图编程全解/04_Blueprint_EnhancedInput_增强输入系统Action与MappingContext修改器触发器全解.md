@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：为什么 `Enhanced Input` 彻底淘汰了虚幻经典输入管线？
 
-![Blueprint_EnhancedInput 展厅总览实拍](../images/maps/Blueprint_EnhancedInput_00_overview.png)
+![Blueprint_EnhancedInput 展厅总览实拍](../images/maps/Blueprint_EnhancedInput_00_overview.webp)
 
 在上一章 `Blueprint_Input_Examples` 的结尾，我们亲眼目睹了经典输入（Legacy Input）在复杂项目中的窘境：硬编码在 `DefaultInput.ini` 里的全局字符串、无法在运行期按情景热插拔键位表、手搓长按蓄力与摇杆死区带来的满屏面条节点。
 
@@ -57,7 +57,7 @@ flowchart LR
 - **官方展牌原文**：
   > *There are several input related debug commands available to help you debug any input-related behavior you may be working on. Step on the pressure plates below to toggle the debug information on or off.*
 
-![展台 #2 增强输入调试命令踏板实拍](../images/maps/Blueprint_EnhancedInput_01_stand_02.png)
+![展台 #2 增强输入调试命令踏板实拍](../images/maps/Blueprint_EnhancedInput_01_stand_02.webp)
 
 #### 两块可视化调试踏板实测参数全揭秘
 当你怀疑“为什么我按了键角色没反应？是不是被高优先级 UI 吞了输入？还是死区设太大了？”，千万不要去蓝图里傻傻地连一百个 `Print String`！展台 #2 地面并排放置了两块 `BP_Visulizer_PressureButton` 踏板，实测提取出的实例参数直接给出了虚幻官方排错双神器：
@@ -100,7 +100,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Input Actions are the communication link between the Enhanced Input system and your project's code. Input Actions are the conceptual equivalent to Action and Axis mapping names, except they are data assets. Each Input Action should represent something that the user can do, like "Crouch" or "Fire Weapon". This time the Cow is moved using 2 digital bool input actions rather than an axis input action. Q - Move left | E - Move right*
 
-![展台 #4 Input Actions 离散布尔动作遛牛对照台实拍](../images/maps/Blueprint_EnhancedInput_02_stand_04.png)
+![展台 #4 Input Actions 离散布尔动作遛牛对照台实拍](../images/maps/Blueprint_EnhancedInput_02_stand_04.webp)
 
 #### 为什么在展台 #4 按住 `Q/E` 不松手，奶牛却只往前蹦一步就停下？
 表面上看，展台 #4 和展台 #3 都是“按 Q 左移、按 E 右移”，但当你亲自踩上 `BP_PressureButton_EnhancedInput2`（挂载 `IMC_EnhancedInput_CowDigitalBool`）实操时，手感截然不同——**按住不放没用，必须狂按键盘奶牛才会一步一顿地挪动！**
@@ -155,7 +155,7 @@ flowchart TB
 - **展牌标识**：`BP_DemoDisplay10` | **空间坐标**：`(7784, -468, 8)`
 - **官方展牌原文**：`Q - Left | E - Right`
 
-![展台 #6-#8 多输入映射上下文动态切换牧场实拍](../images/maps/Blueprint_EnhancedInput_03_stand_06.png)
+![展台 #6-#8 多输入映射上下文动态切换牧场实拍](../images/maps/Blueprint_EnhancedInput_03_stand_06.webp)
 
 #### 展台 #6 陈列与映射拆解
 如实拍图所示，展台 #6、#7、#8 共同围合出一座大型方形木栅栏牧场，栅栏中央只有 **1 头共享的玩具奶牛 `BP_EnhancedInput_CowDemo_InputMappingContexts`**，而栅栏外侧左右分列着两块踏板：
@@ -199,7 +199,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Input Modifiers are pre-processors that alter the raw input values that UE receives before sending them on to Input Triggers. The Enhanced Input Plugin has a variety of Input Modifiers to perform tasks like changing the order of axes, implementing "dead zones", and converting axial input to world space. In the example, scalar modifiers are used to change the speed of the cow in each direction. Q - Move left | E - Move right*
 
-![展台 #9 Input Modifiers 标量修改器非对称移速实验实拍](../images/maps/Blueprint_EnhancedInput_04_stand_09.png)
+![展台 #9 Input Modifiers 标量修改器非对称移速实验实拍](../images/maps/Blueprint_EnhancedInput_04_stand_09.webp)
 
 #### 1. `IMC_EnhancedInput_CowInputModifier` 实测修改器链拆解
 奶牛蓝图 `BP_EnhancedInput_CowDemo_InputModifier` 内部代码与展台 #3 几乎完全一致，但当你踩上踏板 `BP_PressureButton_EnhancedInput6` 按 `Q` 和 `E` 时，会发现奶牛**往一个方向跑得飞快，往另一个方向却像慢动作蜗牛爬**！秘密全在 `IMC_EnhancedInput_CowInputModifier` 的修改器数组顺序中：
@@ -238,7 +238,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Enhanced Input also brings along the concept of "Injecting Input" to your player. This provides the means for you to call a function in Blueprints, C++, or use a console command to simulate input on your player. Here is an example of simulating keys using console commands.*
 
-![展台 #11 使用控制台命令注入模拟按键输入实拍](../images/maps/Blueprint_EnhancedInput_05_stand_11.png)
+![展台 #11 使用控制台命令注入模拟按键输入实拍](../images/maps/Blueprint_EnhancedInput_05_stand_11.webp)
 
 #### 实测踏板命令揭秘：`Input.+key` 与 `Input.-key`
 展台 #11 前并排放着两块无需你动手按键盘的控制台踏板（后台自动由区域触发器挂载了 `IMC_EnhancedInput_InjectingInput`），实测提取出的精确命令字符串如下：

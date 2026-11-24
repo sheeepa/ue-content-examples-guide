@@ -11,7 +11,7 @@
 
 在没有刚体动力学（Rigid Body Dynamics）的世界里，所有物体的运动轨迹都是美术在关键帧曲线上画死的“提线木偶”——箱子撞到墙角不会翻滚，铁链被风吹动不会摇曳，吊灯挨了一枪依然纹丝不动。而一旦为网格体挂载了简单碰撞体（Simple Collision）并勾选 **`Simulate Physics`**，虚幻引擎 5 内置的 **Chaos `PBDRigids`（基于扩展位置动力学的刚体求解器）** 便会接管它的位置 $\mathbf{x} \in \mathbb{R}^3$ 与姿态四元数 $\mathbf{q} \in \mathbb{H}$，在每一个物理子步（Sub-step）中严密演绎牛顿-欧拉运动方程与拉格朗日乘子约束。
 
-![Physics 展厅总览与高空自由落体刚体方块实拍](../images/maps/Physics_00_overview.png)
+![Physics 展厅总览与高空自由落体刚体方块实拍](../images/maps/Physics_00_overview.webp)
 
 欢迎来到物理专题的第一座基石展馆——**`/Game/Maps/Physics/Physics`**。这条长约 **85 米**（`X` 坐标从 `505` 延伸至 `8506`）、由 **9 座标准对照展台** 构成的物理实验室，用最纯粹的红、绿、蓝三色高光方块（`SM_DemoCube`）和十组精调的物理约束关节（`PhysicsBSJointActor1~10`），将 Chaos 刚体解算的四大支柱——**碰撞与惯性张量、力与冲量场、六自由度（6-DOF）空间约束、主动伺服马达与断裂阈值**——拆解得淋漓尽致。
 
@@ -122,7 +122,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay` | 坐标 `(1505, -900, 0)`
 - **官方展牌原文**：*Left Mouse Click to pick up and drop objects / Right Mouse Click to poke or throw objects / Static Meshes need Collision to be able to Simulate Physics*
 
-![展台 #2 Object Simulating Physics 刚体模拟展台实拍](../images/maps/Physics_01_stand_02.png)
+![展台 #2 Object Simulating Physics 刚体模拟展台实拍](../images/maps/Physics_01_stand_02.webp)
 
 #### 2.1 为什么“没有简单碰撞体的 StaticMesh 绝对无法开启 Simulate Physics”？
 在视口实拍图（以及展厅总览图右上角）可以看到，`#2` 号展台正上方悬空摆放了 **11 颗** `/Game/Global/Meshes/SM_DemoCube`：
@@ -190,7 +190,7 @@ MCP 资产深拆揭示了贯穿全馆的三原色高光塑料材质实例链（�
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(4505, -900, 0)`
 - **官方展牌原文**：*Blocking Volumes are just to restrict movement of the Thruster*
 
-![展台 #5 Thruster 火箭推进器与 22 面防飞逸阻挡体积笼实拍](../images/maps/Physics_02_stand_05.png)
+![展台 #5 Thruster 火箭推进器与 22 面防飞逸阻挡体积笼实拍](../images/maps/Physics_02_stand_05.webp)
 
 #### 5.1 为什么一个火箭展台要摆 22 个 `BlockingVolume` 并列入关卡蓝图白名单？
 仔细观察实拍图中的橙色线框与实测 Actor 清单（共 **23 个 Actor**）：
@@ -237,7 +237,7 @@ MCP 资产深拆揭示了贯穿全馆的三原色高光塑料材质实例链（�
 - **官方展牌原文**：*Constraints will by default not move by themselves / but an Angular Motor can be used to do so*
 - **展台内 3D 悬浮文字标签**：`Driven by Velocity` | `Driven by Orientation`
 
-![展台 #7 PhysicsConstraints Angular Motors 角马达双模式对比实拍](../images/maps/Physics_03_stand_07.png)
+![展台 #7 PhysicsConstraints Angular Motors 角马达双模式对比实拍](../images/maps/Physics_03_stand_07.webp)
 
 #### 7.1 展台两组红蓝马达对的实测架构与控制律数学方程
 观察实拍图，上方红色方块（`Z = 217.5`）固定在背景墙前充当马达定子基座，关节中心架设在 `Z = 242.5`，下方蓝色方块（`Z = 85`）充当带摆臂半径的转子负载：

@@ -20,7 +20,7 @@
 
 在传统动画状态机或 `Blend Poses by Bool / Enum / Int` 节点树下，这叫作**笛卡尔积组合爆炸（Combinatorial Explosion）**：$4 \times 3 \times 3 = 36$ 个运动子状态两两相连能长出数百根过渡箭头（**Spaghetti Monster 意大利面条连线灾难**）！更致命的是，所有候选动画序列被硬编码挂死在动画蓝图节点上——不仅每次加新动作都要动蓝图逻辑代码，更会导致打开一张主动画蓝图瞬间把几百兆不同武器、不同体型的动画资产全部连坐加载进内存！
 
-![Animation_Choosers 动态资产选择器展厅总览实拍](../images/maps/Animation_Choosers_00_overview.png)
+![Animation_Choosers 动态资产选择器展厅总览实拍](../images/maps/Animation_Choosers_00_overview.webp)
 
 为了从架构根源上终结这场灾难，Epic Games 在《堡垒之夜（Fortnite）》第五章及次世代标杆工程 **Game Animation Sample（`GASP`）** 中正式祭出了动画数据驱动革命的杀手锏——**`ChooserTable`（动态上下文选择器表）** 与 **`ProxyTable`（虚拟代理映射表）**！
 
@@ -72,7 +72,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `1-1_BoolColumn` | 坐标 `(1975, -900, 0)`
 - **官方展牌原文说明**：*A Chooser that selects between two animation sequences based on a bool*
 
-![展台 #2 Chooser with one Bool Column 单布尔列动态选片实拍](../images/maps/Animation_Choosers_01_stand_02.png)
+![展台 #2 Chooser with one Bool Column 单布尔列动态选片实拍](../images/maps/Animation_Choosers_01_stand_02.webp)
 
 #### 2.1 展台交互与蓝图调用链深拆
 - **陈列 Actor（共 2 个）**：
@@ -168,7 +168,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `1-11_OutputBoolColumn` | 坐标 `(4025, 900, 0)` *(南廊，展牌内部 Label 沿用了 1-11 前缀但绑定的是 `1-12` 资产族)*
 - **官方展牌原文说明**：*Each time you step on the button a chooser will select a random hit react The hit react AnimSequence will be played in a different part of the AnimGraph, depending on the value of an output enum for that row in the chooser (FullBody/UpperBody)*
 
-![展台 #7 Chooser with Enum Output Column 受击动画全身与上半身路由分流实拍](../images/maps/Animation_Choosers_02_stand_07.png)
+![展台 #7 Chooser with Enum Output Column 受击动画全身与上半身路由分流实拍](../images/maps/Animation_Choosers_02_stand_07.webp)
 
 #### 7.1 动作游戏痛点：轻伤不能打断双腿跑动，重伤必须全身硬直踉跄！
 在射击游戏中，角色正在持枪前进（播放 `/Game/Characters/Mannequins/Animations/Manny/MM_Rifle_Walk_Fwd`）：被小口径手枪擦中肩膀时，双腿应该继续往前走，只让腰部以上播放耸肩受击（**`UpperBody` 半身叠加**）；但一旦被霰弹枪正面轰中胸口，就必须瞬间切断走路，接管全身播放大幅度后仰硬直（**`FullBody` 全身覆盖**）！
@@ -232,7 +232,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `1-13_OutputObjectColumn` | 坐标 `(5975, 900, 0)` *(南廊，绑定 `1-14` 资产族)*
 - **官方展牌原文说明**：*A Chooser which uses a bool to select between animations, and has an Object output column to output an additional sequence. The primary result of the chooser is played on the lower body and the Object Output column sequence is played on the upper body*
 
-![展台 #11 Chooser with Object Output Column 单次查表同步输出上下半身双序列实拍](../images/maps/Animation_Choosers_03_stand_11.png)
+![展台 #11 Chooser with Object Output Column 单次查表同步输出上下半身双序列实拍](../images/maps/Animation_Choosers_03_stand_11.webp)
 
 #### 11.1 为什么“一次查表吐出两个动画资产”如此实用？
 在制作“一边下半身慢跑，一边上半身喝药水/装填弹药”或者“主武器开火动画 + 角色手部配套拉栓动画”时，上下半身或者人枪两段动画往往是**严格成对配置**的。如果建两张 Chooser 表分别查一次，不仅浪费双倍 CPU，还容易因为改漏其中一张表导致上下半身动作错配！
@@ -352,7 +352,7 @@ flowchart TD
 - **空间元数据**：展牌 Label `2-2_BlendSpace` | 坐标 `(10505, -900, 0)`
 - **官方展牌原文说明**：*A chooser that selects between blend spaces based on a bool*
 
-![展台 #16 Blend Space Chooser 空手与持枪走跑混合空间动态切换实拍](../images/maps/Animation_Choosers_04_stand_16.png)
+![展台 #16 Blend Space Chooser 空手与持枪走跑混合空间动态切换实拍](../images/maps/Animation_Choosers_04_stand_16.webp)
 
 #### 16.1 实测资产与无跳变混合空间切换函数
 - **陈列 Actor（共 3 个）**：调速滑杆 `BlendSpaceSlider` + `BP_ChooserCharacterDisplay11`（挂载 `2-2_ABP_BlendSpaceChooser`）+ 拔枪/收枪切换按钮 `BP_PressureButton_BPIInteract_Child10`。
@@ -427,7 +427,7 @@ flowchart TD
 - **空间元数据**：展牌 Label `3-2_ProxyTablesWithChoosers` | 坐标 `(13975, -900, 0)`
 - **官方展牌原文说明**：*Choosers can be nested in Proxy Table entries The character on the left has a chooser with different move speeds The character on the right has a single sequence for movement*
 
-![展台 #20 Proxy Tables with Choosers 代理表词条内嵌动态选择器实拍](../images/maps/Animation_Choosers_05_stand_20.png)
+![展台 #20 Proxy Tables with Choosers 代理表词条内嵌动态选择器实拍](../images/maps/Animation_Choosers_05_stand_20.webp)
 
 #### 20.1 极其聪明的非对称复杂度设计：英雄用复杂表，杂兵用单动画！
 在同屏百人的游戏里，玩家主角的“移动”需要根据速度细分慢走、快走、慢跑、冲刺多档动画，而背景里的普通杂兵或小动物只需要播一段走路循环就够了。难道要给主角和杂兵写两套不同的 `AnimBlueprint` 吗？完全不需要！

@@ -15,7 +15,7 @@
 - **误区**：“把 `SetAllBodiesBelowPhysicsBlendWeight` 调成 `0.5`，不就是让手臂有一半肌肉力量去抗重力吗？”
 - **真相**：**完全不是！** `Physics Blend Weight = 0.5` 时，物理引擎内部的那条手臂其实是 **100% 毫无肌力的死尸布偶**，只是在渲染输出骨骼变换的最后一刻，用数学插值把“死尸下垂的位置”和“动画挥手的位置”硬生生取了个几何中点！而真正的“用关节电机发力追赶动画”，则是 `#5` 与 `#6` 号展台主角 **`PhysicalAnimationComponent`** 的职责！
 
-![PhysicalAnimation 物理动画展厅总览实拍](../images/maps/PhysicalAnimation_00_overview.png)
+![PhysicalAnimation 物理动画展厅总览实拍](../images/maps/PhysicalAnimation_00_overview.webp)
 
 走进 **`/Game/Maps/Animation/PhysicalAnimation`** 这座紧凑精炼的 **6 展台对照实验室**（`X` 坐标从 `501.5` 延伸至 `5488.5`），官方将这两种截然不同的融合哲学摆在同一条走廊里同台竞技。我们先用一张底层数据流对比图厘清全貌：
 
@@ -65,7 +65,7 @@ flowchart TB
   - 滑块刻度区：`Physics Blend Weight` | `0` `(All Animation)` | `0.5` | `1` `(All Physics)`
   - 地面三角色脚下说明：`Blend Weight set on every Bone below b_LeftArm` | `... b_Spine` | `... b_RightUpLeg`
 
-![展台 #2 Physics Animation Blending 骨骼子树物理混合权重实拍](../images/maps/PhysicalAnimation_01_stand_02.png)
+![展台 #2 Physics Animation Blending 骨骼子树物理混合权重实拍](../images/maps/PhysicalAnimation_01_stand_02.webp)
 
 #### 2.1 底层机制深扒：为什么 `w = 0.5` 时角色既不像纯动画，又可能会撞墙穿模？
 展台上并排站立着 3 个正在原地播放奔跑动画（`/Game/Characters/Mannequins/Animations/Quinn/MF_Run_Fwd`）的女性人体模特 **`SKM_Quinn_Simple`**，全部受控于墙面滑块 **`BP_Slider`**（初始值 `startValue = 0`，行程 `205.55 cm`，归一化输出范围 `[0, 1]`）。
@@ -107,7 +107,7 @@ $$\mathbf{q}_{\text{final}} = \text{Slerp}\left(\mathbf{q}_{\text{anim}},\, \mat
 - **空间元数据**：展牌 Label `BP_DemoDisplay5` | 坐标 `(3498.5, -900, 0)`
 - **官方展牌原文**：`Change Constraint Profiles at Runtime`
 
-![展台 #4 Constraint Profiles 运行时切换关节约束配置实拍](../images/maps/PhysicalAnimation_02_stand_04.png)
+![展台 #4 Constraint Profiles 运行时切换关节约束配置实拍](../images/maps/PhysicalAnimation_02_stand_04.webp)
 
 #### 4.1 什么是 `Constraint Profile`（约束配置表）？
 打开任意骨骼网格关联的物理资产（如 `/Game/Characters/Mannequins/Rigs/PA_Mannequin`），除了胶囊体碰撞盒之外，连接每对相邻骨骼的 **`PhysicsConstraintTemplate`（关节约束）** 上都有几十个参数：Swing1 / Swing2 / Twist 三个旋转自由度的角度限位（比如手肘只能向内折 $130^\circ$，绝不能向外反折）、关节线性断裂阈值（Linear Breakable，用于机械断肢！）、以及角速度阻尼。
@@ -126,7 +126,7 @@ $$\mathbf{q}_{\text{final}} = \text{Slerp}\left(\mathbf{q}_{\text{anim}},\, \mat
   - 滑块刻度区：`Physics Animation Strength` | `0` `(No Physical Animation)` | `0.5` | `1` `(Full Strength)`
   - 地面三角色说明：`Physical animation set on every bone below upperarm_l` | `... spine_01` | `... thigh_l`
 
-![展台 #5 Physical Animation Component 关节电机强度驱动实拍](../images/maps/PhysicalAnimation_03_stand_05.png)
+![展台 #5 Physical Animation Component 关节电机强度驱动实拍](../images/maps/PhysicalAnimation_03_stand_05.webp)
 
 #### 5.1 核心革命：和 `#2` 号展台到底有什么本质区别？
 请站在 `#5` 号展台前，对比回忆刚才 `#2` 号展台的画面！

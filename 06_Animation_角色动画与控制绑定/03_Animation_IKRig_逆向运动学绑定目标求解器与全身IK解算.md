@@ -18,7 +18,7 @@ $$\mathbf{x}_{\text{end}} = \mathbf{f}(\theta_1, \theta_2, \dots, \theta_n) = \t
 
 在 UE4 时代，开发者往往只能在 AnimGraph 里零散拼凑 `Two Bone IK`（仅限两节骨头的余弦定理解析解）或早期的 `FABRIK`。而在虚幻引擎 5 中，官方推出了革命性的资产化全身逆向运动学框架——**`IK Rig`（`UIKRigDefinition`）及其核心引擎 `PBIK`（Position-Based Inverse Kinematics，基于位置约束的全身刚体迭代求解器）**！它不仅是实时脚步地形自适应、动态伸手抓取、怪物长链触手模拟的利器，更是下一章 **`IK Retargeter`（跨体型任意拓扑动画重定向）** 的底层骨架基座！
 
-![Animation_IKRig 逆向运动学绑定与全身 IK 展厅总览实拍](../images/maps/Animation_IKRig_00_overview.png)
+![Animation_IKRig 逆向运动学绑定与全身 IK 展厅总览实拍](../images/maps/Animation_IKRig_00_overview.webp)
 
 ### 1.1 直击数学内核：从阻尼伪逆雅可比（DLS）到 UE5 原生 PBIK 位置约束迭代
 
@@ -79,7 +79,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay` | 坐标 `(1502, -900, 0)`
 - **官方展牌原文说明**：`Play or Simulate Single IK Goal driving Full Body IK`
 
-![展台 #2 IK Goals 单一效应器目标牵引 Quinn 全身姿态实拍](../images/maps/Animation_IKRig_01_stand_02.png)
+![展台 #2 IK Goals 单一效应器目标牵引 Quinn 全身姿态实拍](../images/maps/Animation_IKRig_01_stand_02.webp)
 
 #### 2.1 为什么拉动右手一个点，Quinn 的肩膀、胸椎和腰胯全都跟着自然侧倾？
 在传统的 `Two Bone IK` 里，无论你把目标球拉到十米开外，大臂和小臂最多伸成一条僵硬的死直线，锁骨和脊柱连 `0.1°` 都不会动。
@@ -148,7 +148,7 @@ $$\Delta \mathbf{t}_{\text{body}} = \alpha_{\text{pos}} \cdot \frac{1}{N} \sum_{
 - **空间元数据**：展牌 Label `BP_DemoDisplay10` | 坐标 `(3489, -900, 0)`
 - **官方展牌原文说明**：`Play or Simulate Full Body IK with ~20 bones per leg`
 
-![展台 #7 Long Bone Chains 每条腿约20节骨骼的超冗余弹簧生物全身IK实拍](../images/maps/Animation_IKRig_02_stand_07.png)
+![展台 #7 Long Bone Chains 每条腿约20节骨骼的超冗余弹簧生物全身IK实拍](../images/maps/Animation_IKRig_02_stand_07.webp)
 
 #### 7.1 当总关节数突破 60 大关：PBIK 如何驯服弹簧腿怪兽 `SK_Spelunkle`？
 走到 `#7` 号展台前，你会看到一只造型奇特的三足弹簧腿生物 **`BP_LongBoneChains`**（实例名 `Spelunkle_SpringLeg_Actor_C_1`，挂载网格体 **`/Game/ExampleContent/IKRig/Mesh/Spelunkle/SK_Spelunkle`** 与动画蓝图 **`ABP_LongBoneChains`**）。
@@ -217,7 +217,7 @@ $$\Delta \mathbf{t}_{\text{body}} = \alpha_{\text{pos}} \cdot \frac{1}{N} \sum_{
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(6500, -900, 0)`
 - **官方展牌原文说明**：`Play or Simulate Set Preferred Angles per Bone`
 
-![展台 #12 Preferred Angles 五腕海星通过优先角实现可预测定向弯曲实拍](../images/maps/Animation_IKRig_03_stand_12.png)
+![展台 #12 Preferred Angles 五腕海星通过优先角实现可预测定向弯曲实拍](../images/maps/Animation_IKRig_03_stand_12.webp)
 
 #### 12.1 数学奇点剖析：为什么笔直的骨头被往回顶时，会失控乱弹（IK Popping）？
 观察实拍图中的可爱粉色五腕海星 **`BP_PreferredAngles`**（实例名 `PreferredAngles_Actor_C_1`，网格体 **`/Game/ExampleContent/IKRig/Mesh/Starfish/Starfish`**，动画蓝图 **`ABP_PreferredAngles`**，两侧配有蓝色目标球组件 **`IKTargetLeft`** 与 **`IKTargetRight`** 沿着 `LeftGoalPoint` / `RightGoalPoint` 往海星身体中心挤压）。

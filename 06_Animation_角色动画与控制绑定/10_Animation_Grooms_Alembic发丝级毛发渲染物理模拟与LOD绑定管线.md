@@ -13,7 +13,7 @@
 
 开启虚幻引擎的 **`HairStrands`（Groom）系统**后，美术师无需再痛苦地拓扑插片，而是直接从 Maya XGen、Houdini Groom、Ornatrix 或 Blender Curves 导出包含**数万根真实三维样条曲线的 Alembic（`.abc`）缓存**直入引擎！以本关主角 MetaHuman **`Aera`** 头上那条精致的荷兰麻花辫（`Hair_L_DutchBraid`）为例，MCP 实测解包显示它单单头发一个部位就由 **36,791 根独立渲染发丝曲线（共计 809,830 个曲线控制顶点！）** 构成！
 
-![Animation_Grooms 发丝级毛发渲染与可控动力学展厅总览实拍](../images/maps/Animation_Grooms_00_overview.png)
+![Animation_Grooms 发丝级毛发渲染与可控动力学展厅总览实拍](../images/maps/Animation_Grooms_00_overview.webp)
 
 面对单角色 **81 万个亚像素级曲线顶点**，虚幻引擎必须在短短几毫秒预算内同时攻克四大世界级图形与物理难题——这也是贯穿本章的四大技术支柱：
 
@@ -144,7 +144,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay` | 坐标 `(2010, -900, 0)`
 
-![展台 #2 Hair Directability 引导丝线性蒙皮变形实拍](../images/maps/Animation_Grooms_01_stand_02.png)
+![展台 #2 Hair Directability 引导丝线性蒙皮变形实拍](../images/maps/Animation_Grooms_01_stand_02.webp)
 
 #### 3.1 底层绑定与混合架构拆解（`BP_Aera_Guides_Child`）
 展台陈列着派生蓝图 **`BP_Aera_Guides_Child`**、灯光架 **`BP_HairLgt2`** 与主控序列器 **`HairDirectability_Seq`**。打开它的依赖链与 `GroomAsset` 配置，一条精巧的“物理+手K混合驱动链”跃然纸上：
@@ -160,7 +160,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(3000, -900, 0)`
 
-![展台 #3 Hair Directability 引导丝样条曲线平滑变形实拍](../images/maps/Animation_Grooms_02_stand_03.png)
+![展台 #3 Hair Directability 引导丝样条曲线平滑变形实拍](../images/maps/Animation_Grooms_02_stand_03.webp)
 
 #### 3.2 升级样条插值消除关节折角（`BP_Aera_Spline_Child`）
 来到 `#3` 号展台，角色换成了 **`BP_Aera_Spline_Child`**（搭配灯光架 `BP_HairLgt3`），其 `Hair` 组件挂载了第二个毛发变体资产 **`/Game/MetaHumans/Aera_MHC/Grooms/Hair_L_DutchBraid_Spline`**：
@@ -175,7 +175,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(4000, -900, 0)`
 
-![展台 #4 Hair Directability 全量渲染发丝直接样条变形实拍](../images/maps/Animation_Grooms_03_stand_04.png)
+![展台 #4 Hair Directability 全量渲染发丝直接样条变形实拍](../images/maps/Animation_Grooms_03_stand_04.webp)
 
 #### 3.3 电影特写终极画质：跳过引导丝中转，直接重塑 81 万渲染顶点（`BP_Aera_Strands_Child`）
 走到走廊终点的 `#4` 号展台，压轴登场的是 **`BP_Aera_Strands_Child`**（搭配灯光架 `BP_HairLgt4`），挂载第三个毛发变体资产 **`/Game/MetaHumans/Aera_MHC/Grooms/Hair_L_DutchBraid_Strands`**（展牌原文注：`deforming the groom Stands [Strands] with a Spline deformer`）：

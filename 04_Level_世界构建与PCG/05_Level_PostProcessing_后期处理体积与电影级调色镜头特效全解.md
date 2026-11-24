@@ -14,7 +14,7 @@
 
 打开 `/Game/Maps/Level/Level_PostProcessing`，你将步入整部 `ContentExamples` 工程中展台数量最庞大的一座光学实验室——全长 135 米的黑暗展厅内密布了 **39 座展台**与 **238 个校准灯箱、反射雕塑及后期体积盒**：
 
-![Level_PostProcessing 展厅总览：黑暗光学暗房中一字排开的标准化 HDR 测光靶与前排试镜踏板](../images/maps/Level_PostProcessing_00_overview.png)
+![Level_PostProcessing 展厅总览：黑暗光学暗房中一字排开的标准化 HDR 测光靶与前排试镜踏板](../images/maps/Level_PostProcessing_00_overview.webp)
 
 ---
 
@@ -106,7 +106,7 @@ flowchart LR
 
 ### 展台 #2：`Default`（后排标准检定灯箱）— 未加局部滤镜的原始基准靶标
 
-![展台 #2 Default：五色渐变灯带、冷暖高亮灯牌与四座材质反射雕塑构成的标准检定靶实拍](../images/maps/Level_PostProcessing_01_stand_02.png)
+![展台 #2 Default：五色渐变灯带、冷暖高亮灯牌与四座材质反射雕塑构成的标准检定靶实拍](../images/maps/Level_PostProcessing_01_stand_02.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay`，位于 `(1505, -900, 0)`
 - **展台内陈列的示例 Actor（共 11 个标准壁龛靶标件）**：
@@ -192,7 +192,7 @@ flowchart LR
 
 ### 展台 #10：`Scene Color 2` — 场景色彩与镜头瑕疵二：重度光学暗角（Vignette）与场景色调染色
 
-![展台 #10 Scene Color 2：前排窄体后期体积线框与后排 Scene Color 比色灯箱对照实拍](../images/maps/Level_PostProcessing_02_stand_10.png)
+![展台 #10 Scene Color 2：前排窄体后期体积线框与后排 Scene Color 比色灯箱对照实拍](../images/maps/Level_PostProcessing_02_stand_10.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay17`，位于第三组试镜区中央踏板 `(3505, -340, 0)`
 - **展台内陈列的示例 Actor（共 6 个）**：
@@ -268,7 +268,7 @@ flowchart LR
 
 ### 展台 #17：`Ambient Cubemap`（前排环境立方体贴图试镜踏板）— 局部 HDR 环境光染色与镜面反射注入
 
-![展台 #17 Ambient Cubemap：踏入局部后期体积为暗部与金属雕塑注入 HDR 环境立方体贴图照明实拍](../images/maps/Level_PostProcessing_03_stand_17.png)
+![展台 #17 Ambient Cubemap：踏入局部后期体积为暗部与金属雕塑注入 HDR 环境立方体贴图照明实拍](../images/maps/Level_PostProcessing_03_stand_17.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay23`，位于第五组试镜区宽幅单踏板 `(5515, -340, 0)`
 - **展台内陈列的示例 Actor（共 8 个）**：
@@ -351,7 +351,7 @@ flowchart LR
 
 ### 展台 #25：`Lens Flares 3` — 镜头眩光实验三（右侧踏板：8 级光斑色彩梯度 `Tints[8]` 定制）
 
-![展台 #25 Lens Flares 3：前排右侧眩光体积踏板与后排 Lens Flares 强光壁龛及相邻 SSR 镜面展台实拍](../images/maps/Level_PostProcessing_04_stand_25.png)
+![展台 #25 Lens Flares 3：前排右侧眩光体积踏板与后排 Lens Flares 强光壁龛及相邻 SSR 镜面展台实拍](../images/maps/Level_PostProcessing_04_stand_25.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay29`，位于第七组试镜区右侧踏板 `(7805, -340, 0)`
 - **展台内陈列的示例 Actor（2 个）**：
@@ -426,7 +426,7 @@ flowchart LR
 
 ### 展台 #32：`Blendables 1` — 后期处理材质一：`PPMAT_BlendablePostProcess` 色阶量化/色调分离滤镜全节点深拆
 
-![展台 #32 Blendables 1：踏入挂载后期材质的体积实现全屏色阶量化风格化效果实拍](../images/maps/Level_PostProcessing_05_stand_32.png)
+![展台 #32 Blendables 1：踏入挂载后期材质的体积实现全屏色阶量化风格化效果实拍](../images/maps/Level_PostProcessing_05_stand_32.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay33`，位于第十组试镜区左侧踏板 `(10295, -340, 0)`
 - **展台内陈列的示例 Actor（共 6 个）**：

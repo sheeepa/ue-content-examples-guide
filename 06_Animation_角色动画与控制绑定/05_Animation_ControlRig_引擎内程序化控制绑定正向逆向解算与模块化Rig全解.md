@@ -17,7 +17,7 @@
 
 **Control Rig（控制绑定）** 的诞生，相当于直接把整套高性能角色绑定工作台与实时解算器搬进了虚幻引擎内核。
 
-![Animation_ControlRig 引擎内程序化控制绑定展厅总览实拍](../images/maps/Animation_ControlRig_00_overview.png)
+![Animation_ControlRig 引擎内程序化控制绑定展厅总览实拍](../images/maps/Animation_ControlRig_00_overview.webp)
 
 欢迎步入 `/Game/Maps/Animation/Animation_ControlRig` 展厅！这是一条全长超过 **221 米**（`X` 坐标从 `500` 一路延伸至 `22679`）、密集排布着 **43 座受控实验展台** 的宏伟长廊。在出发逐台拆解之前，我们必须先看懂支撑这一切的底层心脏——**RigVM 高性能字节码虚拟机**与**四大解算事件（Execution Events）**。
 
@@ -79,7 +79,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay6` | 坐标 `(1500, -900, -0)` | **官方展牌说明**：`Simulate or Play`
 
-![展台 #2 FK 正向运动学触手摆动实拍](../images/maps/Animation_ControlRig_01_stand_02.png)
+![展台 #2 FK 正向运动学触手摆动实拍](../images/maps/Animation_ControlRig_01_stand_02.webp)
 
 #### 2.1 工程原理：为什么不直接改骨骼，而要包一层 `Control`？
 正向运动学（Forward Kinematics, FK）遵循最直观的“父动子随”法则：旋转大臂，小臂和手掌跟着一起转。但在动画绑定中，我们绝不直接暴露原始导入骨骼（`Bone`），而是创建专门的控制器（`ERigElementType::Control`，挂载来自 `/ControlRig/Controls/DefaultGizmoLibraryNormalized` 的可视化线框形状），原因有二：一是控制器拥有干净归零的初始偏移空间（Offset/Null Space），随时可一键归零恢复默认姿势；二是控制器可以勾选 **`bExposesAnimatableControls`** 直接暴露为 `AnimNode_ControlRig` 节点上的输入引脚！
@@ -255,7 +255,7 @@ Control Rig 内置了物理查询节点 **`FRigUnit_SphereTraceByObjectTypes` / 
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay14` | 坐标 `(9500, -900, -0)` | **3D 文字标签**：`0` | `0.5` | `1`
 
-![展台 #10 Layering Rigs 螺旋桨旋转与手臂活塞双层绑定实拍](../images/maps/Animation_ControlRig_02_stand_10.png)
+![展台 #10 Layering Rigs 螺旋桨旋转与手臂活塞双层绑定实拍](../images/maps/Animation_ControlRig_02_stand_10.webp)
 
 #### 10.1 极其经典的架构示范：如何解耦“玩法主动控制层”与“角色解剖/机械联动层”？
 仔细观察上图的特种改造人形模特 `/Game/ExampleContent/ControlRig/Meshes/Mannequin_Propeller_Piston/SKM_Mannequin_Propeller_Piston`：它头顶装有一枚三叶螺旋桨骨骼（`propeller1`），左小臂与大臂之间架设了一套红绿蓝涂装的液压活塞连杆骨骼（`lowerarm_piston`）。如果把螺旋桨逻辑和手臂活塞解算全塞进一张臃肿的 Rig 里，任何换装或动作复用都会牵一发而动全身。官方在这里展示了教科书级的**运行时双层 Control Rig 职责分离架构**：
@@ -428,7 +428,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay15` | 坐标 `(15001, -900, -0)` | **官方展牌说明**：`Play in Sequencer` / `Use Constraints to Animate Objects with Characters`
 
-![展台 #19 Constraints 角色双手抛接球动态父子约束实拍](../images/maps/Animation_ControlRig_03_stand_19.png)
+![展台 #19 Constraints 角色双手抛接球动态父子约束实拍](../images/maps/Animation_ControlRig_03_stand_19.webp)
 
 #### 19.1 困扰动画师几十年的噩梦：“捡起杯子再放到桌子上”为什么那么难？
 当角色走过去用右手捡起桌上的球（球要跟右手走）、抛到左手（球跟世界抛物线走，再跟左手走）时，如果用传统的 `AttachToActor` 硬挂载，断开挂载的那一帧球会立刻瞬移飞回世界原点！
@@ -504,7 +504,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay24` | 坐标 `(18499, -900, -0)`
 - **官方展牌原文说明**：`Play in Sequencer` / `Use Layered Control Rigs to apply Ground Alignment as a Layer without Baking the Animation in Sequencer`
 
-![展台 #27 Ground Alignment in Sequencer 免烘焙过场脚步台阶贴合实拍](../images/maps/Animation_ControlRig_04_stand_27.png)
+![展台 #27 Ground Alignment in Sequencer 免烘焙过场脚步台阶贴合实拍](../images/maps/Animation_ControlRig_04_stand_27.webp)
 
 - **痛点终结**：过场动画里角色走过一片乱石滩，美术改了一次石头摆放位置，难道所有走路镜头都要重新烘焙修脚吗？看上图对比：左侧小人半截小腿直接陷进了白色方块里，而右侧小人只需挂上一层零关键帧的程序化 `CR_GroundAlignment` 分层轨道，左脚立刻精准踏上方块顶面！
 
@@ -575,7 +575,7 @@ flowchart LR
 #### 展台 #36：`Result` — 三轨合璧的终极非破坏合成输出！
 - **空间元数据**：展牌 Label `BP_DemoDisplay37` | 坐标 `(20800, -625, -0)`
 
-![展台 #36 Multiple Layered Rigs 多重分层绑定栈拆解与终极合成实拍](../images/maps/Animation_ControlRig_05_stand_36.png)
+![展台 #36 Multiple Layered Rigs 多重分层绑定栈拆解与终极合成实拍](../images/maps/Animation_ControlRig_05_stand_36.webp)
 
 - **陈列 Actor（共 3 个）**：**`Quinn_MultipleLayeredRig`**（`SKM_Quinn_Simple`）+ **`ControlRigControlActor18`** + **`Cube4`**。
 - **实测三轨堆叠证据**：在 `3_5_Multiple_Layered_Rigs_LS` 绑定清单中，`Quinn_MultipleLayeredRig` 身上整整齐齐叠放了 `MovieScene3DTransformTrack_1`、底层源动画 **`MovieSceneSkeletalAnimationTrack_3`**、第一层地形贴合 **`MovieSceneControlRigParameterTrack_11`** 以及第二层艺术修型 **`MovieSceneControlRigParameterTrack_14`**！如上图最右侧所示，Quinn 既稳稳踩在了白色方块顶面，同时上半身又做出了灵动的表演姿势，三层数据互不污染！

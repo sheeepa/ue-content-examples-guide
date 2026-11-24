@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：从“连线脚本”跨越到“程序化关卡工具与可复用玩法架构”
 
-![Blueprint_Advanced 展厅总览实拍](../images/maps/Blueprint_Advanced_00_overview.png)
+![Blueprint_Advanced 展厅总览实拍](../images/maps/Blueprint_Advanced_00_overview.webp)
 
 如果说 `Blueprint_Overview` 教会了我们如何点亮一盏灯、移动一个球，那么 `Blueprint_Advanced` 则是虚幻引擎将蓝图推向**工业级关卡生产力（Level Art Automation）**与**模块化玩法工程（Modular Gameplay Engineering）**的真正分水岭。
 
@@ -62,7 +62,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Construction script is used to randomly position a specified number of meshes in a radius*
 
-![展台 #2 Randomly scattered meshes 实拍](../images/maps/Blueprint_Advanced_01_stand_02.png)
+![展台 #2 Randomly scattered meshes 实拍](../images/maps/Blueprint_Advanced_01_stand_02.webp)
 
 #### 1. 成员变量与关卡实测参数表
 选中展台中央由方块与雕塑混排而成的随机簇，其实例暴露了 6 个高自由度的公开调参旋钮：
@@ -213,7 +213,7 @@ flowchart LR
 - **官方展牌原文**：
   > *An example of using construction script to combine all the necessary components of a light fixture into one actor*
 
-![展台 #5 Customizable spotlight 实拍](../images/maps/Blueprint_Advanced_02_stand_05.png)
+![展台 #5 Customizable spotlight 实拍](../images/maps/Blueprint_Advanced_02_stand_05.webp)
 
 #### 1. 五层父子组件运动学装配树（Kinematic Hierarchy）
 为什么现实中的舞台探照灯既能水平 $360^\circ$ 旋转（Yaw），又能上下俯仰（Pitch），而支架永远不会穿模错位？打开 `BP_Spotlight` 的组件树，你会看到教科书级的机械骨骼级联设计：
@@ -327,7 +327,7 @@ flowchart TB
 - **官方展牌原文**：
   > *A blueprint interface asset is used to allow the button blueprint to trigger an event in the gear blueprint*
 
-![展台 #8 Button trigger using a blueprint interface 实拍](../images/maps/Blueprint_Advanced_03_stand_08.png)
+![展台 #8 Button trigger using a blueprint interface 实拍](../images/maps/Blueprint_Advanced_03_stand_08.webp)
 
 #### 1. 解耦契约：`BPI_Interactions` 接口定义
 打开 `BPI_Interactions`，里面只声明了一个无实现体的纯虚契约函数：**`Toggle(bool On/off)`**。

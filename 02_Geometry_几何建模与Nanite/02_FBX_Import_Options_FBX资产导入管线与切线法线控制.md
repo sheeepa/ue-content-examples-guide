@@ -13,7 +13,7 @@
 
 Autodesk **FBX（Filmbox）** 格式之所以长期担任 Maya、3ds Max、Blender、Houdini、Substance Painter 与 Unreal Engine 之间的工业标准交换枢纽，是因为它不仅能携带多边形顶点与多通道 UV，还能在同一套二进制容器内打包**光滑组（Smoothing Groups）、自定义编辑顶点法线与双切线（Normals & Binormals/Tangents）、LOD 层级组（LODGroup）、材质关联属性、骨骼层级树与蒙皮权重（Skinning Clusters）、骨骼关键帧曲线以及顶点变形目标（Morph Targets / BlendShapes）**。而在 UE 5.5 中，无论你是走经典的 `UFbxFactory` 导入器，还是走全新的异步模块化 **Interchange Framework（通用交换框架）**，其底层所遵循的几何与蒙皮数学契约是完全一致的。
 
-![FBX_Import_Options 展厅全景实拍](../images/maps/FBX_Import_Options_00_overview.png)
+![FBX_Import_Options 展厅全景实拍](../images/maps/FBX_Import_Options_00_overview.webp)
 
 走进 `/Game/Maps/Geometry/FBX_Import_Options` 展厅，8 座展台沿着走廊依次排开（`X = 515` ~ `X = 7500`），上半场（`#1` ~ `#4`）聚焦静态网格体的材质自动构建、外部 LOD 链封装与法线/切线空间计算；下半场（`#5` ~ `#8`）则贯通了骨骼网格体的“网格-骨架二元解耦”、动画序列绑定热替换与 Morph Target 顶点差量混合管线。
 
@@ -58,7 +58,7 @@ flowchart LR
   - `SM_FBX_Box_2`：引用 `/Game/ExampleContent/FBX_Import_Options/Meshes/SM_FBX_Box`（尺寸 `200 × 200 cm` 的基础立方体，未导入外部材质，自动回退引擎默认棋盘格材质 `WorldGridMaterial`）。
   - `SM_FBX_Box_Metal_2`：引用 `/Game/ExampleContent/FBX_Import_Options/Meshes/SM_FBX_Box_Metal`（在 DCC 中赋予了金属材质与贴图关联，导入时自动提取贴图、生成材质球并绑定到 `Material Slot 0`）。
 
-![展台 #2 Static Mesh 导入对比实拍](../images/maps/FBX_Import_Options_01_stand_02.png)
+![展台 #2 Static Mesh 导入对比实拍](../images/maps/FBX_Import_Options_01_stand_02.webp)
 
 #### 管线内核解析：导入面板中材质、枢轴与合并策略的工业级规范
 观察 2 号展台左右两个 `200 × 200 cm` 方盒，背后对应着导入面板最常用的两组工程决策：
@@ -97,7 +97,7 @@ flowchart LR
   - `SM_FBX_Normals_A`（左）：引用 `/Game/ExampleContent/FBX_Import_Options/Meshes/SM_FBX_Custom_Normal_A` —— 导入时选用 **`Compute Normals`（由引擎重新计算法线）**。
   - `SM_FBX_Normals_A_2`（右）：引用 `/Game/ExampleContent/FBX_Import_Options/Meshes/SM_FBX_Custom_Normal` —— 导入时选用 **`Import Normals`（保留 DCC 自定义顶点法线）**。
 
-![展台 #4 Import Normals 切线与法线控制对比实拍](../images/maps/FBX_Import_Options_02_stand_04.png)
+![展台 #4 Import Normals 切线与法线控制对比实拍](../images/maps/FBX_Import_Options_02_stand_04.webp)
 
 #### 管线内核深潜：彻底攻克实时渲染中最易踩坑的“顶点法线与切线空间（Tangent Basis）”！
 站在 4 号展台前仔细观察实拍图：明明是**完全一模一样的顶点坐标、完全一模一样的单一光滑组（One Smoothing Group）倒角方块**，为什么左边的 `SM_FBX_Custom_Normal_A` 大平面看起来像一个鼓包充气的软垫子（四个角落发黑、高光扭曲成圆弧），而右边的 `SM_FBX_Custom_Normal` 大平面却像镜面钢板一样平整锐利，只有边缘倒角泛出精致的金属高光？
@@ -171,7 +171,7 @@ $$\mathbf{N}_{\text{world}} = \text{normalize}\!\left( n_x \cdot \mathbf{T} + n_
   - `Dummy_placeholder_for_1.6`（`SkeletalMeshActor`）：引用 `SK_FBX_Tube`。
   - `SK_FBX_Tube_3`（`SkeletalMeshActor`）：引用 `SK_FBX_Tube`，供读者亲手实践拖拽热替换的交互靶标。
 
-![展台 #7 Drag and drop animation 交互预览实拍](../images/maps/FBX_Import_Options_03_stand_07.png)
+![展台 #7 Drag and drop animation 交互预览实拍](../images/maps/FBX_Import_Options_03_stand_07.webp)
 
 #### 动手实操与组件动画驱动双模式剖析
 按照 7 号展牌的指引，你可以在内容浏览器中定位到 `/Game/ExampleContent/FBX_Import_Options/SkeletalMesh/SK_FBX_Tube_Animation_B`，按住鼠标左键直接将其拖放到视口中的 `SK_FBX_Tube_3` 软管模型身上，然后按下 **`Alt + S`（Simulate In Editor 编辑器内模拟）** 或 **`Alt + P`（Play In Editor）**，软管立即切换为全新的扭动姿态！

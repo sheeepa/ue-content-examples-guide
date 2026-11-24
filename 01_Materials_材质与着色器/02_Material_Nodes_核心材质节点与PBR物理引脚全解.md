@@ -17,7 +17,7 @@
 - 以为 `Metallic = 0.5` 能做出拉丝半金属质感；
 - 以为次表面材质里的 `Opacity = 0` 会让角色皮肤变成透明隐身人……
 
-![Material_Nodes 核心材质引脚展厅总览实拍](../images/maps/Material_Nodes_00_overview.png)
+![Material_Nodes 核心材质引脚展厅总览实拍](../images/maps/Material_Nodes_00_overview.webp)
 
 为了彻底消灭这些认知误区，Epic 官方打造了全长 **125 米**（`X` 从 `515` 延伸至 `12497`）、包含 **13 座展台** 的 **`/Game/Maps/Material/Material_Nodes`** 展厅。这座展厅的设计极其克制而纯粹：**每一座展台只单独点亮主材质节点上的某一个输入引脚，将其余变量全部冻结**，用铁一般的物理对比让你亲眼看见每个引脚背后的微表面散射方程（Microfacet BRDF）与顶点着色魔法。
 
@@ -67,7 +67,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1515, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Material` / `Base Color White` | `Material Instance` / `Base Color modified to Red` | `Material` / `Base Color is Grass Texture` | `Material Instance` / `Base Color is modified to` / `Brick Texture`
 
-![展台 #2 BaseColor 纯色与贴图参数覆写实拍](../images/maps/Material_Nodes_01_stand_02.png)
+![展台 #2 BaseColor 纯色与贴图参数覆写实拍](../images/maps/Material_Nodes_01_stand_02.webp)
 
 #### 2.1 `Base Color` 在物理上到底是什么？为什么不能把阴影画进贴图里？
 在传统非 PBR 时代，美术画的是 `Diffuse Map`（漫反射贴图），习惯把砖缝里的死黑阴影和高光亮边直接画在贴图上。而在虚幻的 PBR 管线中，**`Base Color` 代表的是完全剥离了环境光影的纯净“固有反照率（Albedo）”**：
@@ -166,7 +166,7 @@ $$D_{\text{GGX}}(\mathbf{n}, \mathbf{h}, \alpha) = \frac{\alpha^2}{\pi \left( (\
 - **空间元数据**：展牌 Label `BP_DemoDisplay5` | 坐标 `(5510, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Emissive` / `White` | `Emissive` / `Orange Brightness > 1` | `Emissive` / `Blue Brightness > 1`
 
-![展台 #6 Emissive HDR 自发光辉光与 Lumen 漫射实拍](../images/maps/Material_Nodes_02_stand_06.png)
+![展台 #6 Emissive HDR 自发光辉光与 Lumen 漫射实拍](../images/maps/Material_Nodes_02_stand_06.webp)
 
 #### 6.1 为什么把自发光乘以 `20` 甚至 `29.5` 后，球心会发白、周围会泛起彩色光晕？
 在虚幻引擎的 **HDR（高动态范围，16 位浮点 `SceneColor`）** 管线中，颜色值根本不受 `[0, 1]` 的束缚！
@@ -244,7 +244,7 @@ MCP 深度扫描揭示了一个单靠肉眼很容易漏掉的细节：母材质 
 - **空间元数据**：展牌 Label `BP_DemoDisplay8` | 坐标 `(9497, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`No Normal Map` | `Normal Map =` | `Normal Map` / `Bricks`
 
-![展台 #10 Normal 切线空间法线贴图凹凸微雕效果实拍](../images/maps/Material_Nodes_03_stand_10.png)
+![展台 #10 Normal 切线空间法线贴图凹凸微雕效果实拍](../images/maps/Material_Nodes_03_stand_10.webp)
 
 #### 10.1 顶点数一模一样的圆球，是怎么欺骗大脑长出深深凹陷的砖缝的？
 左侧球和右侧球都是同一个光滑球体 `SM_MatPreviewMesh_01`，连一个多余的顶点都没加！右侧球之所以呈现出凹凸分明的立体红砖表面，是因为 **`MP_Normal`（切线空间法线贴图）** 逐像素篡改了送入光照方程的表面朝向向量 $\mathbf{N}$：

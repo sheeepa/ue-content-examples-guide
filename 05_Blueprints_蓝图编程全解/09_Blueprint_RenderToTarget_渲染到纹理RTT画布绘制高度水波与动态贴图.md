@@ -9,7 +9,7 @@
 
 ## 一、 展厅总览：把材质着色器变成通用 GPU 并行计算器（GPGPU in Blueprints）
 
-![Blueprint_RenderToTarget 展厅总览实拍](../images/maps/Blueprint_RenderToTarget_00_overview.png)
+![Blueprint_RenderToTarget 展厅总览实拍](../images/maps/Blueprint_RenderToTarget_00_overview.webp)
 
 初学者眼中的材质（Material）只是贴在模型表面决定“是木头还是金属”的被动外衣；而在资深技术美术（Technical Artist）与图形程序员眼中，**材质编辑器本质上是一套极其强大的跨平台像素着色器（Pixel Shader）并行编程环境，而渲染目标（`UTextureRenderTarget2D`，简称 RT / RTT）就是显卡显存中可读写的二维浮点数组（VRAM Buffer）！**
 
@@ -52,7 +52,7 @@ flowchart LR
   2. 左侧实时计算平面：`SM_Plane1000_513`（网格体 `SM_Plane1000_512`，覆写材质 **`M_RT_Material`**）
   3. 右侧烘焙贴图平面：`SM_Plane1000_512`（网格体 `SM_Plane1000_512`，覆写材质 **`M_Texture_Creator_StaticTexture`**）
 
-![展台 #2 Creating Textures Using Render Targets 实拍](../images/maps/Blueprint_RenderToTarget_01_stand_02.png)
+![展台 #2 Creating Textures Using Render Targets 实拍](../images/maps/Blueprint_RenderToTarget_01_stand_02.webp)
 
 #### 1. 左右两块平面为何肉眼一模一样，GPU 开销却天差地别？
 观察实拍图中的两块黑白云雾噪波板，对比它们背后的材质源码拆解：
@@ -87,7 +87,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Point and left click to draw on the plane. Use the button to reset.*
 
-![展台 #3 Height Map Painter 实拍](../images/maps/Blueprint_RenderToTarget_02_stand_03.png)
+![展台 #3 Height Map Painter 实拍](../images/maps/Blueprint_RenderToTarget_02_stand_03.webp)
 
 #### 1. 展品现象与高密网格选型秘密
 运行游戏，准星对准展台 #3 的黑色画板按住**鼠标左键涂抹**，鼠标划过之处立刻像挤奶油或造山运动一样**隆起立体的白色山脊**！走近旁边的立柱按钮触发 `BP_Button_ResetHeightfield`，整座山脉瞬间夷为平地。
@@ -153,7 +153,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Point and left click to interact with the water surface.*
 
-![展台 #4 Fluid Surface 实拍](../images/maps/Blueprint_RenderToTarget_03_stand_04.png)
+![展台 #4 Fluid Surface 实拍](../images/maps/Blueprint_RenderToTarget_03_stand_04.webp)
 
 这是整套蓝图示例中最令人拍案叫绝的图形学杰作！无论你对准水面点击左键，还是直接操纵角色跳进水池里趟水奔跑，水面上都会荡漾开物理真实的环形涟漪——波峰波谷向外扩散，撞击四周池壁后**自动镜面反射回来并与后续水波发生波峰叠加干涉**，最终在阻尼作用下缓缓归于平静如镜！
 

@@ -33,7 +33,7 @@
 | **内存布局模型** | 节点逻辑与实例状态常混存于 `UObject` 堆对象 | **逻辑模板（`FStateTreeNodeBase` 只读共享）与实例数据（`FInstanceDataStruct` 紧凑值结构体）严格分离**，天然无缝接入 `MassEntity` 万级 ECS！ |
 | **适用领域边界** | 强绑定 `AAIController`，几乎只用于 NPC 怪物 | **Schema 插件化契约设计**：既能驱动 NPC（`StateTreeAIComponent`），也能挂在任意机关门、电梯、分支文字冒险、技能树与并行任务管理器上（`StateTreeComponent`）！ |
 
-![AI_StateTree 轻量级层级状态树展厅总览实拍](../images/maps/AI_StateTree_00_overview.png)
+![AI_StateTree 轻量级层级状态树展厅总览实拍](../images/maps/AI_StateTree_00_overview.webp)
 
 ### 1.2 StateTree 运行期生命周期与数据绑定流水线
 
@@ -74,7 +74,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay5` | 坐标 `(1484, -900, 0)`
 
-![展台 #2 Hello World 最简状态树与三维调试文本输出实拍](../images/maps/AI_StateTree_01_stand_02.png)
+![展台 #2 Hello World 最简状态树与三维调试文本输出实拍](../images/maps/AI_StateTree_01_stand_02.webp)
 
 #### 2.1 官方展牌说明与陈列 Actor 实测深拆
 > *Basic state tree. Transitions directly into a Child State and executes a Debug Task to print text at the Context Actor's location (The Blueprint Class).*
@@ -173,7 +173,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay8` | 坐标 `(4003, 897, 0)`
 
-![展台 #6 Find Location and Move To Combined 单状态多任务组合实拍](../images/maps/AI_StateTree_02_stand_06.png)
+![展台 #6 Find Location and Move To Combined 单状态多任务组合实拍](../images/maps/AI_StateTree_02_stand_06.webp)
 
 #### 6.1 与展台 #4 的镜像对照：把 3 个状态压缩进 1 个状态会发生什么？
 > *Running Multiple State Tree Tasks in one State (Find Location, Move to, Wait). The Tasks Details is set to "All" meaning all tasks need to be compleated for the state to be marked completed.*
@@ -260,7 +260,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay13` | 坐标 `(7499, -900, 0)`
 
-![展台 #10 Text Adventure 分支叙事文字冒险状态树实拍](../images/maps/AI_StateTree_03_stand_10.png)
+![展台 #10 Text Adventure 分支叙事文字冒险状态树实拍](../images/maps/AI_StateTree_03_stand_10.webp)
 
 #### 10.1 官方展牌说明与 UMG 事件解耦架构
 > *This State Tree controls branching narrative. It's run using one StateTreeTask that populates the widget componants on each state. The buttons in the widget then send an event, either A or B, to then decide the next state to enter.*

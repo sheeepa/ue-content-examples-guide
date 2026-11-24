@@ -17,7 +17,7 @@
 
 走进 `/Game/Maps/Geometry/Geometry_Nanite` 展厅，23 座展台（连同展厅尽头双扇大门背后由 **70 余名高模 `SKM_Manny_Nanite` 组成的角色方阵**）构成了虚幻引擎 5.5 最完整的 Nanite 实验室：
 
-![Geometry_Nanite 展厅全景实拍](../images/maps/Geometry_Nanite_00_overview.png)
+![Geometry_Nanite 展厅全景实拍](../images/maps/Geometry_Nanite_00_overview.webp)
 
 全关按空间动线分为四大核心乐章：
 1. **基础理念与开启路径（展台 `#1` ~ `#5`）**：虚拟几何体架构定义、六大核心收益、导入期与内容浏览器批量启用；
@@ -79,7 +79,7 @@ flowchart TD
   - `Level of Detail is automatically handled and no longer requires manual setup.`
   - `Loss of quality is rare, especially with LOD transitions.`
 
-![展台 #2 Benifits of Nanite 核心红利实拍](../images/maps/Geometry_Nanite_01_stand_02.png)
+![展台 #2 Benifits of Nanite 核心红利实拍](../images/maps/Geometry_Nanite_01_stand_02.webp)
 
 #### 管线内核解析：不只是“面数变多”，更是 Draw Call 的彻底解放
 许多开发者只注意到 Nanite 能跑千万面，却忽略了展牌第二条指出的超级红利——**Draw Call 解耦**！
@@ -167,7 +167,7 @@ flowchart TD
 - **展牌标识与空间坐标**：`BP_DemoDisplay22` | `(5003, -889, 6)`
 - **官方展牌原文**：`The static mesh has Nanite disabled and is a lower-quality version that doesn't utilize the full topology of the original mesh. Try activating the visualization and use RMB to zoom in on the mesh details. The triangles will dynamically change as you zoom. Static meshes will appear black when any Nanite visualizers are active.`
 
-![展台 #9 Nanite Mesh vs Static Mesh 对比实拍](../images/maps/Geometry_Nanite_02_stand_09.png)
+![展台 #9 Nanite Mesh vs Static Mesh 对比实拍](../images/maps/Geometry_Nanite_02_stand_09.webp)
 
 #### 视口调试必知现象：为什么开启 Nanite 可视化后，某些物体变成了“纯黑剪影”？
 正如 9 号展牌特意强调的实战技巧：当你在视口左上角点击 `Lit -> Nanite Visualization -> Triangles（或 Clusters / Mask）`，或者踩下展台前的压力踏板时，**全场所有未启用 Nanite 的普通静态网格体（如右侧 `#12` 的 `lod5` 柱子）、半透明物体以及天空盒都会显示为纯黑色**，只有真正走了 `VisBuffer64` 管线的 Nanite 像素才会绽放出五彩斑斓的三角形/簇色块！因此，**`Nanite Visualization -> Mask`** 模式正是技术美术巡检全地图“哪些石头忘了开 Nanite”的最强照妖镜（绿色=Nanite，红色/黑色=传统管线）。
@@ -289,7 +289,7 @@ Nanite 强大但绝非“免死金牌”。从 14 号展台开始，展厅进入
 - **陈列示例 Actor（1 个）**：
   - `BP_Visulizer_PressureButton8`：一键开启 **`Nanite Visualization -> Overdraw`** 热力图视图的压力踏板。
 
-![展台 #17 Overdraw 热力图实拍](../images/maps/Geometry_Nanite_03_stand_17.png)
+![展台 #17 Overdraw 热力图实拍](../images/maps/Geometry_Nanite_03_stand_17.webp)
 
 #### 管线内核解析：“深埋地下零开销，贴皮叠放要老命”的底层数学真相！
 看一眼 17 号展台震撼的橙白高亮热力图，再回味展牌里那句耐人寻味的对比：*“Nanite 剔除深埋在后面的几何体几乎零成本，却对紧贴在可见表面下方的堆叠几何体束手无策”*——为什么？

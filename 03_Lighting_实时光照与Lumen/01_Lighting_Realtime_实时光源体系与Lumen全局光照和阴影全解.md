@@ -23,7 +23,7 @@ $$L_o(\mathbf{x}, \omega_o) = L_e(\mathbf{x}, \omega_o) + \int_{\Omega} f_r(\mat
 
 走进 `/Game/Maps/Lighting/Lighting_Realtime` 展厅，14 座展台沿着走廊从 `X = 510` 铺展至 `X = 14480`：
 
-![Lighting_Realtime 展厅全景实拍](../images/maps/Lighting_Realtime_00_overview.png)
+![Lighting_Realtime 展厅全景实拍](../images/maps/Lighting_Realtime_00_overview.webp)
 
 全关结构脉络极为清晰，层层递进地构建起现代灯光师与渲染工程师的完整知识大厦：
 - **第一乐章：宏观大气天光与无穷远平行日光（展台 `#1` ~ `#3`）**：`SkyLight` 实时天光捕获 + `SkyAtmosphere` + `VolumetricCloud` + `DirectionalLight` 正交太阳光；
@@ -62,7 +62,7 @@ Lumen 是一套高度精密的时空复用光线追踪系统（在 1080p 内部�
   - `ExponentialHeightFog`（`/Script/Engine.ExponentialHeightFog`）：地平线指数高度雾 `HeightFogComponent0`。
   - `Sphere`（`StaticMeshActor`）：展台中央悬浮预览球 `/Engine/BasicShapes/Sphere`，重载自定义无光照采样材质 `/Game/ExampleContent/Lighting/Materials/M_AmbientPreview`。
 
-![展台 #2 Skylight 实时大气环境捕获实拍](../images/maps/Lighting_Realtime_01_stand_02.png)
+![展台 #2 Skylight 实时大气环境捕获实拍](../images/maps/Lighting_Realtime_01_stand_02.webp)
 
 #### 资产深拆与时间分片实时天光管线剖析
 1. **探针预览材质 `/Game/ExampleContent/Lighting/Materials/M_AmbientPreview` 内部节点**：
@@ -127,7 +127,7 @@ Lumen 是一套高度精密的时空复用光线追踪系统（在 1080p 内部�
   - `Cylinder3`：挂载艳紫材质 `M_BrightSurface` 的反弹色源圆柱。
   - `Cube6`：挂载纯白 `BasicShapeMaterial` 的漫反射接收方块。
 
-![展台 #6 Screenspace GI 屏幕空间色溢反弹实拍](../images/maps/Lighting_Realtime_02_stand_06.png)
+![展台 #6 Screenspace GI 屏幕空间色溢反弹实拍](../images/maps/Lighting_Realtime_02_stand_06.webp)
 
 #### 管线内核解析：SSGI 的适用生态位
 观察 6 号展台实拍图：`PointLight2` 的白光打在紫色圆柱 `Cylinder3` 上，弹射出的漫反射光子确实把旁边纯白的 `Cube6` 侧面染上了一层柔和的淡紫色（且填补了墙角的环境遮蔽）。但只要你一转头把紫色圆柱甩出视野，白方块上的紫光便会随着镜头摆动忽明忽暗地褪色消失——在走廊转角处手电筒照亮屏幕外红墙等常见玩法中会产生极其出戏的画面呼吸闪烁。因此，SSGI 仅适合作为不支持距离场的旧世代中低端硬件的补充近似方案。
@@ -223,7 +223,7 @@ Lumen 是一套高度精密的时空复用光线追踪系统（在 1080p 内部�
 - **陈列示例 Actor（1 个动态呼吸动画演示蓝图）**：
   - `BP_LightFalloffMod`（`/Game/ExampleContent/Lighting/Blueprint/BP_LightFalloffMod`）：内部由 `Timeline` 时间轴曲线组件实时周期性调制点光源组件 `LightComponent0`（初始基准 `Intensity = 400`、`AttenuationRadius = 450.50`、`CastShadows = false`、`Mobility = Movable`）的衰减范围与强度变化。
 
-![展台 #11 Strength and Falloff 动态衰减演示实拍](../images/maps/Lighting_Realtime_03_stand_11.png)
+![展台 #11 Strength and Falloff 动态衰减演示实拍](../images/maps/Lighting_Realtime_03_stand_11.webp)
 
 #### 管线内核深潜：虚幻引擎着色器里的精确衰减公式与 `Light Complexity` 优化命门！
 在高中物理课本里，点光源照度严格遵循平方反比定律 $E \propto \frac{1}{d^2}$。但如果在游戏引擎里直接写 `1.0 / (d * d)` 会发生两件灾难：第一，当像素刚好贴在光源中心（$d \to 0$）时分母归零，亮度飙向 $+\infty$ 烧爆泛光（Bloom）；第二，$\frac{1}{d^2}$ 哪怕传到 100 公里外也永远大于 `0`，意味着地图里每一盏小蜡烛都必须对全屏 800 万个像素算一遍光照！

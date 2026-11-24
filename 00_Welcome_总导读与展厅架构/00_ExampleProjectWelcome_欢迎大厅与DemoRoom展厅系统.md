@@ -20,7 +20,7 @@
 1. **读懂“使用说明书”**：把欢迎大厅里从 `#1` 到 `#13` 的每一个展台（包括主展台与台面上的微型子展台）逐一拆开，摸清静态资产、PIE 运行时模拟、三维滑条动态改参、按钮通信、重力踏板控制台指令以及官方文档锚点的完整交互规则；
 2. **解剖“造馆脚手架”**：深入 `/Game/Global/DemoRoom/TemplateRoom` 母版关卡，看懂 Epic 官方团队是如何用一套模块化模板在几十张地图之间统一曝光、色温与受控实验环境的。
 
-![ExampleProjectWelcome 欢迎大厅总览实拍](../images/maps/ExampleProjectWelcome_00_overview.png)
+![ExampleProjectWelcome 欢迎大厅总览实拍](../images/maps/ExampleProjectWelcome_00_overview.webp)
 
 ---
 
@@ -78,7 +78,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(1520, -900, 0)`
 
-![展台 #2 Opening Maps 关卡打开方式指引实拍](../images/maps/ExampleProjectWelcome_01_stand_02.png)
+![展台 #2 Opening Maps 关卡打开方式指引实拍](../images/maps/ExampleProjectWelcome_01_stand_02.webp)
 
 - **官方展牌原文**：
   > *To see the available selection of maps, either:*
@@ -144,7 +144,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay6` | 坐标 `(3500, -900, 0)`
 
-![展台 #6 Play or Simulate 时间轴弹跳小球实拍](../images/maps/ExampleProjectWelcome_02_stand_06.png)
+![展台 #6 Play or Simulate 时间轴弹跳小球实拍](../images/maps/ExampleProjectWelcome_02_stand_06.webp)
 
 - **官方展牌原文**：
   > *Certain demo stands may require you to play or simulate the game in the editor to see the example. This is done with the Play button found in the toolbar, above the viewport. Try this now.*
@@ -243,7 +243,7 @@ sequenceDiagram
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay9` | 坐标 `(5330, -890, 10)`（嵌套于 `#11` 主展台左侧）
 
-![展台 #10 Triggerable 重力踏板触发齿轮组联动实拍](../images/maps/ExampleProjectWelcome_03_stand_10.png)
+![展台 #10 Triggerable 重力踏板触发齿轮组联动实拍](../images/maps/ExampleProjectWelcome_03_stand_10.webp)
 
 - **官方展牌原文**：`Gears`
 

@@ -13,7 +13,7 @@
 
 虚幻引擎的 **Sequencer（非线性多轨实时影视导演系统）** 彻底终结了“实机玩法”与“电影叙事”之间的次元壁。走进本工程规模最宏大的走廊之一——长达 **308 米**（`X` 坐标从 `510` 一路延伸至 `30,800`）、密集排布着 **51 座受控实验展台** 的 `/Game/Maps/Animation/Sequencer` 展厅，你将亲眼见证一套跨学科的实时导演引擎是如何在同一条时间轴上统御 **对象生命周期、9 轴空间变换、骨骼动画混合、Control Rig 引擎内 K 帧、材质 MID / MPC 实时驱动、Niagara 模拟缓存倒放、电影级镜头推拉摇移与焦点追踪、多层级分镜嵌套（Subsequence / Shot）以及局部非线性时间扭曲（Time Warp）** 的！
 
-![Sequencer 308米非线性电影过场导演展厅总览实拍](../images/maps/Sequencer_00_overview.png)
+![Sequencer 308米非线性电影过场导演展厅总览实拍](../images/maps/Sequencer_00_overview.webp)
 
 ### 1.1 从 `Evaluation Template` 到 `Entity Component System (ECS)`：Sequencer 底层求值管线揭秘
 
@@ -78,7 +78,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay` | 坐标 `(1461, -900, 0)`
 - **官方展牌原文**：*Asset that holds sparse keyframe data across time that can animate objects and provide high level control over states.*
 
-![展台 #2 Level Sequence 多轨微缩过场实拍](../images/maps/Sequencer_01_stand_02.png)
+![展台 #2 Level Sequence 多轨微缩过场实拍](../images/maps/Sequencer_01_stand_02.webp)
 
 #### 2.1 展台陈列 Actor 与通用交互按钮 `BP_SequenceTrigger` 深拆（共 2 个）
 1. **`BP_SequenceTrigger_0_LevelIntro`**（`/Game/ExampleContent/Sequencer/Blueprints/BP_SequenceTrigger.BP_SequenceTrigger_C`）
@@ -287,7 +287,7 @@ $$V_{\text{final}}(t) = \underbrace{\frac{\sum_{i=1}^{M} w_i(t) A_i(t) + \max\le
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay45` | 坐标 `(7642, -708, 0)`（`2_2` 片段混合三联展台之**右翼子台**）
 
-![展台 #12 Blended Weights 片段混合权重对照实拍](../images/maps/Sequencer_02_stand_12.png)
+![展台 #12 Blended Weights 片段混合权重对照实拍](../images/maps/Sequencer_02_stand_12.webp)
 
 #### 12.1 展台陈列 Actor 与手动权重通道实战（共 1 个）
 - **陈列 Actor**：圆锥体 **`Cone_WeightBlending`**（`/Engine/BasicShapes/Cone.Cone`），由 `2_2_SectionBlending_LS` 中的 `MovieScene3DTransformTrack_0` 驱动。
@@ -449,7 +449,7 @@ $$\text{最高优先级：Player / Actor 播放级全局覆盖 (`RestoreStateOve
 - **空间元数据**：展牌 Label `BP_DemoDisplay23` | 坐标 `(12000, -900, 0)`
 - **官方展牌原文**：*Simulate or Play / Play in Sequencer Attach Objects to one another in Sequencer to Animate them*
 
-![展台 #22 Attach Track 动态父子空间挂接实拍](../images/maps/Sequencer_03_stand_22.png)
+![展台 #22 Attach Track 动态父子空间挂接实拍](../images/maps/Sequencer_03_stand_22.webp)
 
 #### 22.1 展台陈列 Actor 与 `3_2_AttachTrack_LS` 实测拆解（共 4 个）
 - **陈列 Actor**：父级移动平台方块 **`Cube_AttachParent`**、触发按钮 `BP_SequenceTrigger_3_2_Attach_Track`、`3_2_AttachTrack_LS`，以及子级受控角色 **`SKM_Manny_Simple`**。
@@ -648,7 +648,7 @@ $$\text{最高优先级：Player / Actor 播放级全局覆盖 (`RestoreStateOve
 - **空间元数据**：展牌 Label `BP_DemoDisplay39` | 坐标 `(21000, -900, 0)`
 - **官方展牌原文**：*Simulate or Play / Play in Sequencer Cache and play back Simulations in a Sequence This example plays a Simulation Cache in reverse*
 
-![展台 #32 Niagara Sim Cache Tracks 粒子模拟缓存时间倒流实拍](../images/maps/Sequencer_04_stand_32.png)
+![展台 #32 Niagara Sim Cache Tracks 粒子模拟缓存时间倒流实拍](../images/maps/Sequencer_04_stand_32.webp)
 
 #### 32.1 展台陈列 Actor 与 `5_3_NiagaraSimCache_LS` 实测拆解（共 3 个）
 - **陈列 Actor**：`BP_SequenceTrigger_5_3_Niagara_Sim_Cache_Tracks`、`5_3_NiagaraSimCache_LS`、以及第三座喷泉 **`Fountain_FXS3`**。
@@ -851,7 +851,7 @@ flowchart TD
 - **空间元数据**：展牌 Label `BP_DemoDisplay30` | 坐标 `(27000, -900, 0)`（`7_2` 层级偏置三联展台之**中央核心展示台**）
 - **官方展牌原文**：*Simulate or Play / Play in Sequencer Change the priority of a Subsequence or Shot's animations.*
 
-![展台 #42 Hierarchical Bias 子序列层级优先级夺权对照实拍](../images/maps/Sequencer_05_stand_42.png)
+![展台 #42 Hierarchical Bias 子序列层级优先级夺权对照实拍](../images/maps/Sequencer_05_stand_42.webp)
 
 #### 42.1 展台陈列 Actor 与多级树状累加准则（共 1 个）
 - **陈列 Actor**：受 `#40` 与 `#41` 共同争夺的唯一主角方块 **`7_2_HBiasCube`**（`/Engine/BasicShapes/Cube`）。

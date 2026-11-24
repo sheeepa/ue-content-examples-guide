@@ -14,7 +14,7 @@
 
 打开 `/Game/Maps/Level/Level_Scripting`，Epic Games 用一条精心编排的闯关长廊（共 **9 座展台**，串联 3 道双扇上锁大门与 1 段压轴 Sequencer 过场动画），教科书般地演绎了**“关卡蓝图作为本关专属导演（Level-Specific Director）”**的四大标准设计模式：
 
-![Level_Scripting 展厅总览：由浅入深串联三道机关大门与过场动画的导演走廊](../images/maps/Level_Scripting_00_overview.png)
+![Level_Scripting 展厅总览：由浅入深串联三道机关大门与过场动画的导演走廊](../images/maps/Level_Scripting_00_overview.webp)
 
 ### 1.1 底层拆解：本关 `ALevelScriptActor` 实例藏着什么？
 
@@ -120,7 +120,7 @@ flowchart TB
 
 ### 展台 #2：`Info` — 第一关导读：触发器直驱关卡蓝图
 
-![展台 #2 Info 与第一道感应大门实拍：基础触发器盒联动关卡脚本开门](../images/maps/Level_Scripting_01_stand_02.png)
+![展台 #2 Info 与第一道感应大门实拍：基础触发器盒联动关卡脚本开门](../images/maps/Level_Scripting_01_stand_02.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay6`，位于 `(975, 772, 250)`
 - **官方展牌原文**：
@@ -170,7 +170,7 @@ flowchart TB
 
 ### 展台 #5：`Event dispatcher used to open a door` — 模式二：静态 Actor 多播委托绑定与刷币触发
 
-![展台 #5 Event dispatcher used to open a door：踩踏广播踏板开启第二道门并衔接刷币触发器实拍](../images/maps/Level_Scripting_02_stand_05.png)
+![展台 #5 Event dispatcher used to open a door：踩踏广播踏板开启第二道门并衔接刷币触发器实拍](../images/maps/Level_Scripting_02_stand_05.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay3`，位于 `(2426, 1110, 140)`
 - **展台内陈列的示例 Actor（共 3 个）**：
@@ -212,7 +212,7 @@ flowchart TB
 
 ### 展台 #7：`Spawned actors with event dispatchers` — 模式三：动态生成 + 运行时委托收集计数开门
 
-![展台 #7 Spawned actors with event dispatchers：动态生成拾取金币、运行时绑定计数与开启第三道门实拍](../images/maps/Level_Scripting_03_stand_07.png)
+![展台 #7 Spawned actors with event dispatchers：动态生成拾取金币、运行时绑定计数与开启第三道门实拍](../images/maps/Level_Scripting_03_stand_07.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay4`，位于 `(3926, 1110, 140)`
 - **展台内陈列的示例 Actor（共 3 个）**：

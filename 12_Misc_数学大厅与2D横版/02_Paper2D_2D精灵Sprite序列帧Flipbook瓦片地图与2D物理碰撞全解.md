@@ -12,7 +12,7 @@
 
 承载这一切的官方核心基座，正是引擎内置的 **`Paper2D` 插件**。打开 `/Game/Maps/Misc/Paper2D`，你会发现连这座展厅的建筑结构都别出心裁——在 `BP_DemoRoom` 配置中，Epic 特意将 `roof`（屋顶）和 `enclosed Right`（右侧墙体）设为 `false`，让整条长廊沐浴在自然天光与可移动太阳光之下：
 
-![Paper2D 展厅总览：敞开式自然采光长廊与 7 座核心展台实拍](../images/maps/Paper2D_00_overview.png)
+![Paper2D 展厅总览：敞开式自然采光长廊与 7 座核心展台实拍](../images/maps/Paper2D_00_overview.webp)
 
 在这条沿 $X$ 轴从 `495` 延伸至 `6,495` 的展廊中，7 座展台浓缩了从**单张贴图切分、渲染网格减面降 Overdraw、自定义法线受光材质、序列帧非均匀帧率节奏、蓝图状态机控制、受限平面 3D 物理弹珠台到复古像素无损采样**的完整工业流水线。下面让我们逐台拆解全部实测资产，并延伸讲透 **TileMap 瓦片地图**与 **HD-2D 实战架构**！
 
@@ -41,7 +41,7 @@
 - **展牌标识与坐标**：`BP_DemoDisplay1` | 坐标 `(1515, -900, 0)`
 - **展台 3D 悬浮标注**：左侧 `'Sprite' / '512x512 Texture' / '5 Pixel per Unreal Unit' / 'Default Material'`；右侧 `'modified properties' / 'Sprite Color = Red' / 'Custom Material'`
 
-![展台 #2 Sprites：默认无光照精灵 vs 叠加红色顶点色与法线高光的自定义材质精灵](../images/maps/Paper2D_01_stand_02.png)
+![展台 #2 Sprites：默认无光照精灵 vs 叠加红色顶点色与法线高光的自定义材质精灵](../images/maps/Paper2D_01_stand_02.webp)
 
 #### 1. 什么是 Paper2D 中的 `Sprite`？四种标准创建姿势
 在虚幻引擎底层，`UPaperSprite` 并不是古老的屏幕空间 HUD 贴片，而是**一块完全生活在三维世界坐标系中的平面多边形网格（Planar Mesh）+ 关联材质（Material）+ 可选三维挤压碰撞体（`UBodySetup`）**！
@@ -129,7 +129,7 @@
 - **展牌标识与坐标**：`BP_DemoDisplay3` | 坐标 `(3520, -900, 0)`
 - **展台 3D 悬浮标注**：左侧 `'8 frame animation / extracted from one texture'`；右侧 `'same animation with different "Frame Run"'`
 
-![展台 #4 Flipbooks：Epic 传奇吉祥物 Jazz Jackrabbit 8 帧奔跑序列帧与 Frame Run 节奏对比实拍](../images/maps/Paper2D_02_stand_04.png)
+![展台 #4 Flipbooks：Epic 传奇吉祥物 Jazz Jackrabbit 8 帧奔跑序列帧与 Frame Run 节奏对比实拍](../images/maps/Paper2D_02_stand_04.webp)
 
 #### 1. `UPaperFlipbook` 数据结构本质
 如上方实拍图所示，展台上奔跑的绿色像素兔子正是 Epic Games 1994 年横版射击名作《光速兔崽子（Jazz Jackrabbit）》的主角！
@@ -192,7 +192,7 @@
 - **展牌标识与坐标**：`BP_DemoDisplay4` | 坐标 `(5510, -900, 0)`
 - **展台 3D 悬浮标注**：`'These sprites are using 3D physics but the Locked Axis is set to Y / this limits their movement to a plane'`
 
-![展台 #6 Physics：11 枚圆形多边形碰撞精灵在 Y 轴锁定平面内被底部双径向力场抛起碰撞实拍](../images/maps/Paper2D_03_stand_06.png)
+![展台 #6 Physics：11 枚圆形多边形碰撞精灵在 Y 轴锁定平面内被底部双径向力场抛起碰撞实拍](../images/maps/Paper2D_03_stand_06.webp)
 
 #### 1. 历史演进与架构真相：告别实验性 Box2D，拥抱“平面受限 3D Chaos 物理”！
 早期 UE4 曾短暂实验过集成第三方 2D 物理库 Box2D，但很快发现纯 2D 物理世界与 UE 强大的三维射线检测（LineTrace）、三维导航网格（NavMesh）、三维触发器（TriggerBox）、三维角色移动组件（CharacterMovement）以及破坏力场完全割裂，两边坐标与事件无法互通！

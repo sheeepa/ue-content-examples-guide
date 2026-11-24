@@ -13,7 +13,7 @@
 
 **动画重定向（Animation Retargeting）** 正是将动画师从重复劳动地狱中解放出来的生产力核武器。今天我们踏入的 **`/Game/Maps/Animation/Animation_Retargeting`**，是整个角色动画专题展牌密度极高的一座宏大长廊——全长 **135 米**（`X` 从 `500` 延伸至 `14000`），由 **12 大核心实验台及配套前排 `Source / Target` 独立对照标牌共同构成了足足 40 座编号展台（`#1` ~ `#40`）**！
 
-![Animation_Retargeting 跨体型动画重定向展厅总览实拍](../images/maps/Animation_Retargeting_00_overview.png)
+![Animation_Retargeting 跨体型动画重定向展厅总览实拍](../images/maps/Animation_Retargeting_00_overview.webp)
 
 ### 1.1 虚幻动画重定向的三代技术演进与 `IK Retargeter` 核心数学方程
 
@@ -74,7 +74,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay7` | 坐标 `(1304, -745, 0)`（第一实验站左前源标牌）
 
-![展台 #2 Source 同骨骼平移重定向：赤陶红源角色与高矮钴蓝目标角色并排实拍](../images/maps/Animation_Retargeting_01_stand_02.png)
+![展台 #2 Source 同骨骼平移重定向：赤陶红源角色与高矮钴蓝目标角色并排实拍](../images/maps/Animation_Retargeting_01_stand_02.webp)
 
 #### 2.1 展品解析与源基准材质标识
 观察上方实拍图最左侧的赤陶红色人形角色：这正是第一实验站（由集成 Actor `BP_SimpleRetargeting` 统一承载，旁设 `PrecomputedVisibilityVolume1`）的**源基准网格体 `SkeletalMesh`**：
@@ -178,7 +178,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay12` | 坐标 `(3500, -900, 0)`（第三实验站后排主展牌）
 - **官方展牌原文说明**：`Play or Simulate Easily retarget to Manny & Quinn with IK Rig and IK Retargeter`
 
-![展台 #10 Retargeting Mannequins UE4 小白人实时高精度重定向至 UE5 Manny 实拍](../images/maps/Animation_Retargeting_02_stand_10.png)
+![展台 #10 Retargeting Mannequins UE4 小白人实时高精度重定向至 UE5 Manny 实拍](../images/maps/Animation_Retargeting_02_stand_10.webp)
 
 #### 10.1 商城十万套旧版 UE4 动作包的救星：语义骨骼链是怎么抹平骨骼节数鸿沟的？
 为什么虚幻商城（Fab）里上万套为 UE4 `SK_Mannequin` 制作的动作包，放进 UE5 项目能一秒重定向给拥有 **89 根骨骼（5 节脊椎 `spine_01..05`、2 节颈椎 `neck_01..02`、双侧五指独立掌骨 `*_metacarpal` 与全新程序化矫正骨）** 的 `SKM_Manny`？
@@ -270,7 +270,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay22` | 坐标 `(5901, -745, 0)`（第五实验站左一阶段子展台）
 
-![展台 #18 Root 重定向三阶段同框对比实拍：从左至右依次为 Source、Root、FK、IK](../images/maps/Animation_Retargeting_03_stand_18.png)
+![展台 #18 Root 重定向三阶段同框对比实拍：从左至右依次为 Source、Root、FK、IK](../images/maps/Animation_Retargeting_03_stand_18.webp)
 
 #### 18.1 观察 `Root` 组件海星的孤立行为
 如上方同框实拍图左起第二位所示：这只对应组件 **`Root`** 的海星仅点亮了第一阶段 `Retarget Root`（关闭了 FK 与 IK）。
@@ -357,7 +357,7 @@ $$\Delta R(t) = R_{\text{src}}(t) \cdot \left(R_{\text{src}, 0}\right)^{-1}, \qq
 - **官方展牌原文说明**：`Play or Simulate Raise/Lower the Hips`
 - **展台内 3D 悬浮文字标签**：`-50` | `0` | `50`
 
-![展台 #25 Editing Retarget Root 拖拽滑杆实时通过 Retarget Profile 升降机器人胯部重心实拍](../images/maps/Animation_Retargeting_04_stand_25.png)
+![展台 #25 Editing Retarget Root 拖拽滑杆实时通过 Retarget Profile 升降机器人胯部重心实拍](../images/maps/Animation_Retargeting_04_stand_25.webp)
 
 #### 25.1 不改资产、运行时一行结构体动态改写任意重定向参数！
 在展台 `#25` 上，蓝图 **`BP_EditingRetargetRoot`**（左为源 `SKM_Quinn_Simple`，右为目标 `SKM_Bot` + `ABP_StackOBot_Retargeting_C`，含变量 `["OffsetZSlider", "OutputRetargetProfile"]`）连接着前方的交互滑杆 **`BP_Slider`**（刻度 `-50` 至 `+50`）。
@@ -458,7 +458,7 @@ UE5 为此专门在主重定向管线之后增设了 **Post-Retarget Phase（后
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay35` | 坐标 `(12002, -745, 0)`（第九实验站中央未钉骨对照子展台）
 
-![展台 #33 Target - No Pin 后处理钉骨对照实拍：观察未执行 Pin Bone 时武器/辅助骨脱节现象](../images/maps/Animation_Retargeting_05_stand_33.png)
+![展台 #33 Target - No Pin 后处理钉骨对照实拍：观察未执行 Pin Bone 时武器/辅助骨脱节现象](../images/maps/Animation_Retargeting_05_stand_33.webp)
 
 #### 33.1 `BP_PinBone_PostRetargetPhase` 脱节现场直击
 中央子展台容纳蓝图 **`BP_PinBone_PostRetargetPhase`**，其组件 **`Target_NoPinBone`**（`SKM_Manny_Simple` + **`ABP_NoPinBone_PostRetargetPhase_C`**）故意禁用了后处理 `Pin Bone` 操作。如上方实拍图中央角色所示，一旦下游逻辑依赖 `ik_foot_*` 或 `ik_hand_gun` 驱动挂件或二次 IK，未钉骨的目标角色立即暴露出灾难性的骨骼错位与肢体扭曲！

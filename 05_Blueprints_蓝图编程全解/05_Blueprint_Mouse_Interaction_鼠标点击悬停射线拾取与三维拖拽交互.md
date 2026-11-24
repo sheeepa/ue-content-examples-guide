@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：为什么 RTS、战棋、卡牌与三维解谜游戏离不开这套鼠标交互管线？
 
-![Blueprint_Mouse_Interaction 展厅总览实拍](../images/maps/Blueprint_Mouse_Interaction_00_overview.png)
+![Blueprint_Mouse_Interaction 展厅总览实拍](../images/maps/Blueprint_Mouse_Interaction_00_overview.webp)
 
 在前两章中，我们的鼠标移动一直被视口死死锁在屏幕正中央（`CapturePermanently`），专门用来驱动第一人称或第三人称摄像机的旋转（`Turn / LookUp`）。然而在《星际争霸》式即时战略（RTS）、《博德之门 3》式俯视角 CRPG、《炉石传说》式三维棋盘卡牌以及密室机关解谜游戏中，玩家需要的是**释放自由游走的二维屏幕光标，直接去悬停高亮、点选开关、按住拖拽三维世界中的实体模型**！
 
@@ -50,7 +50,7 @@ flowchart LR
 - **官方展牌原文**：
   > *This example shows how you can use mouse inputs to control your game. The key is to set up your Player Controller to enable mouse clicks. Click + Hold LEFT MOUSE BUTTON to drag spheres | Press LEFT MOUSE BUTTON to stop and start the moving cube.*
 
-![展台 #1 Blueprint Mouse Input 俯视交互沙盒实拍](../images/maps/Blueprint_Mouse_Interaction_01_stand_01.png)
+![展台 #1 Blueprint Mouse Input 俯视交互沙盒实拍](../images/maps/Blueprint_Mouse_Interaction_01_stand_01.webp)
 
 ### 1. 展台空间全量陈列清单（20 个核心交互 Actor + 5 个全局环境光照 Actor）
 1. **16 颗 4×4 矩阵排布的拖拽球体（`MI_Sphere` ~ `MI_Sphere_16`）**：

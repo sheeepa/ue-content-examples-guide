@@ -9,7 +9,7 @@
 
 ## 一、 展厅总览：打破离线 DCC 边界，在运行时用数学直接锻造三维网格
 
-![Blueprint_ProceduralMesh 展厅总览实拍](../images/maps/Blueprint_ProceduralMesh_00_overview.png)
+![Blueprint_ProceduralMesh 展厅总览实拍](../images/maps/Blueprint_ProceduralMesh_00_overview.webp)
 
 在常规游戏管线中，三维网格体（`UStaticMesh`）是由美术师在 Blender、Maya 或 Houdini 中离线建模导出 FBX，经编辑器烘焙顶点缓冲（Vertex Buffer）与索引缓冲（Index Buffer）后锁死在显存中的“只读冰雕”。
 
@@ -54,7 +54,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Procedural Meshes may be constructed by explicitly passing data directly to the Procedural Mesh Component. Data such as vertex positions, triangles, normals, UVs, and tangents. The Procedural Mesh Component assumes counter clockwise construction of faces to determine the face's normal. Right click this Blueprint Class Actor and Edit the Blueprint in order to observe its construction.*
 
-![展台 #2 Mesh Construction 实拍](../images/maps/Blueprint_ProceduralMesh_01_stand_02.png)
+![展台 #2 Mesh Construction 实拍](../images/maps/Blueprint_ProceduralMesh_01_stand_02.webp)
 
 #### 1. 实测实例参数与视口三维顶点拖拽
 观察展台 #2 空中悬浮的那片半透明三角形薄片，选中 `BP_ProceduralMesh_1-1` 实例可见其公开参数：
@@ -105,7 +105,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Included with the Procedural Mesh system is an example of a mesh building Utility that produces a Box. You input in the dimensions of the Box on the X, Y, and Z axes and it creates the Vertices, Triangles, Normals, UVs, and Tangents needed to create a Procedural Mesh. This can be used as the foundation for other mesh producing utilities.*
 
-![展台 #3 Generate Box Mesh 实拍](../images/maps/Blueprint_ProceduralMesh_02_stand_03.png)
+![展台 #3 Generate Box Mesh 实拍](../images/maps/Blueprint_ProceduralMesh_02_stand_03.webp)
 
 #### 1. `UserConstructionScript` 节点流还原
 如果要手写 `MakeArray` 敲一个立方体的全部顶点、索引、法线和切线，连线会高达上百个节点。为此，引擎在 `UKismetProceduralMeshLibrary` 函数库中内置了开箱即用的网格生成器 **`Generate Box Mesh`**：
@@ -178,7 +178,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Procedural Mesh Components can be sliced using a plane. The Slice function can create caps for the cut areas, and it even slices the collision! This enables the seperated bits to fall and interact with each other. Use the Arrow keys to orient the slice plane then Left Click to slice.*
 
-![展台 #5 Mesh Slicing 实拍](../images/maps/Blueprint_ProceduralMesh_03_stand_05.png)
+![展台 #5 Mesh Slicing 实拍](../images/maps/Blueprint_ProceduralMesh_03_stand_05.webp)
 
 #### 1. 组件结构与呼吸刀锋平面 + 炽热熔岩切口双材质深拆
 站在展台 #5 前运行游戏，你会看到一枚洁白的圆锥体 `Cone` 被一片闪烁呼吸的半透明平面 `SlicePlaneVis` 贯穿：按下键盘**方向键（上下左右）**调整刀锋倾角，点击**鼠标左键**——圆锥瞬间沿平面整齐断开，暴露出的新鲜切口闪烁着高达 50 倍亮度的炽热橙红自发光，切掉的尖顶顺势滑落砸在展台上！

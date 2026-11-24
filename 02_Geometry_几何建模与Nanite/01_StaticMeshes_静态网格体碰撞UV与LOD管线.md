@@ -13,7 +13,7 @@
 
 为什么它被称为“静态”？这里的“静态”并非指物体不能在关卡里移动（事实上设置 `Mobility = Movable` 后它可以自由平移、旋转、缩放甚至参与刚体物理碰撞），而是指**其局部空间（Local Space）的顶点拓扑缓冲（Vertex Buffer）与索引缓冲（Index Buffer）在加载进 GPU 显存后保持固定不变**。得益于这种“一次上传、千次复用”的硬件亲和特性，渲染线程（Render Thread）可以通过网格绘制指令缓存（Mesh Draw Commands Caching）、硬件实例化（Hardware Instancing / ISM / HISM）甚至次世代 Nanite 微多边形流送，以极低的 CPU 开销在一帧之内绘制成千上万个静态网格体。
 
-![StaticMeshes 展厅全景实拍](../images/maps/StaticMeshes_00_overview.png)
+![StaticMeshes 展厅全景实拍](../images/maps/StaticMeshes_00_overview.webp)
 
 走进 `/Game/Maps/Geometry/StaticMeshes` 展厅，13 座展台沿着 X 轴从 `X = 515` 一路延伸至 `X = 12501`，由浅入深地串联起了静态网格体从导入引擎到最终上屏的完整技术生命周期：
 
@@ -66,7 +66,7 @@ flowchart LR
 - **陈列示例 Actor（1 个）**：
   - `Basic_Asset`（`StaticMeshActor`）：引用网格体 `/Game/ExampleContent/StaticMeshes/Meshes/SM_Mesh_GoodUVs`，重载材质槽 `[0]` 为 `/Game/ExampleContent/StaticMeshes/Materials/M_SolidColor`。
 
-![展台 #2 Static mesh 实拍](../images/maps/StaticMeshes_01_stand_02.png)
+![展台 #2 Static mesh 实拍](../images/maps/StaticMeshes_01_stand_02.webp)
 
 #### 资产深拆与渲染管线剖析
 - **测试材质 `/Game/ExampleContent/StaticMeshes/Materials/M_SolidColor`**：
@@ -164,7 +164,7 @@ flowchart LR
   - `SM_Mesh_NoUVs_8` -> `/Game/ExampleContent/StaticMeshes/Meshes/SM_Mesh_AutoUVs1`（在引擎内基于 `Channel 0` 自动重排打包至 `Channel 1`）。
   - `SM_Mesh_NoUVs_9` -> `/Game/ExampleContent/StaticMeshes/Meshes/SM_Mesh_AutoUVs2`（完全抛弃旧拓扑、由引擎从零按角度阈值重新切分展开的新 `Channel 1`）。
 
-![展台 #6 Generate Unique UVs 实拍](../images/maps/StaticMeshes_02_stand_06.png)
+![展台 #6 Generate Unique UVs 实拍](../images/maps/StaticMeshes_02_stand_06.webp)
 
 #### 管线内核解析：虚幻引擎自动光照图 UV 生成的两种底层机制
 当美术交付了上千个只展了 `Channel 0` 贴图 UV 的白模资产时，我们无需退回 Maya/Blender 逐个手拆 `Channel 1`：
@@ -263,7 +263,7 @@ $$M_{\text{ChildWorld}} = M_{\text{ChildRelative}} \times M_{\text{SocketLocal}}
   - `SM_Mesh_GoodUVs_7`：引用无顶点色（默认全白 `(1,1,1,1)`）的 `SM_Mesh_GoodUVs`，重载材质 `/Game/ExampleContent/StaticMeshes/Materials/M_VertexColor`。
   - `SM_Mesh_GoodUVs_8`：引用在 DCC 软件中预刷好彩色顶点色并导入的 `/Game/ExampleContent/StaticMeshes/Meshes/SM_Mesh_VertexColor`，同样重载材质 `M_VertexColor`。
 
-![展台 #10 VertexColors 实拍](../images/maps/StaticMeshes_03_stand_10.png)
+![展台 #10 VertexColors 实拍](../images/maps/StaticMeshes_03_stand_10.webp)
 
 #### 资产深拆与工业级多通道妙用
 1. **材质 `/Game/ExampleContent/StaticMeshes/Materials/M_VertexColor` 内部节点**：

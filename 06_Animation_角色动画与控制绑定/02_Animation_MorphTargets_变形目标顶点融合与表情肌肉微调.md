@@ -18,7 +18,7 @@
 
 **变形目标（Morph Targets，在 Maya 中称为 Blend Shapes，在 Blender 中称为 Shape Keys）** 正是为解决逐顶点艺术雕刻而生！今天我们走进小巧却字字珠玑的 **`/Game/Maps/Animation/Animation_MorphTargets`**（全长 50 米，包含 **6 座精炼展台与 15 个示例 Actor**），从底层稀疏顶点数据结构一路拆到次世代主角 Echo 的眼球微动与 4.3 万根发丝实时跟随！
 
-![Animation_MorphTargets 变形目标展厅总览实拍](../images/maps/Animation_MorphTargets_00_overview.png)
+![Animation_MorphTargets 变形目标展厅总览实拍](../images/maps/Animation_MorphTargets_00_overview.webp)
 
 ### 1.1 Morph Target 的底层稀疏数学方程与 GPU 管线执行时序
 
@@ -74,7 +74,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1515, -900, 0)`
 - **官方展牌原文说明**：`The asset must be a skeletal mesh to utilize morph targets. This is a very basic Morph Target example with an animation sequence.`
 
-![展台 #2 Basic Morph Target 基础方块球化变形实拍](../images/maps/Animation_MorphTargets_01_stand_02.png)
+![展台 #2 Basic Morph Target 基础方块球化变形实拍](../images/maps/Animation_MorphTargets_01_stand_02.webp)
 
 #### 2.1 展品解析与“单根骨头也得绑”的底层原因
 展台中央陈列着 **`SK_Box_Morph`**（类 `SkeletalMeshActor`，引用网格体 **`/Game/ExampleContent/Morph_Targets/Morph_1/SK_Box_Morph_1`**，动态材质实例 `MaterialInstanceDynamic_0`），一个倒角立方体正随着动画序列曲线周期性地膨胀呼吸、在“方盒”与“圆润膨胀体”之间丝滑融合。
@@ -122,7 +122,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(3500, -900, 0)`
 - **官方展牌原文说明**：`It is possible to morph material settings in a way that matches the mesh morph. In Persona, you can control a scalar parameter from a material instance with a float track. The float track in Persona must match the material parameter's name exactly.`
 
-![展台 #4 Morphing Material Settings 动画曲线联动几何变形与材质颜色实拍](../images/maps/Animation_MorphTargets_02_stand_04.png)
+![展台 #4 Morphing Material Settings 动画曲线联动几何变形与材质颜色实拍](../images/maps/Animation_MorphTargets_02_stand_04.webp)
 
 #### 4.1 次世代数字人微表情的核心机密：为什么光靠顶点数不够画鱼尾纹？
 哪怕是影视级 MetaHuman 角色，眼角和额头的网格密度也不可能高到用真实几何顶点挤出几十条 `0.2 毫米` 宽的细碎鱼尾纹与毛孔折痕！
@@ -144,7 +144,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(4500, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Base mesh with custom vertex normals.` | `Morph target`
 
-![展台 #5 Vertex Normals 自定义顶点法线在 FBX 变形目标下的光照伪影实拍](../images/maps/Animation_MorphTargets_03_stand_05.png)
+![展台 #5 Vertex Normals 自定义顶点法线在 FBX 变形目标下的光照伪影实拍](../images/maps/Animation_MorphTargets_03_stand_05.webp)
 
 #### 5.1 为什么二次元角色或倒角硬表面模型一播表情，脸上就爆出一块黑斑？
 这是技术美术面试与日式卡通渲染（Cel-Shading / Anime Face Normal Editing）、硬表面加权法线（Weighted Face Normals）项目中最臭名昭著的巨坑！

@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：虚幻引擎的“灵魂与肉身分离”哲学（Controller vs Pawn）
 
-![Blueprint_Input_Examples 展厅总览实拍](../images/maps/Blueprint_Input_Examples_00_overview.png)
+![Blueprint_Input_Examples 展厅总览实拍](../images/maps/Blueprint_Input_Examples_00_overview.webp)
 
 走进 `Blueprint_Input_Examples` 展厅，你会发现它根本不像一座枯燥的代码陈列馆，而是一间摆满了**可上手游玩的独立街机游乐场**——你可以踩下踏板变身为 2D 横版跳跃像素小人、化身太空战机打一场弹幕空战，甚至驾驶一艘拥有引力牵引光束的物理飞碟（UFO）去牧场把逃跑的奶牛抓回围栏！
 
@@ -106,7 +106,7 @@ flowchart TB
 - **官方展牌原文**：
   > *This map shows three examples of possessable Blueprint Pawns. Each one shows how you can capture inputs from the player and use them in different ways to drive various Blueprints. Try each one of these mini-games for yourself!*
 
-![展台 #2 Blueprint Input 入口总导览实拍](../images/maps/Blueprint_Input_Examples_01_stand_02.png)
+![展台 #2 Blueprint Input 入口总导览实拍](../images/maps/Blueprint_Input_Examples_01_stand_02.webp)
 
 #### 虚幻输入路由优先级栈（Input Stack）深度解析
 本展台除承载大气雾与文档 Actor 外，在架构上揭示了虚幻引擎收到一次物理按键后，事件在对象链上的传递优先级（从高到低，一旦某层勾选了 `Consume Input` 就会截断下层）：
@@ -123,7 +123,7 @@ flowchart TB
   > *Movement: A and D keys | Jump: Spacebar | Quit: Q*
 - **展台陈列资产**：由 17 块金属方块 `SM_DemoCube` 搭成的立体跳台关卡、前后两道限制走位的空气墙 `BlockingVolume`、启动踏板 `1.1 Button`，以及主角像素小人 **`BP_Pixel_Dude_Character`**（父类：`Character`）。
 
-![展台 #3 2D 横版跳跃迷你游戏实拍](../images/maps/Blueprint_Input_Examples_02_stand_03.png)
+![展台 #3 2D 横版跳跃迷你游戏实拍](../images/maps/Blueprint_Input_Examples_02_stand_03.webp)
 
 #### `BP_Pixel_Dude_Character` 内部节点连线全还原
 与手写物理插值的飞碟完全不同，`BP_Pixel_Dude_Character` 直接继承自引擎王牌类 **`ACharacter`**，白嫖了工业级防穿墙、斜坡滑落与重力跳跃解算器 `CharacterMovementComponent`：
@@ -187,7 +187,7 @@ flowchart TB
 ### 展台 #5：`The cows have escaped the fence!`（外星飞碟立体牧场沙盒试验场）
 - **展牌标识**：`BP_DemoDisplay` | **空间坐标**：`(6920, 0, 0)`
 
-![展台 #5 飞碟抓牛微缩牧场沙盒实拍](../images/maps/Blueprint_Input_Examples_03_stand_05.png)
+![展台 #5 飞碟抓牛微缩牧场沙盒实拍](../images/maps/Blueprint_Input_Examples_03_stand_05.webp)
 
 #### 牧场空间布局与物理交互闭环（共 25 个陈列 Actor）
 这座位于大厅尽头的微缩田园沙盒是专门为展台 #1 的物理飞碟 **`BP_UFO_Physics`** 准备的实景游乐场：

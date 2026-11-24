@@ -5,7 +5,7 @@
 > - **空间布局与规模**：全馆沿 X 轴延伸逾 **350 米**（坐标 `X = 500` 至 `X = 35500`），总计部署 **301 个场景 Actor**——由 **四大主题展廊**、**34 座标准 `BP_DemoDisplay` 核心展台（`#1` ~ `#34`）**、**143 件受控实验展品网格与动态测试灯组** 以及数十枚 `TextRenderActor` 3D 悬浮标签共同构成（注：本节文件名沿用总目录索引名，正文完整覆盖全馆全部 **34 座核心展台、143 件展品实例与近百个 `M_Substrate_*` / `MI_*` / `SMF_*` 材质资产** 的 100% 逐号深拆）。
 > - **前置项目设置**：需在 `Project Settings -> Engine -> Rendering -> Substrate` 中勾选 **`Substrate Materials`**（重启编辑器生效），并建议同步开启 **`Opaque Material Rough Refraction`**、**`Advanced Visualization Shaders`**，将平台每像素字节预算 **`Substrate Bytes Per Pixel`** 从默认的 `80` 提升至 **`128`**，以确保本馆最极端的多层各向异性材质不会触发自动降级简化。
 
-![Material_Substrate 展厅总览实拍](../images/maps/Material_Substrate_00_overview.png)
+![Material_Substrate 展厅总览实拍](../images/maps/Material_Substrate_00_overview.webp)
 
 ---
 
@@ -70,7 +70,7 @@ flowchart LR
 ### 展台 #2：`Substrate Materials (Experimental)`（项目配置与每像素字节预算）
 - **空间坐标**：`(1500, -900, 0)` | **展牌 Actor**：`BP_DemoDisplay2`（配补光 `SpotLight`，强度 `10`，衰减半径 `1600`）
 
-![展台 #2 Substrate Materials 配置说明实拍](../images/maps/Material_Substrate_01_stand_02.png)
+![展台 #2 Substrate Materials 配置说明实拍](../images/maps/Material_Substrate_01_stand_02.webp)
 
 - **核心机制深拆**：
   1. **三大核心渲染开关**：除主开关 `Substrate Materials` 外，本关依赖 **`Opaque Material Rough Refraction`**（允许不透明分层材质顶层的粗糙透明涂层模糊底层图案）与 **`Advanced Visualization Shaders`**（解锁视口菜单中的 Substrate 调试着色器）。
@@ -173,7 +173,7 @@ flowchart LR
 ### 展台 #9：`Monolithic Material BSDF`（五大单体特化材质 BSDF 全解）
 - **空间坐标**：`(9000, -900, 0)` | **展牌 Actor**：`BP_DemoDisplay25`
 
-![展台 #9 Monolithic Material BSDF 五大单体特化材质实拍](../images/maps/Material_Substrate_02_stand_09.png)
+![展台 #9 Monolithic Material BSDF 五大单体特化材质实拍](../images/maps/Material_Substrate_02_stand_09.webp)
 
 - **架构边界说明**：并非所有光学现象都适合用通用 Slab 拼装。对于体渲染、毛发纤维多次散射、大水体单层折射、眼球双层角膜虹膜以及无光照表面，将它们与普通 Slab 混合要么在物理上毫无意义，要么会导致寄存器爆炸。因此 Substrate 提供了 **5 个独立的单体（Monolithic）BSDF 节点**——它们各自独占专用渲染通道，**不可接入任何混合/分层算子**：
   1. **`Volumetric`（`Sphere` -> `M_Substrate_Volume`，13 节点）**：材质域 `MD_Volume` + `BLEND_Additive`，主节点接入 **`MaterialExpressionStrataVolumetricFogCloudBSDF`**。利用 `WorldPosition`、`ObjectPivotPoint` 与 `ObjectScale` 构建内外双层三维 `SphereMask`：外层球体输出高反照率 `0.98` 浓密云雾散射（消光系数缩放 `50`），内核球体通过 **`BlackBody`（黑体辐射节点）** 驱动高温自发光火核，在球体内部呈现真实的“炽热岩浆核包裹翻滚浓烟”体积云效果。
@@ -262,7 +262,7 @@ $$\mathbf{T} = e^{-d_{\text{ref}} / \mathbf{l}_{\text{mfp}}} \implies \mathbf{l}
 ### 展台 #15：`Subsurface Scattering`（Henyey-Greenstein 散射相函数 vs Wrap 裹挟散射）
 - **空间坐标**：`(15500, -900, 0)` | **展牌 Actor**：`BP_DemoDisplay32`
 
-![展台 #15 Subsurface Scattering 次表面散射相函数对比实拍](../images/maps/Material_Substrate_03_stand_15.png)
+![展台 #15 Subsurface Scattering 次表面散射相函数对比实拍](../images/maps/Material_Substrate_03_stand_15.webp)
 
 - **实验装置设计**：展台陈列了 4 块薄板平面（`Plane11` ~ `Plane14`），并在每块薄板**背后**各架设了一盏挂载了 **`InterpToMovement` 往复运动组件**的可移动聚光灯（`SpotLight4/6` 强度 `5`，`SpotLight7/8` 强度 `1`，衰减半径 `125`），利用实时移动的背光点光源直观检验光束穿透薄板时的前向聚焦光晕！
 - **物理机制与两组对照材质深拆**：
@@ -349,7 +349,7 @@ Substrate 彻底终结了这一混乱，将半透明严格拆分为两个正交�
 ### 展台 #22：`Substrate Translucency`（半透明四大核心机制全景对照）
 - **空间坐标**：`(23000, -900, 0)` | **展牌 Actor**：`BP_DemoDisplay13`
 
-![展台 #22 Substrate Translucency 物理半透明总览实拍](../images/maps/Material_Substrate_04_stand_22.png)
+![展台 #22 Substrate Translucency 物理半透明总览实拍](../images/maps/Material_Substrate_04_stand_22.webp)
 
 - **4 座对比材质球（统一开启 `BLEND_Translucent`、`TLM_SurfacePerPixelLighting` 逐像素表面光照、`RM_IndexOfRefraction` 且 `MP_Refraction = 1.0`）逐一深拆**：
   1. **`Translucent Opaque`（`M_Substrate_Trans_OverviewA`，4 节点）**：半透明通道内的 100% 不透明实体基准。单 `StrataSlabBSDF`（深紫蓝漫反射 `(0.0487, 0.03, 0.10)`，`Roughness = 0.36`），不接 `MFP` 且不加 `Weight`——虽然走半透明渲染队列，但因内部零透射且覆盖率为 `1`，外观与延迟不透明球体完全一致，印证了前向半透明与延迟管线的高度特性对齐。
@@ -406,7 +406,7 @@ Substrate 彻底终结了这一混乱，将半透明严格拆分为两个正交�
 ### 展台 #28：`Advanced Substrate Use`（五大殿堂级生产标杆材质球全拓扑解构）
 - **空间坐标**：`(29500, -900, 0)` | **展牌 Actor**：`BP_DemoDisplay14`
 
-![展台 #28 Advanced Substrate Use 五大殿堂级综合材质球实拍](../images/maps/Material_Substrate_05_stand_28.png)
+![展台 #28 Advanced Substrate Use 五大殿堂级综合材质球实拍](../images/maps/Material_Substrate_05_stand_28.webp)
 
 这 5 座材质球集中展示了旧版固定枚举管线根本不可能单Pass完成的复合光学奇观，每一颗都值得在材质编辑器中放大逐帧研读：
 

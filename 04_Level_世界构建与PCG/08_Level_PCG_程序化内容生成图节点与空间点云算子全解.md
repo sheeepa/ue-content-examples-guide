@@ -14,7 +14,7 @@
 
 打开 `/Game/Maps/Level/Level_PCG`，整座长达 **206 米**（X 轴从 `0` 跨越至 `20629`）的恢弘展馆由 `BP_DemoRoom` 串联起 **五大递进式主题展厅**，共计 **33 座展台**，从最原子的单点创建一直演进到集地形图层、距离场、空间布尔差集、样条围栏与三维网格花艺雕塑于一体的终极自然生态山谷！
 
-![Level_PCG 展厅总览：五大主题展厅横跨两百米的 PCG 空间点云算子实验室实拍](../images/maps/Level_PCG_00_overview.png)
+![Level_PCG 展厅总览：五大主题展厅横跨两百米的 PCG 空间点云算子实验室实拍](../images/maps/Level_PCG_00_overview.webp)
 
 ### 1.1 彻底参透 PCG 的第一性原理：`FPCGPoint` 空间点云数据流
 
@@ -130,7 +130,7 @@ flowchart LR
 
 ### 展台 #2：`Surfaces and Landscape`（地形展区总领展台）
 
-![展台 #2 Surfaces and Landscape：地形表面点云采样与三种样条投影模式并列对比实拍](../images/maps/Level_PCG_01_stand_02.png)
+![展台 #2 Surfaces and Landscape：地形表面点云采样与三种样条投影模式并列对比实拍](../images/maps/Level_PCG_01_stand_02.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay15`，位于 `(11489, -1336, -1)`（宽度达 `18.07m` 的巨幅联排母展台，左拥展台 #1 `Surface Sampler`，右揽展台 #3 `Projections`）
 - **展台内陈列的示例 Actor（1 个）**：
@@ -212,7 +212,7 @@ flowchart LR
 
 ### 展台 #8：`Debug Nodes` — `D` 键单步点云透视与生产环境模拟
 
-![展台 #8 Debug Nodes：在 PCG 图表中按下 D 键开启任意算子节点的实时三维点云调试视图实拍](../images/maps/Level_PCG_02_stand_08.png)
+![展台 #8 Debug Nodes：在 PCG 图表中按下 D 键开启任意算子节点的实时三维点云调试视图实拍](../images/maps/Level_PCG_02_stand_08.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay3`，位于 `(2480, -900, -1)`
 - **官方展牌原文**：
@@ -274,7 +274,7 @@ flowchart LR
 
 ### 展台 #13、展台 #14 与展台 #15：`Create Points`（Global Space 世界绝对空间坐标点组）
 
-![展台 #15 Create Points Global Multiple：在世界绝对坐标系中按固定高程差生成的多点实例实拍](../images/maps/Level_PCG_03_stand_15.png)
+![展台 #15 Create Points Global Multiple：在世界绝对坐标系中按固定高程差生成的多点实例实拍](../images/maps/Level_PCG_03_stand_15.webp)
 
 与展台 #9~#11 的局部空间形成精准镜像对比，这组三联展台展示了默认 `World`（全局绝对空间）模式下的造点行为：
 
@@ -346,7 +346,7 @@ flowchart LR
 
 ### 展台 #21：`Loop and Maths` — 子图循环（Loop Subgraph）、反馈引脚（Feedback Pin）与模运算换模
 
-![展台 #21 Loop and Maths：按高程分区执行反馈累乘指数缩放与每三层自动替换球体网格实拍](../images/maps/Level_PCG_04_stand_21.png)
+![展台 #21 Loop and Maths：按高程分区执行反馈累乘指数缩放与每三层自动替换球体网格实拍](../images/maps/Level_PCG_04_stand_21.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay17`，位于 `(7505, -900, -1)`（第 3 厅 `Moderate` 进阶算子厅开篇王牌展台！）
 - **官方展牌原文**：
@@ -491,7 +491,7 @@ flowchart LR
 
 ### 展台 #27 & 展台 #28：`Mesh Sampler` 与 `Sampling Meshes` — 任意三维曲面泊松采样、拷贝投射与自剪枝防穿模
 
-![展台 #28 Sampling Meshes：对三维大理石雕像表面执行三角面点云采样与 Z 法线青苔生长对比实拍](../images/maps/Level_PCG_05_stand_28.png)
+![展台 #28 Sampling Meshes：对三维大理石雕像表面执行三角面点云采样与 Z 法线青苔生长对比实拍](../images/maps/Level_PCG_05_stand_28.webp)
 
 这两座展台与左翼展台 #25 共同组成了第 3 厅南侧压轴的“网格曲面采样三联展区”：
 
@@ -592,7 +592,7 @@ flowchart LR
 
 ### 展台 #33：`Mesh Sampler`（山巅压轴 · 虚幻引擎 `UELogo` 巨型立体花雕与 `PCG_FinalExample` 总览）
 
-![Level_PCG 终极自然生态山谷实拍：融合地形图层过滤、样条围栏、巨石伴生花丛、级联差集草皮与山巅 UE 徽标立体花艺雕塑](../images/ce_05_level_pcg.png)
+![Level_PCG 终极自然生态山谷实拍：融合地形图层过滤、样条围栏、巨石伴生花丛、级联差集草皮与山巅 UE 徽标立体花艺雕塑](../images/ce_05_level_pcg.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay31`，位于 `(19829, 1923, 811)`（整座 206 米展馆最东端山巅观景台！）
 - **官方展牌原文**：

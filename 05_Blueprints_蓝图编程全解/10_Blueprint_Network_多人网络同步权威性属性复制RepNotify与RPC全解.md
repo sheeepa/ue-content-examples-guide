@@ -9,7 +9,7 @@
 
 ## 一、 展厅总览：揭秘虚幻引擎 Client-Server 主从权威网络架构
 
-![Blueprint_Network 展厅总览实拍](../images/maps/Blueprint_Network_00_overview.png)
+![Blueprint_Network 展厅总览实拍](../images/maps/Blueprint_Network_00_overview.webp)
 
 从单机游戏迈向多人联机游戏，绝不是“在写完项目最后一周勾上几个 `Replicates` 复选框”那么简单，而是一场彻头彻尾的**世界观重构**。
 
@@ -56,7 +56,7 @@
 - **官方展牌原文标题**：
   > *On the "Play" dropdown, set the number of players.*
 
-![展台 #2 多人联机 PIE 玩家数量配置展牌实拍](../images/maps/Blueprint_Network_01_stand_02.png)
+![展台 #2 多人联机 PIE 玩家数量配置展牌实拍](../images/maps/Blueprint_Network_01_stand_02.webp)
 
 #### 1. 展台环境组件与单机运行的常见误区
 本展台承载了关卡的全局光照与空间锚点（`DirectionalLight` 强度 `3.14`、`SkyLight` 强度 `3.0`、`SkyAtmosphere`、`ExponentialHeightFog`、`ChaosDebugDrawComponent_0`、`TargetPoint1` 与 `InstancedFoliageActor`）。
@@ -144,7 +144,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Variables that are important to gameplay should only be modified on the network authority (server), and then replicated to remote machines (clients) on a need-to-know basis. In this example, the ghost's health is being modified on a timer exclusively on the network authority. In the non-replicated ghost, the remote machines never receive updated health values. In the replicated ghost, they receive updates as the server changes the health.*
 
-![展台 #5 Variable Replication 实拍](../images/maps/Blueprint_Network_02_stand_05.png)
+![展台 #5 Variable Replication 实拍](../images/maps/Blueprint_Network_02_stand_05.webp)
 
 #### 1. 蓝图源码拆解：完全相同的逻辑，仅差一个变量复制选项
 两只幽灵拥有完全一致的 4 个整型/浮点变量（`Health = 0`、`MaxHealth = 100`、`HealthDecrementAmt = 10`、`HealthDecrementTime = 3.0`）与三段图表逻辑：
@@ -285,7 +285,7 @@ flowchart LR
 - **官方展牌原文**：
   > *This example attempts to network the chest's behavior through the use of a replicated Multicast function... Stand the client outside of the ring and the chest will be irrelevant to the client, even though it is visible. Now move the server to the chest to activate it and observe what happens on the client. The client doesn't see anything change at all! This is expected, as the chest was not relevant to the client when the multicast was called. The issue with this solution is that all of the actions related to updating the chest were sent through a replicated function, which the client didn't receive due to relevancy, and never executed anything to open the chest.*
 
-![展台 #9 Network Relevancy (Part II) 相关性圆环与宝箱实拍](../images/maps/Blueprint_Network_03_stand_09.png)
+![展台 #9 Network Relevancy (Part II) 相关性圆环与宝箱实拍](../images/maps/Blueprint_Network_03_stand_09.webp)
 
 #### 1. 错误代码还原与现场复现步骤
 许多刚学会 `Multicast` 的新手最爱这么写：子类重写 `OnChestTouched()` $\rightarrow$ 调用自定义多播事件 **`ChestTouchMulticast`（`Multicast`）** $\rightarrow$ 在多播里一口气调 `OpenChest()` + `PlayGoldFX()`。

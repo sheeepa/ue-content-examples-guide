@@ -20,7 +20,7 @@
 
 为了彻底驯服实时织物模拟，虚幻引擎 5 全面弃用了早期的 NVIDIA APEX / NvCloth 黑盒库，全面拥抱自研的 **Chaos Cloth（基于 XPBD 扩展位置动力学与长程测地栓绳架构）**。步入 **`/Game/Maps/Physics/Physics_Cloth`** 这座长约 **65 米**（`X` 坐标从 `500` 延伸至 `6489`）、精炼排布 **7 座实战展台** 的布料专精实验室，我们将从底层 XPBD 数学公式一直拆解到主角 `Echo` 奔跑转身时的每一项生产级防穿模参数。
 
-![Physics_Cloth 展厅总览与风场旗帜实拍](../images/maps/Physics_Cloth_00_overview.png)
+![Physics_Cloth 展厅总览与风场旗帜实拍](../images/maps/Physics_Cloth_00_overview.webp)
 
 ---
 
@@ -82,7 +82,7 @@ $$\mathbf{F}_{\text{drag}} = \frac{1}{2}\rho_{\text{air}} A C_{\text{drag}} \|\m
 - **空间元数据**：展牌 Label `BP_DemoDisplay` | 坐标 `(1472, -900, 0)`
 - **官方展牌原文**：*SkeletalMesh with a Chaos Cloth Asset*
 
-![展台 #2 Chaos Cloth and WindDirectionalSource 风源吹拂旗帜实拍](../images/maps/Physics_Cloth_01_stand_02.png)
+![展台 #2 Chaos Cloth and WindDirectionalSource 风源吹拂旗帜实拍](../images/maps/Physics_Cloth_01_stand_02.webp)
 
 #### 2.1 展台 3 个核心陈列 Actor 与资产配对
 1. **`CLOTH_SimpleCloth_2`**（`/Script/Engine.SkeletalMeshActor`）：挂载基础正方形垂挂布料网格 `/Game/ExampleContent/Cloth/CLOTH_SimpleCloth`，顶部一排顶点 `Max Distance = 0` 固定在横杆骨骼上，其余区域完全自由垂落。
@@ -168,7 +168,7 @@ Event OnComponentEndOverlap (Trigger):
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(3504, -900, 0)`
 - **官方展牌原文**：*Cloth Collision is limited / Cloth does not collide with any objects by default / But within a Cloth Asset it is possible to use Capsule Rigid Bodies for collision / This prevents cloth from intersecting with parts of the SkeletalMesh that are not simulating cloth*
 
-![展台 #4 Chaos Cloth Collision 胶囊体/锥柱体布料防穿模实拍](../images/maps/Physics_Cloth_02_stand_04.png)
+![展台 #4 Chaos Cloth Collision 胶囊体/锥柱体布料防穿模实拍](../images/maps/Physics_Cloth_02_stand_04.webp)
 
 #### 4.1 展台 2 个对照 Actor 与碰撞算法复杂度解剖
 实拍图中展示了一块水平展开的深红布片坠落在右侧银白色圆台立柱上的对比实验，包含两个骨骼网格 Actor：
@@ -187,7 +187,7 @@ Event OnComponentEndOverlap (Trigger):
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(4518, -900, 0)`
 - **官方展牌原文**：*Another method to prevent intersections is the Backstop (better for performance) / It sets the distance it can move from the bone it is weighted to. This is a similar result as the collision with Capsule Rigid Bodies, but depends on Bone Weighting / Both methods can be combined to get the best result*
 
-![Physics_Cloth 展厅中后段碰撞、BackStop、自碰撞与远处 Echo 角色全景实拍](../images/ce_07_physics_cloth.png)
+![Physics_Cloth 展厅中后段碰撞、BackStop、自碰撞与远处 Echo 角色全景实拍](../images/ce_07_physics_cloth.webp)
 
 #### 5.1 唯一展品 `CLOTH_Backstop` 背后的几何精算方程
 对于贴在角色后背的单面披风、胸前的领巾或挂在腰间的绶带，其实布料**永远只应该往身体外侧（蒙皮法线 $+\hat{\mathbf{n}}$ 方向）飘起，绝不允许往身体内侧（$-\hat{\mathbf{n}}$ 方向）凹陷哪怕 1 厘米**！如果为了防胸腔穿模去塞一堆胶囊体，既浪费算力又贴合不准胸肌弧度。
@@ -208,7 +208,7 @@ $$\mathbf{c}_i = \mathbf{x}_i^{\text{skin}} - \left(R_b(i) + d_b(i)\right)\hat{\
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(5505, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Self Collision` `OFF` | `Self Collision` `ON` | **`Warning: Self-Collisions can be expensive! (More iterations/subdivisions will be needed)`**
 
-![展台 #6 Self Collision 自碰撞开关对比与性能红线警告实拍](../images/maps/Physics_Cloth_03_stand_06.png)
+![展台 #6 Self Collision 自碰撞开关对比与性能红线警告实拍](../images/maps/Physics_Cloth_03_stand_06.webp)
 
 #### 6.1 展台 5 个动态搅拌实验 Actor 完整拆解
 为了制造最极端的“布料自身折叠拧麻花互相穿插”压力测试，官方在 `#6` 号展台布置了一套旋转球搅拌机：

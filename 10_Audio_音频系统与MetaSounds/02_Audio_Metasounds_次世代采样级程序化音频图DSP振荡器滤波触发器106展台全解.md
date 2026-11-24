@@ -27,7 +27,7 @@
 
 推开 `/Game/Maps/Audio/Audio_Metasounds` 的大门，迎接你的是全 Content Examples 工程中**规模最宏大、跨度最壮观（全长 `645 米`！）、单图展台数量最多（整整 `106 座`！）**的殿堂级实验室。本篇将以首席技术音频师与 DSP 算法专家的双重视角，按展厅空间坐标顺序将 `#1` 至 `#106` 每一座展台的数学方程、引擎实现与音效设计配方悉数拆透！
 
-![Audio_Metasounds 645米次世代程序化音频 DSP 殿堂总览实拍](../images/maps/Audio_Metasounds_00_overview.png)
+![Audio_Metasounds 645米次世代程序化音频 DSP 殿堂总览实拍](../images/maps/Audio_Metasounds_00_overview.webp)
 
 ---
 
@@ -101,7 +101,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(1500, -900, 0)`
 
-![展台 #2 Why Use MetaSounds 采样级 DSP 渲染图核心优势实拍](../images/maps/Audio_Metasounds_01_stand_02.png)
+![展台 #2 Why Use MetaSounds 采样级 DSP 渲染图核心优势实拍](../images/maps/Audio_Metasounds_01_stand_02.webp)
 
 - **官方展牌原文**：
   > *Unlike Sound Cues, MetaSounds are fundamentally a Digital Signal Processing (DSP) rendering graph. With them, audio designers can construct powerful procedural audio systems that offer sample-accurate timing and control at the audio buffer level. Using MetaSounds, audio designers can generate audio synthetically at runtime and freely mix and match procedurally generated sound with other audio sources. We also designed MetaSounds to easily integrate with game data and player interactions to create immersive experiences triggered by gameplay events.*
@@ -296,7 +296,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay20` | 坐标 `(13000, 900, 0)` | 资产：`MSS_RandomGet`（依赖 `Audio_Footstep_Wood01 ~ 04`）
 
-![展台 #20 Random Get 加权防重复数组随机抽取器实拍](../images/maps/Audio_Metasounds_02_stand_20.png)
+![展台 #20 Random Get 加权防重复数组随机抽取器实拍](../images/maps/Audio_Metasounds_02_stand_20.webp)
 
 - **官方展牌原文**：
   > *The Random Get node randomly retrieves elements from an input array. Optionally, an array of weights can be supplied to adjust the randomness.*
@@ -498,7 +498,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay37` | 坐标 `(25000, -900, 0)`
 
-![展台 #37 CrossFade 多路输入连续交叉淡化混合器实拍](../images/maps/Audio_Metasounds_03_stand_37.png)
+![展台 #37 CrossFade 多路输入连续交叉淡化混合器实拍](../images/maps/Audio_Metasounds_03_stand_37.webp)
 
 - **陈列 Actor 与滑条联动（5 个）**：`MS_Example29`（挂载 `MSS_CrossFade`）、`BP_Slider_MetaSounds17`（参数 `"Knob"` 驱动 `Crossfade Value`）、`BP_Button_SinglePressMetaSound30`、`NS_EQ_Reactive59/60`。
 - **官方展牌原文**：*The Crossfade node blends between inputs linearly using a provided block-rate float parameter.*
@@ -668,7 +668,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay52` | 坐标 `(34500, -900, 0)` | 资产：`MSS_AdditiveSynth`
 
-![展台 #54 Additive Synth 傅里叶多正弦泛音加法合成器实拍](../images/maps/Audio_Metasounds_04_stand_54.png)
+![展台 #54 Additive Synth 傅里叶多正弦泛音加法合成器实拍](../images/maps/Audio_Metasounds_04_stand_54.webp)
 
 - **官方展牌原文**：*The Additive Synth node synthesizes audio by adding given sinusoids together.*
 - **傅里叶级数合成方程与非谐波钟铃音色**：
@@ -841,7 +841,7 @@ flowchart TB
 #### 展台 #72：`Linear To Log Frequency` — 归一化旋钮到对数频率空间的桥梁！
 - **空间元数据**：Label `BP_DemoDisplay69` | 坐标 `(44000, -900, 0)` | 资产：`MSS_LinearToLogFreq`
 
-![展台 #72 Linear To Log Frequency 线性控制域转人耳对数频率域实拍](../images/maps/Audio_Metasounds_05_stand_72.png)
+![展台 #72 Linear To Log Frequency 线性控制域转人耳对数频率域实拍](../images/maps/Audio_Metasounds_05_stand_72.webp)
 
 - **官方展牌原文**：*The Linear To Log Frequency node converts a linear space input value to a log-frequency output.*
 - **为什么扫频旋钮不加这个节点就会“前 90% 行程毫无感觉”？**
@@ -1003,7 +1003,7 @@ flowchart TB
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay89` | 坐标 `(56500, -900, 0)` | 资产：`MSS_TriggerAccumulate`
 
-![展台 #90 Trigger Accumulate 多路触发器同步汇合栅栏实拍](../images/maps/Audio_Metasounds_06_stand_90.png)
+![展台 #90 Trigger Accumulate 多路触发器同步汇合栅栏实拍](../images/maps/Audio_Metasounds_06_stand_90.webp)
 
 - **官方展牌原文**：*The Trigger Accumulate node triggers once all connected input triggers have been triggered at least once.*
 - **并发屏障（Barrier Synchronization）机制**：假设机关大门开启需要“左侧蒸汽阀泄压完毕（`In 0`）”且“右侧齿轮锁扣到位（`In 1`）”两个子流程全部完成才触发最终的巨门轰鸣解锁声——`Trigger Accumulate` 会默默记下每一路到达状态，直到**最后一块拼图到齐的那一采样点瞬间**才发射 `Out` 脉冲（勾选 `Auto Reset` 后自动清零等待下一轮）！
@@ -1147,7 +1147,7 @@ flowchart TB
 
 走完 106 座展台，我们已经集齐了全部 DSP 原语积木。最后，让我们站在首席技术音频师的架构高度，打通**“C++/蓝图外部实时通信”**与**“零录音程序化合成三大经典场景实例”**的任督二脉！
 
-![Audio_Metasounds 程序化音频合成与实时交互全景](../images/ce_09_audio_metasounds.png)
+![Audio_Metasounds 程序化音频合成与实时交互全景](../images/ce_09_audio_metasounds.webp)
 
 ### 15.1 外部蓝图与 C++ 实时参数推入全协议（`FAudioParameter` & `IAudioParameterControllerInterface`）
 

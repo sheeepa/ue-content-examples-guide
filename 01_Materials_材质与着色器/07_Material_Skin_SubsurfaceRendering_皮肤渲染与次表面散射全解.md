@@ -63,7 +63,7 @@ flowchart TB
 
 一踏入 `/Game/Maps/Material/Material_Skin_SubsurfaceRendering`，你会立刻注意到一个与众不同的设计——**整座展厅是一间伸手不见五指的全黑摄影棚暗房！**
 
-![Material_Skin_SubsurfaceRendering 摄影棚暗房展厅总览实拍](../images/maps/Material_Skin_SubsurfaceRendering_00_overview.png)
+![Material_Skin_SubsurfaceRendering 摄影棚暗房展厅总览实拍](../images/maps/Material_Skin_SubsurfaceRendering_00_overview.webp)
 
 为什么官方故意关掉了所有关卡常用的全局 `DirectionalLight` 与 `SkyLight`？因为次表面散射最迷人的光学奇迹就发生在**强点光源/聚光灯掠过脸庞轮廓时的明暗交界线与背光边缘**！如果在明亮均匀的天空光下，四面八方的环境光会把暗部填平，肉眼就很难剥离出纯粹由皮下散射贡献的那一抹绯红。
 
@@ -91,7 +91,7 @@ flowchart TB
 
 ### 3.2 展台 `#2`：`Subsurface Profile `（`BP_DemoDisplay7`，坐标 `(1516, -900, 0)`）—— 资产解耦思想与免重编译实时调参架构
 
-![展台 #2 Subsurface Profile 核心原理展牌实拍](../images/maps/Material_Skin_SubsurfaceRendering_01_stand_02.png)
+![展台 #2 Subsurface Profile 核心原理展牌实拍](../images/maps/Material_Skin_SubsurfaceRendering_01_stand_02.webp)
 
 > **官方展牌原文**：  
 > *The Subsurface Scattering Profile data is an asset that can be shared, created, and saved. It controls light scattering distance, Subsurface color, and falloff color once light leaves the object. The data can then be applied to a Subsurface Material. The Subsurface Profile data can also be tweaked interactively, which means you don't have to re-compile the material when you make a change. The Subsurface Profile shading method is similar to the Subsurface method, but with a fundamental difference in how it renders: Subsurface Profile is based in screen space. Due to screen space rendering, it is easier to display the subtle subsurface effects in human skin, while backscattering is only seen in rare cases, such as ears.*
@@ -196,7 +196,7 @@ flowchart LR
 > *Subsurface profiles allow you to create other looks, not just skin. The profiles control how light bounces across its surface.*  
 > **展台 3D 悬浮文字**：左侧 `Simple Jade`（极简翡翠） | 右侧 `Simple Marble`（极简大理石）
 
-![展台 #5 Alternate Subsurface Profiles 实拍图](../images/maps/Material_Skin_SubsurfaceRendering_03_stand_05.png)
+![展台 #5 Alternate Subsurface Profiles 实拍图](../images/maps/Material_Skin_SubsurfaceRendering_03_stand_05.webp)
 
 - **左侧翡翠雕像 `head2`（`MI_Jade_Simple` $\rightarrow$ 母材质 `M_Jade_Simple` + 配置 `SP_Jade`）**：
   母材质 `M_Jade_Simple` 仅 **5 个节点**！`VectorParameter("Color")`（在实例中设为浓郁翠绿 `(0.306, 0.505, 0.264)`）直连 `MP_BaseColor`，`ScalarParameter("Opacity") = 1.0` 直连 `MP_Opacity`，另采样一张平滑石纹 `T_SmoothStone_01_D` 经 `Lerp` 微调 `MP_Roughness`——**连一张法线贴图和复杂节点都没用，全靠 `SP_Jade` 撑起惊艳的润玉质感！**

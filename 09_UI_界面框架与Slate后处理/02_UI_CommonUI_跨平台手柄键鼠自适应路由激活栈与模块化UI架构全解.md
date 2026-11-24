@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：为什么原生 UMG 一遇上“多级弹窗 + 手柄跨平台”就会彻底失控？
 
-![UI_CommonUI 展厅总览实拍](../images/maps/UI_CommonUI_00_overview.png)
+![UI_CommonUI 展厅总览实拍](../images/maps/UI_CommonUI_00_overview.webp)
 
 如果只开发一款纯 PC 键鼠点击的单层小游戏，上一章的原生 UMG 完全够用；但只要你的项目需要**同时登陆 PC、PS5、Xbox、Switch、Steam Deck 或移动端触屏**，并且包含哪怕只有三层深的常规菜单（例如：`游戏 HUD -> 打开背包 -> 选中传说武器弹出详情对比页 -> 点击分解弹出二次确认框`），纯原生 UMG 就会立刻把 UI 程序员拖入著名的**“焦点与输入路由地狱（Focus & Input Hell）”**：
 
@@ -116,7 +116,7 @@ flowchart TB
 - **官方展牌原文**：
   > *ActivatableWidgets allow for easy creation & mangement of layered UI's*
 
-![展台 #2 Activatable Widgets 实拍](../images/maps/UI_CommonUI_01_stand_02.png)
+![展台 #2 Activatable Widgets 实拍](../images/maps/UI_CommonUI_01_stand_02.webp)
 
 #### 1. 三层嵌套控件树全还原（`BaseLayer` -> `BottomPopup` -> `CenterPopup`）
 在传统 UMG 中，`UUserWidget` 只有“在视口中（Construct）”与“被销毁（Destruct）”两种粗暴状态；而 **`UCommonActivatableWidget`** 引入了核心的 **`Activated`（激活）与 `Deactivated`（停用）** 状态机！拆解展台 #2 的四份关联资产：
@@ -195,7 +195,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Use CommonActionWidgets w/ Input Actions to display platform-specific UI elements*
 
-![展台 #4 Input Actions 实拍](../images/maps/UI_CommonUI_02_stand_04.png)
+![展台 #4 Input Actions 实拍](../images/maps/UI_CommonUI_02_stand_04.webp)
 
 #### 1. “同一逻辑动作 -> 多平台物理按键 -> 多设备图标笔刷”三级查表管线
 为什么动一下鼠标按钮上显示键盘 `[Z] / [X] / [C]`，拨一下手柄摇杆瞬间变成手柄肩键 `[LB] / [RB]` 与面键图标？我们把 `/Game/ExampleContent/UMG/CommonUI/` 下的整条数据链彻底扒开：
@@ -292,7 +292,7 @@ WidgetTree (CommonUI_ActionWidgets)
 - **官方展牌原文**：
   > *Action Domains are an advanced feature that lets you create abstract layers of input. Use these to allow for input to passed across multiple activatable widget trees regardless of handling. Or to have multiple activatable widgets at the same level handle input.*
 
-![展台 #7 Action Domains 实拍](../images/maps/UI_CommonUI_03_stand_07.png)
+![展台 #7 Action Domains 实拍](../images/maps/UI_CommonUI_03_stand_07.webp)
 
 #### 1. 什么场景下默认单栈路由不够用？
 在默认的 CommonUI 路由规则下，同一个按键事件（比如按下 `B` 键关闭）遵循严格的**“一旦被某个活跃叶节点处理（Handled）就立即终止冒泡消耗掉”**原则。但假设你的屏幕上有**左、中、右三块并列独立的小面板**（例如：双人同屏合作各自的准备面板，或者同时展开的“左装备栏 + 中合成台 + 右材料箱”），你希望按下一次“全部收起”快捷键时，**三块同级独立激活面板能同时收到这同一个按键事件并一起关闭**，互不吞噬！这就是 **Action Domains（动作输入域）** 诞生的原因。

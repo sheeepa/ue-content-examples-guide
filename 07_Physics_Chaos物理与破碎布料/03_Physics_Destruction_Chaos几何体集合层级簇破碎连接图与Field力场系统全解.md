@@ -16,7 +16,7 @@
 
 为了在 **60 FPS 实时帧率预算** 下交付好莱坞视效级（VFX-Grade）的实时破坏体验，虚幻引擎 5 打造了庞大而精密的 **Chaos Destruction（几何体集合 + 层级簇应力连接图 + Dataflow 程序化图 + Field 力场系统）**。而 **`/Game/Maps/Physics/Physics_Destruction`** 正是整个 Content Examples 工程中体量最宏伟、技术栈跨度最广的殿堂级关卡！
 
-![Physics_Destruction 迎宾广场总览与双侧可破坏方块塔实拍](../images/maps/Physics_Destruction_00_overview.png)
+![Physics_Destruction 迎宾广场总览与双侧可破坏方块塔实拍](../images/maps/Physics_Destruction_00_overview.webp)
 
 ### 1.1 逛展必读空间导览：为什么 `#27` 号展台在出生点，而 `#1` 号展台在最深处的终极圣殿？
 
@@ -100,7 +100,7 @@ MCP 对核心资产 `/Game/ExampleContent/Destruction/Modules/ChaosProps/PIllarH
 - **官方展牌原文**：*This is a fully dynamic example that uses Physics Constraints to attach Geometry Collection discs to a central rigid body cube. With no angular limit on x rotation, the discs are able to spin when collided with.*
 - **展台内 3D 悬浮文字标签**：`Shoot button to activate.`
 
-![展台 #2 Constraints 刚体转轴挂载可破碎陶瓷圆盘实拍](../images/maps/Physics_Destruction_01_stand_02.png)
+![展台 #2 Constraints 刚体转轴挂载可破碎陶瓷圆盘实拍](../images/maps/Physics_Destruction_01_stand_02.webp)
 
 #### 2.1 展台 2 个核心 Actor 与混联架构深拆
 1. **`BP_ConstrainedPlates`**（`/Game/ExampleContent/Destruction/Blueprints/OtherBP/BP_ConstrainedPlates`）与激活锁扣 **`BP_KioskButton8`**：
@@ -116,7 +116,7 @@ MCP 对核心资产 `/Game/ExampleContent/Destruction/Modules/ChaosProps/PIllarH
 - **官方展牌原文**：*This very experimental trick can be used to build or animate the pieces of your Geometry Collection over time. This is not a simulation, but can be used for interesting effects. 'Get/Set Initial Local Rest Transforms' is the primary node that we use to get and set data. This example will either build your Geometry Collection from bottom to top or create a pseudo tornado effect that spins for a few seconds.*
 - **展台内 3D 悬浮文字标签**：`Shoot button to play`
 
-![展台 #3 Animated Geometry Collections 与 #4 Chaos Caching 木桶阵走廊实拍](../images/ce_07_physics_destruction.png)
+![展台 #3 Animated Geometry Collections 与 #4 Chaos Caching 木桶阵走廊实拍](../images/ce_07_physics_destruction.webp)
 
 #### 3.1 展台 Actor `BP_Animated_GC0` 蓝图时间轴与非物理碎块动画 DSL
 如上方实拍图左侧所示，展台中央伫立着一尊由 **259 个骨骼节点** 构成的破碎人体雕像 `GC_SM_Manny2`（初始设为运动学态 **`objectType = Chaos_Object_Kinematic`**，超高保护阈值 `[2000000, 50000, 5000]`），搭配激活按钮 `BP_KioskButton3`：
@@ -256,7 +256,7 @@ Event OnComponentHit (CollisionComp -> HitComponent, HitActor, ImpactPoint, Norm
 - **官方展牌原文**：*The Procedural Content Generation Framework (PCG) is a toolset for creating your own procedural content inside Unreal Engine. PCG provides artists and designers the ability to build fast, iterative tools and content of any complexity ranging from asset utilities, such as buildings or biome generation, up to entire worlds. This example uses the 'Spawn Actor' node in a PCG Graph to emit Geometry Collection Blueprints along the surface of a static mesh. This process can be used to generate destructible content throughout a level.*
 - **展台内 3D 悬浮文字标签**：`*Uses Dataflow` | `Shoot the button on the right to activate or reset`
 
-![展台 #11 PCG + Chaos 沿人体模型表面程序化生成的休眠可破坏方块甲实拍](../images/maps/Physics_Destruction_02_stand_11.png)
+![展台 #11 PCG + Chaos 沿人体模型表面程序化生成的休眠可破坏方块甲实拍](../images/maps/Physics_Destruction_02_stand_11.webp)
 
 #### 11.1 展台 4 个 Actor 与“休眠态生成（`Chaos_Object_Sleeping`）”设计精髓
 观察实拍图，一尊巨大的人形轮廓浑身上下长满了密密麻麻带蓝色发光印记的小方块！MCP 实测拆解了其 4 个协同 Actor：
@@ -380,7 +380,7 @@ Event OnComponentHit (CollisionComp -> HitComponent, HitActor, ImpactPoint, Norm
 - **官方展牌原文**：*In this example, we have fully processed a Geometry Collection. It is now possible to author and optimize convex hulls for entire fracture hierarchies. In this example, collisions have been generated for the leaf nodes, as well as the Level 1 Clusters and Root Bone. We have also applied logic to how the rigid bodies behave once the object breaks, and we have applied an internal material. To see how this was done, please open the Asset Rest Collection and follow the comments in the Dataflow Graph.*
 - **展台内 3D 悬浮文字标签**：`Shoot this collection.` | `* Uses Dataflow`
 
-![展台 #19 Convex Hierarchies 全层级凸包优化古典石柱实拍](../images/maps/Physics_Destruction_03_stand_19.png)
+![展台 #19 Convex Hierarchies 全层级凸包优化古典石柱实拍](../images/maps/Physics_Destruction_03_stand_19.webp)
 
 #### 19.1 为什么不仅叶节点要有凸包，连 `Root Bone` 和 `Level 1 Clusters` 也必须定制层级凸包？
 观察实拍图中的古典蓝金石柱 `BP_ConvexHierarchies`（`GC_Column_ConvexHiearchy`，共 34 个层级骨骼节点，三级伤害阈值 `[150000, 75000, 5000]`，配按钮 `BP_KioskButton15`）：
@@ -476,7 +476,7 @@ Event OnComponentHit (CollisionComp -> HitComponent, HitActor, ImpactPoint, Norm
 
 ### 展台 #27：`Chaos Destruction Content Example` — 迎宾广场巨幅总纲横匾与全局环境总览
 
-- **空间元数据**：展牌 Label `BP_DemoDisplay19` | 坐标 `(19990, 0, 640)`（见篇首 `Physics_Destruction_00_overview.png` 正上方弧形主标题牌）
+- **空间元数据**：展牌 Label `BP_DemoDisplay19` | 坐标 `(19990, 0, 640)`（见篇首 `Physics_Destruction_00_overview.webp` 正上方弧形主标题牌）
 - **官方展牌原文**：*The Chaos Destruction system is a collection of tools that can be used to achieve cinematic-quality levels of destruction in real-time. In addition to great-looking visuals, the system is optimized for performance, and grants artists and designers more control over content creation and the fracturing process by using an intuitive non-linear workflow and a new asset type called Geometry Collections.*
 
 #### 27.1 关卡全局/未归属特定单台展牌的 53 个持久层 Actor 完整清点

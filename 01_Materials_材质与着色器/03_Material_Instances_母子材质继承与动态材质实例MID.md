@@ -16,7 +16,7 @@
 2. **PSO 切换卡顿（Pipeline State Object Hitching）**：运行时玩家一转视角，GPU 被迫在几百个完全不同的编译着色器程序（PSO）之间疯狂切换上下文，引发致命的帧率掉帧尖峰（Stutter）！
 3. **全局维护噩梦**：美术总监突然说“全城所有建筑材质都要统一加上雨天积水潮湿效果”——难道要人工打开 3000 个材质球逐个连线保存重编吗？
 
-![Material_Instances 材质实例展厅总览实拍](../images/maps/Material_Instances_00_overview.png)
+![Material_Instances 材质实例展厅总览实拍](../images/maps/Material_Instances_00_overview.webp)
 
 解开这个死结的唯一银弹，就陈列在 **`/Game/Maps/Material/Material_Instances`** 这座精炼而深刻的 **5 展台专章展厅** 中：**将着色算法抽象为极少数几个“母材质（Master Material）”，而把成千上万种颜色、贴图与粗糙度变化全部交给零编译开销的“材质实例（Material Instance）”！**
 
@@ -55,7 +55,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1525, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`A simple Material with Diffuse and Normal Map` / `no setup for Instance use` | `The same Material` / `but setup with Parameters` / `that can be changed in an Instance` / `we also call it Master Material`
 
-![展台 #2 普通写死材质与可参数化母材质对比实拍](../images/maps/Material_Instances_01_stand_02.png)
+![展台 #2 普通写死材质与可参数化母材质对比实拍](../images/maps/Material_Instances_01_stand_02.webp)
 
 #### 2.1 肉眼看两颗红砖球长得一模一样，为什么左边是“死胡同”，右边却是“兵工厂”？
 站在 `#2` 展台前，左右两颗 `SM_MatPreviewMesh_01` 呈现出完全相同的红砖质感，连一丝一毫的色差都没有。但当我们用 MCP 拆开它们各自的内部节点表时，两者的基因截然不同：
@@ -81,7 +81,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay2` | 坐标 `(2510, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Master Material` / `with Parameter` / `(Parent)` | `Instance` / `without changed Parameter` / `(Child)` | `Instance` / `with changed Parameter` / `(Child)` / `Metallic = 1` / `Roughness = 0.2`
 
-![展台 #3 母材质派生子实例及秒变抛光金属砖实拍](../images/maps/Material_Instances_02_stand_03.png)
+![展台 #3 母材质派生子实例及秒变抛光金属砖实拍](../images/maps/Material_Instances_02_stand_03.webp)
 
 #### 3.1 为什么改材质实例不需要等哪怕 1 秒钟的 `Compiling Shaders`？
 在展台 `#3` 上，官方甚至专门摆放了两个三维立体箭头模型（`SM_Arrow1` 与 `SM_Arrow2`），直观勾勒出从左至右的父子派生流向：
@@ -141,7 +141,7 @@ flowchart TB
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(4510, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Parent` / `Not Grouped` / `every Parameter is in its default Group` / `Instance` | `Parent` / `Grouped` / `all Parameters are in a group called Brick` / `Instance`
 
-![展台 #5 未分组参数与规范分组参数实例对比实拍](../images/maps/Material_Instances_03_stand_05.png)
+![展台 #5 未分组参数与规范分组参数实例对比实拍](../images/maps/Material_Instances_03_stand_05.webp)
 
 #### 5.1 当母材质膨胀到 60 个参数时，为什么不分组会让全组美术抓狂？
 如果不给参数指定分组（`Group` 属性留空），当你打开子材质实例面板时，引擎只能机械地按数据类型把所有参数塞进默认的 `Scalar Parameter Values`、`Vector Parameter Values`、`Texture Parameter Values` 大抽屉里——`BaseColor` 贴图在最底下，`BaseColorTint` 颜色在中间，`Brightness` 标量在最上面，改一层材质要上下滚三次鼠标滚轮！

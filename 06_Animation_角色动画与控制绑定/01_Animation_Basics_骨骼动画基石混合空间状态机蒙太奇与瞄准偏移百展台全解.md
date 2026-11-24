@@ -17,7 +17,7 @@
 
 而今天我们踏入的 **`/Game/Maps/Animation/Animation_Basics`**，正是整座大厦最核心的承重地基。这条横跨 **180 米**（`X` 坐标从 `1500` 一路延伸至 `19500`）、划分为前后两大主题展厅、囊括 **18 座精密对照展台与 71 个交互示例 Actor** 的长廊，将骨骼资产解耦、镜像对称、根运动提取、加法空间、重心混合空间、惯性化过渡与多插槽分层蒙太奇逐一摊开在显微镜下。
 
-![Animation_Basics 骨骼动画基石展厅总览实拍](../images/maps/Animation_Basics_00_overview.png)
+![Animation_Basics 骨骼动画基石展厅总览实拍](../images/maps/Animation_Basics_00_overview.webp)
 
 ### 1.1 角色动画的“四大坐标空间”与蒙皮矩阵链（Skinning Matrix Chain）
 
@@ -73,7 +73,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay_1.1` | 坐标 `(3000, -850, 0)`
 - **展台内 3D 悬浮文字标签**：`Skeleton (SK_)` | `Skeletal Mesh (SKM_)` | `Animation` | 以及完整 3D 骨骼层级树文本（从 `root -> pelvis -> spine_01..03` 分叉至 `neck_01/head`、`clavicle_l/r` 与 `thigh_l/r`）
 
-![展台 #2 Core Asset Types 骨骼动画三大核心资产实拍](../images/maps/Animation_Basics_01_stand_02.png)
+![展台 #2 Core Asset Types 骨骼动画三大核心资产实拍](../images/maps/Animation_Basics_01_stand_02.webp)
 
 #### 2.1 为什么虚幻要把“骨头名字列表”和“模型网格”强行拆成两个独立资产？
 在早期游戏引擎或 DCC 软件中，骨架和蒙皮模型往往是焊死在一起的。但想象一个大型 RPG 项目：主角有 50 套体型相似的盔甲外观，共享 800 个战斗与跑酷动作。如果每个模型都自带一套独立骨架，800 个动画资产岂不是要复制 50 份？
@@ -138,7 +138,7 @@ $$M_{B'}^{\text{comp, mirrored}} = R_{\text{plane}} \cdot M_B^{\text{comp}} \cdo
 - **空间元数据**：展牌 Label `BP_DemoDisplay_1.3.2` | 坐标 `(6000, -850, 0)`
 - **展台内 3D 悬浮文字标签**：`No Root Motion`（左道） | `Root Motion`（右道）
 
-![展台 #5 Root Motion - Application 根运动提取与矮墙碰撞实拍](../images/maps/Animation_Basics_02_stand_05.png)
+![展台 #5 Root Motion - Application 根运动提取与矮墙碰撞实拍](../images/maps/Animation_Basics_02_stand_05.webp)
 
 #### 5.1 根运动提取（Root Motion Extraction）底层究竟经历了哪三步偷梁换柱？
 很多同学以为勾选了 `EnableRootMotion = true` 后，是 `root` 骨头推着模型走——**恰恰相反！一旦开启根运动提取，动画求值器做的第一件事就是把 `root` 骨头强行清零锁回原点！** 完整的帧间增量接管方程如下：
@@ -231,7 +231,7 @@ $$\mathbf{t}_{\text{out}, i} = \mathbf{t}_{\text{run}, i} + \alpha \Delta \mathb
 - **空间元数据**：展牌 Label `BP_DemoDisplay_1.7` | 坐标 `(10000, -850, 0)`
 - **展台内 3D 悬浮文字标签**：`Normal`（左按钮） | `Additive`（右按钮）
 
-![展台 #9 Montages & Slots 动画蒙太奇与插槽注入实拍](../images/maps/Animation_Basics_03_stand_09.png)
+![展台 #9 Montages & Slots 动画蒙太奇与插槽注入实拍](../images/maps/Animation_Basics_03_stand_09.webp)
 
 #### 9.1 为什么 C++ 和游戏逻辑蓝图从不直接操控状态机内部节点，而是调 `PlayAnimMontage`？
 状态机擅长管理**连续、持久的运动状态**（走、跑、跳、蹲），但游戏里充斥着大量由玩家按键或技能逻辑瞬时触发的**一次性事件型动作（One-Shot Actions）**：挥刀三连击（Combo Sections）、换弹夹、喝血瓶、被重击硬直。如果把 50 个技能全连进状态机，转移连线会瞬间变成灾难级的盘丝洞！
@@ -298,7 +298,7 @@ $$\mathbf{t}_{\text{out}, i} = \mathbf{t}_{\text{run}, i} + \alpha \Delta \mathb
 - **空间元数据**：展牌 Label `BP_DemoDisplay_2.2` | 坐标 `(13500, -850, 0)`
 - **展台内 3D 悬浮文字标签**：`No Blend Profile` | `Time Blend Profile` | `Weight Blend Profile`
 
-![展台 #12 Blend Profiles 逐骨骼时间与权重混合配置实拍](../images/maps/Animation_Basics_04_stand_12.png)
+![展台 #12 Blend Profiles 逐骨骼时间与权重混合配置实拍](../images/maps/Animation_Basics_04_stand_12.webp)
 
 #### 12.1 实战痛点：全身统一用 `0.4 秒` 过渡太肉，改用 `0.1 秒` 下半身又咔嚓闪现，怎么破？
 想象竞技射击游戏里的“奔跑转开镜瞄准（Sprint to ADS）”：设计要求玩家按下右键后，**双手和枪口必须在 `0.1 秒` 内闪电般举到屏幕准星处**保证极致操控手感；但如果把整个状态机过渡时长直接设成 `0.1 秒`，双腿和骨盆也会在 `0.1 秒` 内瞬移抽搐！
@@ -371,7 +371,7 @@ $$x(t) = A t^5 + B t^4 + C t^3 + \frac{1}{2} a_0 t^2 + v_0 t + x_0$$
 - **空间元数据**：展牌 Label `BP_DemoDisplay_2.6` | 坐标 `(17500, -850, 0)`
 - **展台内 3D 悬浮文字标签**：`Blendspace Axis` / `Direction` / `Speed` | `Flip Hips Direction`
 
-![展台 #16 Blendspace Graphs 图表内建混合空间与胯部朝向动态翻转实拍](../images/maps/Animation_Basics_05_stand_16.png)
+![展台 #16 Blendspace Graphs 图表内建混合空间与胯部朝向动态翻转实拍](../images/maps/Animation_Basics_05_stand_16.webp)
 
 #### 16.1 传统 2D BlendSpace 的世纪难题：正左 `(-90°)` 与正右 `(+90°)` 到底该朝哪扭胯？
 做过 3A 第三人称八向移动（8-Way Strafe Locomotion）的动画工程师一定吃过这个大亏：

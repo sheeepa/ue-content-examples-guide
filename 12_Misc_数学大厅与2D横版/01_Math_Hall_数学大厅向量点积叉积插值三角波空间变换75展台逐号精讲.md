@@ -14,7 +14,7 @@
 
 Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hall`（数学大厅）**，正是为了彻底击碎这堵墙而生。它把枯燥的公式变成了**可拖拽、可缩放、实时发光跳动的视觉实验室**：
 
-![Math_Hall 数学大厅序厅总览实拍](../images/maps/Math_Hall_00_overview.png)
+![Math_Hall 数学大厅序厅总览实拍](../images/maps/Math_Hall_00_overview.webp)
 
 在这条长达 **280 米**（世界坐标 $X$ 从 `0` 延伸至 `28,006` 厘米）的科幻长廊里，75 座 `BP_DemoDisplay` 展台按教学逻辑严密铺开。左侧用自定义导数绘图着色器实时绘制红色函数曲线 $y = f(x)$，右侧立刻用动态交互材质球、顶点动画或三维空间箭头告诉你：**“这个数学算子在真实游戏里到底能变出什么魔法！”**
 
@@ -115,7 +115,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #14：`ABS Math`
 - **展牌标识与坐标**：`BP_DemoDisplay21` | 坐标 `(3059, -1091, 6)` | 逻辑编号：`1.4A`
 
-![展台 #14 ABS Math 绝对值 V 形折叠曲线与顶部对称渐变实拍](../images/maps/Math_Hall_02_stand_14.png)
+![展台 #14 ABS Math 绝对值 V 形折叠曲线与顶部对称渐变实拍](../images/maps/Math_Hall_02_stand_14.webp)
 
 - **数学定义**：
   $$f(x) = \lvert x \rvert = \begin{cases} x, & x \ge 0 \\ -x, & x < 0 \end{cases}$$
@@ -277,7 +277,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #27：`Power Example`
 - **展牌标识与坐标**：`BP_DemoDisplay59` | 坐标 `(6557, 1192, 6)` | 逻辑编号：`1.9B`
 
-![展台 #27 Power Example 幂指数调节纹理曲线对比度实拍](../images/maps/Math_Hall_03_stand_27.png)
+![展台 #27 Power Example 幂指数调节纹理曲线对比度实拍](../images/maps/Math_Hall_03_stand_27.webp)
 
 - **实测资产与材质连线拆解**（`M_MathHall_Mats_Power_Example` 赋给 `BP_Mat_with_Slider_2`，滑块 `BP_Slider_27`）：
   - **材质节点列表（8 节点）**：采样草地贴图 `T_CleanGrass_D` 与鹅卵石贴图 `T_Cobble_01_D`，通过 `LinearInterpolate_5`（带注释节点 `Add_0`: `"Makes it blend to 0.25 instead of 1"`）混合基底纹理后，送入 `MaterialExpressionPower_0`（指数由标量参数 `Value` 控制）做幂次塑形，最终经 `Multiply_1` 输出至 `MP_BaseColor`。
@@ -407,7 +407,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #39：`Sine Example`
 - **展牌标识与坐标**：`BP_DemoDisplay77` | 坐标 `(10141, 1187, 6)` | 逻辑编号：`1.13B`
 
-![展台 #39 Sine Example 正弦波重映射驱动双色呼吸渐变实拍](../images/maps/Math_Hall_04_stand_39.png)
+![展台 #39 Sine Example 正弦波重映射驱动双色呼吸渐变实拍](../images/maps/Math_Hall_04_stand_39.webp)
 
 - **官方展牌说明**：对 `Time` 求 `Sine`（值域 $[-1, 1]$），将其重映射到 $[0, 1]$ 区间后作为 `Lerp` 的 Alpha，让圆盘在暗红与亮绿两种颜色间柔和呼吸切换。
 - **数学公式**：
@@ -519,7 +519,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #51：`SphereMask Example`
 - **展牌标识与坐标**：`BP_DemoDisplay80` | 坐标 `(13531, 1187, 6)` | 逻辑编号：`1.17B`
 
-![展台 #51 SphereMask Example 世界空间球形遮罩局部显露鹅卵石实拍](../images/maps/Math_Hall_05_stand_51.png)
+![展台 #51 SphereMask Example 世界空间球形遮罩局部显露鹅卵石实拍](../images/maps/Math_Hall_05_stand_51.webp)
 
 - **实测 15 节点材质连线拆解**（`M_MathHall_Mats_SphereMask_Example` 赋给 `BP_Mat_with_Slider_8`，滑块 `BP_Slider_47` 默认 `Hardness = 0.5`）：
   ```
@@ -580,7 +580,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #2：`2.2 What is a vector`
 - **展牌标识与坐标**：`BP_DemoDisplay26` | 坐标 `(18505, -900, 0)` | 逻辑编号：`2.2`
 
-![展台 #2 2.2 What is a vector 一维数轴路标与向量定义实拍](../images/maps/Math_Hall_01_stand_02.png)
+![展台 #2 2.2 What is a vector 一维数轴路标与向量定义实拍](../images/maps/Math_Hall_01_stand_02.webp)
 
 - **展台 3D 悬浮数轴标注**：`-5 ... -1(B) | 0 | 1 ... 4(A) 5`
 - **数学定义与点/向量二象性**：
@@ -728,7 +728,7 @@ Epic Games 的技术美术大师们在 Content Examples 中建造的 **`Math_Hal
 #### 展台 #64：`Camera Vector`
 - **展牌标识与坐标**：`BP_DemoDisplay35` | 坐标 `(22896, 893, 4)` | 逻辑编号：`2.13`
 
-![展台 #64 Camera Vector 逐像素放射状视线向量与 FOV 张角实拍](../images/maps/Math_Hall_06_stand_64.png)
+![展台 #64 Camera Vector 逐像素放射状视线向量与 FOV 张角实拍](../images/maps/Math_Hall_06_stand_64.webp)
 
 - **陈列 Actor 与实拍图精析**：如上方实拍图所示，同样是一台摄像机 `MatineeCam_SM`，但射出的 **6 支绿色箭头 `SM_Arrow_15`～`SM_Arrow_20` 呈扇形向外放射散开**！
 - **数学公式与方向细节（千万注意箭头指向！）**：

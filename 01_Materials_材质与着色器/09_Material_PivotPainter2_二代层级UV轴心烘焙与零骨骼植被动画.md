@@ -54,7 +54,7 @@ flowchart TB
 
 步入 `/Game/Maps/Material/Material_PivotPainter2`，展厅不再像初代那样排列 24 个基础数学方块，而是开门见山地用 **6 座高浓缩精品展台**（分布在 `X = 1481`、`X = 4180` 横向三联展位、以及 `X = 6220～6270` 压轴双巨树展位）直接演示二代工具链最具爆发力的四大应用场景。
 
-![Material_PivotPainter2 展厅总览实拍](../images/maps/Material_PivotPainter2_00_overview.png)
+![Material_PivotPainter2 展厅总览实拍](../images/maps/Material_PivotPainter2_00_overview.webp)
 
 | 展台编号 | 官方展台标题 (`BP_DemoDisplay`) | 空间坐标 `(X, Y, Z)` | 核心静态网格与二代材质/纹理资产 | 核心演示能力 |
 | :---: | :--- | :---: | :--- | :--- |
@@ -84,7 +84,7 @@ flowchart TB
 
 如果一开始就看一棵长满几万片树叶的大树，肉眼很难分辨到底有几层树枝在联动。于是官方在 `#2` 展台特意摆放了一棵没有任何树叶伪装的深灰色“方形钢条分形树架”——`SimplePivotPainterExample3`！
 
-![展台 #2 Simple foliage animation demo 实拍图（清晰展现四级分叉刚体骨架的无脱节层级传递）](../images/maps/Material_PivotPainter2_01_stand_02.png)
+![展台 #2 Simple foliage animation demo 实拍图（清晰展现四级分叉刚体骨架的无脱节层级传递）](../images/maps/Material_PivotPainter2_01_stand_02.webp)
 
 - **陈列网格与引擎内置示范包**：静态网格直接引用引擎材质函数库自带的示范资产 `/Engine/Functions/Engine_MaterialFunctions02/ExampleContent/PivotPainter2/SimplePivotPainterExample`（配套烘焙纹理 `SimpExPivPos` 与 `PP2_rgb_XVect_a_XExtent`，由核心动画函数 `PivotPainter2FoliageAnimation` 驱动）。
 - **视口观察精髓**：驻足凝视这棵由方形长条逐级四叉分枝构成的抽象树架（实拍图前景），你能无比直观地看到**前向运动学在单个静态网格上的完美演绎**：
@@ -118,7 +118,7 @@ flowchart TB
 
 来到中排最右侧的 `#4` 展台，眼前的景象酷似《堡垒之夜（Fortnite）》快速建造或《刺客信条》Animus 虚拟现实重构：一座由 **60 块独立砖石构件** 组成的房屋 `House`，一块接一块从半空中凭空显形、高速翻滚着精准砸落拼接到墙体严丝合缝的位置上！
 
-![展台 #4 Build An Object 实拍图（可见正在按序逐块落位拼装的金属质感墙体构件）](../images/maps/Material_PivotPainter2_02_stand_04.png)
+![展台 #4 Build An Object 实拍图（可见正在按序逐块落位拼装的金属质感墙体构件）](../images/maps/Material_PivotPainter2_02_stand_04.webp)
 
 #### 核心资产 30 节点完全解剖：`/Game/ExampleContent/ScriptExamples/PivotPainter2/Materials/BuildHouse`
 这绝对是建筑可视化（ArchViz）、科幻 UI 全息沙盘与建造类游戏最值得收藏的 30 节点宝藏材质！让我们拆解它的每一个齿轮：
@@ -143,7 +143,7 @@ flowchart TB
 
 走进后方挑高阳光大厅，南侧 `#5` 展台矗立着一棵枝繁叶茂的写实阔叶巨树 `HillTree_P2`（静态网格 `/Game/ExampleContent/ScriptExamples/PivotPainter2/StaticMesh/HillTree_P2`，其贴图注释直接印证了它源自虚幻传奇开放世界 Demo `KiteDemo/Environments/Trees/HillTree_02`！）。
 
-![展台 #5 Calm Wind Foliage Animation Demo 实拍图](../images/maps/Material_PivotPainter2_03_stand_05.png)
+![展台 #5 Calm Wind Foliage Animation Demo 实拍图](../images/maps/Material_PivotPainter2_03_stand_05.webp)
 
 #### （1） 三槽四层材质实例继承金字塔
 `HillTree_P2` 静态网格分为三个材质槽，采用极具工业美感的**“树种总控实例 $\to$ 叶片/树皮渲染状态派生”**四级继承链（改一次风速即可同步整棵树所有槽位，绝不脱节！）：

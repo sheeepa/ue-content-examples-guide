@@ -47,7 +47,7 @@ flowchart LR
 
 打开 `/Game/Maps/Material/Material_PivotPainter`，这是一条长达 **240 米**（从 `X = 510` 一路延伸到 `X = 23970`）、编排得如同教科书般丝丝入扣的 **GPU 顶点着色器大师长廊**！正如 `#1` 号展牌与 `#09` 篇二代展牌所强调的，**如果你想从零学会手写工业级顶点动画着色器（Vertex Shader），全虚幻引擎没有比这 24 座展台更系统的圣地。**
 
-![Material_PivotPainter 初代轴心烘焙长廊总览实拍](../images/maps/Material_PivotPainter_00_overview.png)
+![Material_PivotPainter 初代轴心烘焙长廊总览实拍](../images/maps/Material_PivotPainter_00_overview.webp)
 
 我们将全部 **24 座展台** 按技术演进划分为五大篇章，先建立宏观知识全景：
 
@@ -75,7 +75,7 @@ flowchart LR
 
 #### 3.2 展台 `#2`：`Scale the elements`（`BP_DemoDisplay4`，坐标 `(1970, -900, 0)`）—— 子零件原地独立缩放的向量恒等式
 
-![展台 #2 Scale the elements 实拍图（注：抓拍瞬间恰逢正弦波缩至各子零件轴心极小点）](../images/maps/Material_PivotPainter_01_stand_02.png)
+![展台 #2 Scale the elements 实拍图（注：抓拍瞬间恰逢正弦波缩至各子零件轴心极小点）](../images/maps/Material_PivotPainter_01_stand_02.webp)
 
 - **陈列 Actor 与材质**：`Boxes` 网格搭载 `/Game/ExampleContent/ScriptExamples/PivotPainter/Materials/Scale_PerObjectPivot`（`MD_Surface`、`BLEND_Opaque`，`BaseColor = 0.1`、`Roughness = 0.2`，共 **9 个表达式节点**）。
 - **节点公式完全还原**：
@@ -84,7 +84,7 @@ flowchart LR
   3. 用 `Time` $\rightarrow$ `Sine` $\rightarrow$ `ConstantBiasScale`（将 $[-1, 1]$ 重映射为 $[0, 1]$）生成周期呼吸系数 $s(t) \in [0, 1]$；
   4. 相乘连入 `MP_WorldPositionOffset`：
      $$\Delta \vec{P}_{\text{WPO}} = (\vec{P}_{\text{pivot}} - \vec{P}_{\text{world}}) \cdot s(t)$$
-- **数学直觉点拨**：为什么这个极简减法能让几十个长方体**各自缩回自己的中心**，而不是一窝蜂缩向整个大模型原点？因为加上偏移后顶点的最终世界坐标为 $\vec{P}_{\text{final}} = \vec{P}_{\text{world}} + (\vec{P}_{\text{pivot}} - \vec{P}_{\text{world}}) \cdot s(t)$！当 $s(t) = 0$ 时保持原尺寸；当 $s(t) = 1$ 时，$\vec{P}_{\text{final}} \equiv \vec{P}_{\text{pivot}}$——每个长方体的 8 个顶点精准坍缩进它自己的局部轴心点（正因如此，实拍图 `Material_PivotPainter_01_stand_02.png` 抓拍瞬间刚好撞上 $s(t) \approx 1$，整团柱阵全部隐入各自的轴心奇点中）！
+- **数学直觉点拨**：为什么这个极简减法能让几十个长方体**各自缩回自己的中心**，而不是一窝蜂缩向整个大模型原点？因为加上偏移后顶点的最终世界坐标为 $\vec{P}_{\text{final}} = \vec{P}_{\text{world}} + (\vec{P}_{\text{pivot}} - \vec{P}_{\text{world}}) \cdot s(t)$！当 $s(t) = 0$ 时保持原尺寸；当 $s(t) = 1$ 时，$\vec{P}_{\text{final}} \equiv \vec{P}_{\text{pivot}}$——每个长方体的 8 个顶点精准坍缩进它自己的局部轴心点（正因如此，实拍图 `Material_PivotPainter_01_stand_02.webp` 抓拍瞬间刚好撞上 $s(t) \approx 1$，整团柱阵全部隐入各自的轴心奇点中）！
 
 ---
 
@@ -145,11 +145,11 @@ flowchart LR
 
 #### 3.10 展台 `#10`：`Translate the sub-objects`（`BP_DemoDisplay13`，坐标 `(9970, -900, 0)`）—— 沿子零件局部生长轴往复活塞平移
 
-![展台 #10 Translate the sub-objects 实拍图（可见悬浮放射柱阵与地面圆环柱阵沿各自轴向伸缩）](../images/maps/Material_PivotPainter_02_stand_10.png)
+![展台 #10 Translate the sub-objects 实拍图（可见悬浮放射柱阵与地面圆环柱阵沿各自轴向伸缩）](../images/maps/Material_PivotPainter_02_stand_10.webp)
 
 - **陈列 Actor 与材质**：`Boxes_29` 搭载 `/Game/ExampleContent/ScriptExamples/PivotPainter/Materials/Rotate_PerObjectPivot_MoveSubObjects`（共 **8 个表达式节点**）。
 - **节点公式拆解**：不只有缩放和旋转！从 `PivotPainter_PerObjectData` 取出子零件局部朝向单位向量 $\hat{X}_{\text{obj}}$（`Object X Vector`）与随机数 $R_i$，用 `TimeWithSpeedVariable` $\rightarrow$ `Sine_Remapped` 配合 `HeightLerp` 构造带停顿节奏的往复包络波形，直接乘上 $\hat{X}_{\text{obj}}$ 与最大行程距离连入 `MP_WorldPositionOffset`！
-- **视觉效果**：如实拍图 `Material_PivotPainter_02_stand_10.png` 所示，上方海胆球阵的每一根方柱顺着放射方向往外弹出缩回，下方地面柱阵则像管风琴活塞一样顺着垂直轴上下升降——做科幻浮空石阶拼合、变形机甲散热片开合简直信手拈来！
+- **视觉效果**：如实拍图 `Material_PivotPainter_02_stand_10.webp` 所示，上方海胆球阵的每一根方柱顺着放射方向往外弹出缩回，下方地面柱阵则像管风琴活塞一样顺着垂直轴上下升降——做科幻浮空石阶拼合、变形机甲散热片开合简直信手拈来！
 
 ---
 
@@ -207,7 +207,7 @@ flowchart LR
 
 #### 3.17 展台 `#17`：`Improve the animation `（二：个体与跨实例双重打散）（`BP_DemoDisplay16`，坐标 `(16970, -900, 0)`）—— 彻底消灭复制粘贴机械感
 
-![展台 #17 Improve the animation 实拍图（可见多组复制柱丛呈现出自然错落的柔韧弯曲风浪）](../images/maps/Material_PivotPainter_03_stand_17.png)
+![展台 #17 Improve the animation 实拍图（可见多组复制柱丛呈现出自然错落的柔韧弯曲风浪）](../images/maps/Material_PivotPainter_03_stand_17.webp)
 
 - **陈列 Actor 与材质**：4 组 `Boxes_GroundOnly` 搭载 `/Game/ExampleContent/ScriptExamples/PivotPainter/Materials/DirectionalAni_Advanced`（共 **35 个表达式节点**）。
 - **双重去同步化公式**：在 `#16` 风浪推进与弧形弯曲的基础上，额外叠入两层随机扰动：

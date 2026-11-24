@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：揭开虚幻蓝图（Blueprint）作为面向对象字节码虚拟机的面纱
 
-![Blueprint_Overview 展厅总览实拍](../images/maps/Blueprint_Overview_00_overview.png)
+![Blueprint_Overview 展厅总览实拍](../images/maps/Blueprint_Overview_00_overview.webp)
 
 初学者踏入虚幻引擎时，最容易对蓝图（Blueprint Visual Scripting）产生两种极端的误判：要么把它当成“不需要懂编程就能乱连一气的玩具积木”，要么把它轻视为“性能低下、大型项目不可用的策划草稿”。
 
@@ -61,7 +61,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Using the Event Graph to set text on a Text Render Component. Simulate or Play to see "Hello World" appear in the air.*
 
-![展台 #2 Blueprint - Hello World 实拍](../images/maps/Blueprint_Overview_01_stand_02.png)
+![展台 #2 Blueprint - Hello World 实拍](../images/maps/Blueprint_Overview_01_stand_02.webp)
 
 #### 1. 组件结构拆解
 打开 `BP_HelloWorld` 的组件树，内部极其精简，仅挂载了两个组件：
@@ -115,7 +115,7 @@ flowchart LR
 - **展牌标识**：`BP_DemoDisplay3` | **空间坐标**：`(3506, -900, 0)`
 - **核心陈列资产**：`BP_Variables`（路径：`/Game/ExampleContent/Blueprints/Blueprints/BP_Variables`，父类：`Actor`）
 
-![展台 #4 Blueprint - Variables 实拍](../images/maps/Blueprint_Overview_02_stand_04.png)
+![展台 #4 Blueprint - Variables 实拍](../images/maps/Blueprint_Overview_02_stand_04.webp)
 
 #### 1. 展台视觉现象与组件对称布局
 如实拍图所示，墙面上并排安装了两盏工业聚光灯（由底座 `SM_Spotlight_Base`、铰链支架 `SM_Spotlight_Hinge` 与灯筒 `SM_Spotlight` 三段网格拼装而成）：
@@ -239,7 +239,7 @@ flowchart TB
 - **官方展牌原文**：
   > *This Blueprint uses the Event Tick to add every Tick +1 to the Integer Variable.*
 
-![展台 #7 Blueprint - Simple Math 实拍](../images/maps/Blueprint_Overview_03_stand_07.png)
+![展台 #7 Blueprint - Simple Math 实拍](../images/maps/Blueprint_Overview_03_stand_07.webp)
 
 #### 1. 组件与变量结构
 - **组件**：`SceneRoot`（场景根）、`Label`（固定标题文本组件）、`Time`（动态刷新数值的 `TextRenderComponent`）。

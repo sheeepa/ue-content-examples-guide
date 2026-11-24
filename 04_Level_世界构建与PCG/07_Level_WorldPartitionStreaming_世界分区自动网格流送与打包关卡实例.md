@@ -17,7 +17,7 @@
 
 打开 `/Game/Maps/Level/Level_WorldPartitionStreaming`，整座演示馆由 `BP_DemoRoom2` 划分为三大递进空间（`Introduction` 导览厅 $\rightarrow$ `World Partition Editor / Location Volumes` 编辑器实操廊 $\rightarrow$ `World Example` 户外实时网格流送沙盘），共计 **12 座展台**。
 
-![Level_WorldPartitionStreaming 展厅总览：从 OFPA 与世界分区编辑器走廊迈向实时网格流送户外沙盘](../images/maps/Level_WorldPartitionStreaming_00_overview.png)
+![Level_WorldPartitionStreaming 展厅总览：从 OFPA 与世界分区编辑器走廊迈向实时网格流送户外沙盘](../images/maps/Level_WorldPartitionStreaming_00_overview.webp)
 
 ### 1.1 World Partition 全链路流送架构图解
 
@@ -106,7 +106,7 @@ flowchart TB
 
 ### 展台 #2：`What is World Partition` — 空间网格与流送源（Streaming Source）核心机制
 
-![展台 #2 What is World Partition：自动空间网格划分与基于流送源距离的动态加载机制实拍](../images/maps/Level_WorldPartitionStreaming_01_stand_02.png)
+![展台 #2 What is World Partition：自动空间网格划分与基于流送源距离的动态加载机制实拍](../images/maps/Level_WorldPartitionStreaming_01_stand_02.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay14`，位于 `(-1450, -2595, 0)`
 - **官方展牌原文**：
@@ -155,7 +155,7 @@ World Partition 在运行时并不知道谁是“主角”——它只认向 `UW
 
 ### 展台 #6：`World Bookmarks` — 可纳入 Git / Perforce 版本控制的团队共享书签
 
-![展台 #6 World Bookmarks：团队级可共享世界书签资产与视口快速跳转实拍](../images/maps/Level_WorldPartitionStreaming_02_stand_06.png)
+![展台 #6 World Bookmarks：团队级可共享世界书签资产与视口快速跳转实拍](../images/maps/Level_WorldPartitionStreaming_02_stand_06.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay34`，位于 `(9938, -2102, 312)`
 - **官方展牌原文**：
@@ -207,7 +207,7 @@ World Partition 在运行时并不知道谁是“主角”——它只认向 `UW
 
 ### 展台 #9：`World Partition Editor` — 2D 网格按需加载工作台与全局环境单例
 
-![展台 #9 World Partition Editor：在世界分区 2D 网格面板框选并按需加载局部单元格实拍](../images/maps/Level_WorldPartitionStreaming_03_stand_09.png)
+![展台 #9 World Partition Editor：在世界分区 2D 网格面板框选并按需加载局部单元格实拍](../images/maps/Level_WorldPartitionStreaming_03_stand_09.webp)
 
 - **展牌标识与空间坐标**：`BP_DemoDisplay11`，位于 `(798, -1222, 68)`
 - **官方展牌原文**：

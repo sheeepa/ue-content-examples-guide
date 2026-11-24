@@ -75,7 +75,7 @@ flowchart LR
 
 打开 `/Game/Maps/Material/Material_Decals`，整座展厅由 `BP_DemoRoom` 构建出 8 个连续展位（`segment Counter = 8`），沿着世界 $X$ 轴从 `X = 500` 一路延伸至 `X = 7500`（固定位于南侧展列 `Y = -900`）。
 
-![Material_Decals 展厅总览实拍](../images/maps/Material_Decals_00_overview.png)
+![Material_Decals 展厅总览实拍](../images/maps/Material_Decals_00_overview.webp)
 
 在进入逐展台解剖前，我们先通过全局矩阵鸟瞰 8 个展台的排布逻辑与核心资产对应关系：
 
@@ -117,7 +117,7 @@ flowchart LR
 > **展台 3D 悬浮文字（`TextRenderActor1`）**：  
 > `A simple Decal Material with only the Base Color modified.`（一个仅修改了基础颜色的简单贴花材质。）
 
-![展台 #2 Basic Decal 实拍图](../images/maps/Material_Decals_01_stand_02.png)
+![展台 #2 Basic Decal 实拍图](../images/maps/Material_Decals_01_stand_02.webp)
 
 #### （1） 空间 Actor 配对与“局部 $+X$ 轴投射”细节
 本展台由两个核心 Actor 构成空间配对：
@@ -141,7 +141,7 @@ flowchart LR
   - `MP_BaseColor` $\leftarrow$ `MaterialExpressionVectorParameter_0`（参数名 `"Base Color"`，默认值 `(0.5, 0.017676, 0.0, 1.0)` 暗赭红色）；
   - `MP_Metallic` $\leftarrow$ `MaterialExpressionConstant_0`（`0.0`）；
   - `MP_Specular` & `MP_Roughness` $\leftarrow$ 共用同一个 `MaterialExpressionConstant_1`（**`0.5`**）。
-- **视口现象深度剖析**：仔细观察实拍图 `Material_Decals_01_stand_02.png`！你会发现两个极其有趣的物理细节：
+- **视口现象深度剖析**：仔细观察实拍图 `Material_Decals_01_stand_02.webp`！你会发现两个极其有趣的物理细节：
   1. **底层砖墙的立体凹凸缝隙完好无损地保留了下来！** 因为 `M_Decal_Simple` 的 `MP_Normal` 引脚悬空未连，引擎仅覆写了颜色与粗糙度缓冲，底层 `M_BrickWall` 的 `T_Bricks_N` 法线依然全权主导像素光照起伏；
   2. **粗糙度从 `0.9` 降到了 `0.5`**：贴花覆盖区域不仅改变了底色，还因为 `MP_Roughness = 0.5` 比原砖墙的 `0.9` 更光滑，使得中央方形区域展现出类似刷了一层半哑光清漆的润泽高光响应。
 
@@ -185,7 +185,7 @@ flowchart LR
 > **展台 3D 悬浮文字（`TextRenderActor2`）**：  
 > `A Decal Material with an Opacity texture and Normal Map texture.`（一个同时包含不透明度遮罩贴图与法线贴图的贴花材质。）
 
-![展台 #4 Masked Decal 实拍图](../images/maps/Material_Decals_02_stand_04.png)
+![展台 #4 Masked Decal 实拍图](../images/maps/Material_Decals_02_stand_04.webp)
 
 #### 核心资产节点深拆：`/Game/ExampleContent/Decals/Materials/M_Decal_Logo`
 打开 `M_Decal_Logo`，它包含 **9 个材质表达式节点**，完整示范了一枚工业级复合 PBR 贴花的标准连线拓扑：
@@ -253,10 +253,10 @@ flowchart LR
 > **展台 3D 悬浮文字（`TextRenderActor10` & `TextRenderActor11`）**：  
 > `You can control which order the Decals are drawn on top of each other with the Sort Order property.`（你可以通过 `Sort Order` 排序优先级属性，精确控制多张贴花彼此叠压时的绘制先后顺序。）
 
-![展台 #7 Sort Order 实拍图](../images/maps/Material_Decals_03_stand_07.png)
+![展台 #7 Sort Order 实拍图](../images/maps/Material_Decals_03_stand_07.webp)
 
 #### 空间配对与材质实例参数实测核对
-对照实拍图 `Material_Decals_03_stand_07.png` 与实测提取数据，砖墙 `Shape_Cube_6` 表面交错叠放了三枚分别呈品字形错开的纯色方形贴花：
+对照实拍图 `Material_Decals_03_stand_07.webp` 与实测提取数据，砖墙 `Shape_Cube_6` 表面交错叠放了三枚分别呈品字形错开的纯色方形贴花：
 
 1. **最底层（左中红色方块）`DecalActor14`**：
    - 坐标：`(6437.51, -562.73, 176.30)`

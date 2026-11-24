@@ -14,7 +14,7 @@
 
 答案藏在一句底层架构格言里：**Cascade 是“写死在 C++ 里的黑盒菜单”，而 Niagara 是“把粒子属性表直接交给美术自由编程的 SIMD / Compute Shader 编译器”**。
 
-![Niagara_Particles 粒子基础与轻量发射器展厅总览实拍](../images/maps/Niagara_Particles_00_overview.png)
+![Niagara_Particles 粒子基础与轻量发射器展厅总览实拍](../images/maps/Niagara_Particles_00_overview.webp)
 
 在走进长达 **275 米**（`X` 坐标从 `498` 延伸至 `27536`）的 `Niagara_Particles` 展厅之前，我们必须先打通支撑整个 Niagara 帝国的三大根基：**四层六阶段执行栈**、**参数命名空间矩阵**与**五大解耦渲染器**。
 
@@ -99,7 +99,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1500, -900, 0)`
 
-![展台 #2 Simple Sprite Emitter 基础广告牌发射器实拍](../images/maps/Niagara_Particles_01_stand_02.png)
+![展台 #2 Simple Sprite Emitter 基础广告牌发射器实拍](../images/maps/Niagara_Particles_01_stand_02.webp)
 
 #### 2.1 MCP 实测资产深拆：`Simple_system`
 - **陈列 Actor**：`Simple_system`（`NiagaraActor` $\to$ `/Game/ExampleContent/Niagara/Simple/Simple_system`）
@@ -191,7 +191,7 @@ flowchart TD
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay6` | 坐标 `(7000, -900, 0)`
 
-![展台 #7 Static Beams 静态光束与端点广告牌叠加实拍](../images/maps/Niagara_Particles_02_stand_07.png)
+![展台 #7 Static Beams 静态光束与端点广告牌叠加实拍](../images/maps/Niagara_Particles_02_stand_07.webp)
 
 #### 7.1 MCP 实测资产深拆：`StaticBeam_System`
 - **陈列 Actor**：`StaticBeam_System`（`/Game/ExampleContent/Niagara/Beams/StaticBeam_System`）
@@ -284,7 +284,7 @@ Cascade 时代有专门写死的 Beam 类型发射器，而在 Niagara 中，**�
 - **空间元数据**：展牌 Label `BP_DemoDisplay24` | 坐标 `(12503, -896, 0)`
 - **官方展牌原文**：*"With standard emitters you have the choice to use CPU or GPU emitters. Lightweight emitters switch automatically between CPU and GPU based on spawn count to achieve the most efficient performance."*
 
-![展台 #12 CPU vs GPU 轻量发射器高低数量自动调度与旋度场实拍](../images/maps/Niagara_Particles_03_stand_12.png)
+![展台 #12 CPU vs GPU 轻量发射器高低数量自动调度与旋度场实拍](../images/maps/Niagara_Particles_03_stand_12.webp)
 
 #### 12.1 MCP 实测资产深拆：`NS_SpawnCountVary_Lightweight`
 - **陈列资产**：`/Game/ExampleContent/Niagara/Lightweight/NS_SpawnCountVary_Lightweight`
@@ -366,7 +366,7 @@ Cascade 时代有专门写死的 Beam 类型发射器，而在 Niagara 中，**�
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(17990, -900, 0)`
 
-![展台 #17 Expressions 内联 HLSL 数学表达式驱动 GPU 粒子波浪实拍](../images/maps/Niagara_Particles_04_stand_17.png)
+![展台 #17 Expressions 内联 HLSL 数学表达式驱动 GPU 粒子波浪实拍](../images/maps/Niagara_Particles_04_stand_17.webp)
 
 #### 17.1 MCP 实测资产深拆：`ExpressionsExample_System`
 - **陈列 Actor**：`ExpressionsExample_System`（`/Game/ExampleContent/Niagara/Expressions/ExpressionsExample_System`）
@@ -457,7 +457,7 @@ Cascade 时代有专门写死的 Beam 类型发射器，而在 Niagara 中，**�
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay15` | 坐标 `(23010, -900, 0)`
 
-![展台 #22 Texture Sampling GPU 粒子直接采样 2D 纹理重构图像实拍](../images/maps/Niagara_Particles_05_stand_22.png)
+![展台 #22 Texture Sampling GPU 粒子直接采样 2D 纹理重构图像实拍](../images/maps/Niagara_Particles_05_stand_22.webp)
 
 #### 22.1 MCP 实测资产深拆：`TextureSampling_System`
 - **陈列 Actor（共 2 个）**：`SpotLight3`（`Intensity = 90.586`） + `TextureSampling_System`（`/Game/ExampleContent/Niagara/Textures/TextureSampling_System`）

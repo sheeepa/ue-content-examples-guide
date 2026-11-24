@@ -9,7 +9,7 @@
 
 ## 一、 展厅总览：不用写一行 C++ Slate，用蓝图直接给虚幻编辑器造“工业外挂”
 
-![Blueprint_EditorUtilities 展厅总览实拍](../images/maps/Blueprint_EditorUtilities_00_overview.png)
+![Blueprint_EditorUtilities 展厅总览实拍](../images/maps/Blueprint_EditorUtilities_00_overview.webp)
 
 在早期虚幻引擎（UE3 ~ UE4 初期）时代，如果你想在编辑器的右键菜单里加一个“一键对齐所有路灯”按钮，或者做一个带滑条与列表的自定义关卡检查器窗口，你必须深入啃下数千行晦涩难懂的 C++ `Slate` UI 宏（`SLATE_BEGIN_ARGS`）、`FExtender` 菜单挂载钩子与自定义编辑器模块编译配置——极高的门槛将大量懂业务痛点的技术美术（TA）与关卡策划拒之门外。
 
@@ -85,7 +85,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Normally you are recommended to 'play in editor' for the best first time experience with content examples. Since Editor Utility Blueprints are designed to be used in the editor, for the following content examples, you should interact with them using the editor instead. Each demo display will provide instruction on how to view the content. It will typically involve running an Editor Utility Blueprint asset from your content browser.*
 
-![展台 #2 Viewing These Content Examples 实拍](../images/maps/Blueprint_EditorUtilities_01_stand_02.png)
+![展台 #2 Viewing These Content Examples 实拍](../images/maps/Blueprint_EditorUtilities_01_stand_02.webp)
 
 #### 为什么本关绝不能按 `Play (PIE)` 来体验？—— `Editor World` vs `PIE World` 内存隔离机制
 - 当你按下 **Play** 时，虚幻引擎会将当前编辑器关卡在内存中深拷贝克隆出一份临时的 **`UEDPIE_0_Blueprint_EditorUtilities`（PIE 运行时临时世界）**。你在 PIE 期间所做的任何灯光强度修改、生成的任何方块，在按下 `Esc` 退出游戏的一瞬间都会**灰飞烟灭**！
@@ -123,7 +123,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Actor Action Utilities are designed to affect actors in the scene. In the class defaults you can assign 'Supported Classes'. This is useful for making sure your utility only shows on actors it was designed to be used with. Actor Action Utilities can be run from the right click menu or 'Actor' dropdown in the title bar. Test this now by right clicking the point light, navigating to 'Scripted Actor Actions' and selecting 'Update Point Light Settings'*
 
-![展台 #4 Actor Action Utility 实拍](../images/maps/Blueprint_EditorUtilities_02_stand_04.png)
+![展台 #4 Actor Action Utility 实拍](../images/maps/Blueprint_EditorUtilities_02_stand_04.webp)
 
 #### 1. 三大核心机制拆解：如何把自定义蓝图函数塞进视口右键菜单？
 如果每次改场景里的灯都要像展台 #3 那样去内容浏览器翻五层目录找脚本，关卡美术早就崩溃了！**`ActorActionUtility`** 直接把你的蓝图函数挂载到了**视口选中 Actor 的右键上下文菜单 -> `Scripted Actor Actions`（脚本化 Actor 操作）**下：
@@ -178,7 +178,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Editor Utility Widgets allow you to create custom UIs for your Editor Utility Blueprints. This is useful for expanding on the tools you create by adding more controls, displaying information, or bundling multiple actions into a single menu. To view this example by navigating to: `All > Content > ExampleContent > EditorUtilities > Blueprint > EU_EditorUtilityWidget`. Then right click and select 'Run Editor Utility Widget'*
 
-![展台 #6 Editor Utility Widget 与 13 个悬浮方块靶机实拍](../images/maps/Blueprint_EditorUtilities_03_stand_06.png)
+![展台 #6 Editor Utility Widget 与 13 个悬浮方块靶机实拍](../images/maps/Blueprint_EditorUtilities_03_stand_06.webp)
 
 #### 1. 为什么复杂工具终将走向 `Editor Utility Widget (EUW)`？
 当你的工具需要**实时显示当前关卡统计信息（如当前选中了多少个 DummyActor）**、**在一个统一工具箱里集成七八个功能按钮**，并且像 `World Outliner` 或 `Details` 面板一样**永久停靠在虚幻编辑器侧边栏随叫随用**时，`EU_EditorUtilityWidget` 就是终极形态！
@@ -228,7 +228,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Scripted Actions don't always automatically add to the undo buffer because you need to manually define at what points in the logic an undo buffer 'transaction' should start and end. One benefit to this is that a more complex scripted action could be split into multiple transactions. You can see an example of this by Right clicking the Dummy Actor and in the scripted asset actions select 'Undo Buffer Example'. Next use 'undo' to step back through the steps executed by the asset action.*
 
-![展台 #9 Using the Undo Buffer 实拍](../images/maps/Blueprint_EditorUtilities_04_stand_09.png)
+![展台 #9 Using the Undo Buffer 实拍](../images/maps/Blueprint_EditorUtilities_04_stand_09.webp)
 
 #### 1. 血泪事故警示：不写 Undo Transaction 的工具就是“删库炸弹”！
 想象一个真实研发惨案：技术美术写了一个 EUW 按钮“一键随机打乱全图树木朝向”，关卡美术点了一下觉得效果不好，习惯性按下 **`Ctrl + Z`（撤销）**——结果全图 2000 棵树纹丝不动没有撤回，反而把美术 10 分钟前辛辛苦苦摆好的一栋房子给撤没了！
@@ -298,7 +298,7 @@ flowchart TB
 - **官方展牌原文**：
   > *Scripted Asset Actions can be used to create a quicker way to convert a material to a texture. This can be useful to bake down complex shader instructions such as noise. To see an example, navigate to: `Game > ExampleContent > EditorUtilities > Blueprint > RenderMaterialToTexture > M_NoiseyCircle`. Right click and select the "Export Material as Texture" scripted asset action.*
 
-![展台 #11 Export Material as Texture 实拍](../images/maps/Blueprint_EditorUtilities_05_stand_11.png)
+![展台 #11 Export Material as Texture 实拍](../images/maps/Blueprint_EditorUtilities_05_stand_11.webp)
 
 #### 从手动 6 步到一键全自动：串起第 09 章 RTT 与第 11 章资产管线！
 还记得我们在**第 09 章（`Blueprint_RenderToTarget`）展台 #2** 看到的流程吗？当时为了把噪波材质 `M_RT_Material` 变成静态贴图，需要手动建 RT、摆蓝图 Actor、运行触发绘制、再去内容浏览器右键点击 RT 点 `Create Static Texture`、改名保存——整整 6 步手工操作！

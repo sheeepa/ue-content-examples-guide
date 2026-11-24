@@ -18,7 +18,7 @@ This repository contains two strictly separated categories of material with dist
 The following materials are **explicitly excluded from the `CC BY-SA 4.0` license** (and are not licensed under any open-source software license by the author of this repository):
 
 - **Covered Material**:
-  - Viewport screenshots in `images/maps/*.png` and `images/*.png` depicting sample levels, 3D meshes, materials, textures, animations, UI, and VFX from Epic Games' *Content Examples* sample project;
+  - Viewport screenshots in `images/maps/*.webp` and `images/*.webp` depicting sample levels, 3D meshes, materials, textures, animations, UI, and VFX from Epic Games' *Content Examples* sample project;
   - Short educational excerpts (each strictly $\le 30$ lines) of Unreal Engine APIs, official sample Material `Custom` HLSL expressions, Blueprint node identifiers, and `.ini` configuration lines quoted in `**/*.md` for commentary and analysis.
 - **Copyright & Terms**:
   - Copyright © Epic Games, Inc. All rights reserved.

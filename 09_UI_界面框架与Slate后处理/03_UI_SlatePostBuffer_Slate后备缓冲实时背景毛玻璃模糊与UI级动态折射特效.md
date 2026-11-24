@@ -8,7 +8,7 @@
 
 ## 一、 展厅总览：打破 3D 场景缓冲与 2D Slate 材质之间长达十年的“次元壁”
 
-![UI_SlatePostBuffer 展厅总览实拍](../images/maps/UI_SlatePostBuffer_00_overview.png)
+![UI_SlatePostBuffer 展厅总览实拍](../images/maps/UI_SlatePostBuffer_00_overview.webp)
 
 在 UE 5.4 推出 **Slate Post Buffer（Slate 后备帧缓冲）** 之前，虚幻引擎的 UI 技术美术（UI TA）一直苦于一道横亘在渲染管线底层的“铁幕”：
 
@@ -99,7 +99,7 @@ SlatePostSettings=(
 - **官方展牌原文**：
   > *Applying some screen effects without the use of Processors. In this example we are inverting the screen's Y axis.*
 
-![展台 #2 Simple Effect 实拍](../images/maps/UI_SlatePostBuffer_01_stand_02.png)
+![展台 #2 Simple Effect 实拍](../images/maps/UI_SlatePostBuffer_01_stand_02.webp)
 
 #### 1. `Widget_SimpleInversion` 控件树与材质 `M_SimpleInversion` 全节点还原
 - **极简控件树**：`CanvasPanel_29 -> CanvasPanelSlot_0 -> InversionEffect [UImage]`（居中摆放一块矩形透镜区域，笔刷材质指向 `MI_SimpleInversion` -> 母材质 `M_SimpleInversion`）；
@@ -155,7 +155,7 @@ WidgetTree (Widget_Blur_Effect)
 - **官方展牌原文**：
   > *A full screen mask and blur that also applies to the UI. Time for a medkit !*
 
-![展台 #4 Full screen Blur with Mask 实拍](../images/maps/UI_SlatePostBuffer_02_stand_04.png)
+![展台 #4 Full screen Blur with Mask 实拍](../images/maps/UI_SlatePostBuffer_02_stand_04.webp)
 
 #### 1. 颠覆性突破：3D 后处理做不到的事 ——“让屏幕特效同时作用于上层 UI 本身”！
 在传统 FPS 游戏里，濒死残血红屏通常做在 3D `PostProcessVolume` 里：结果 3D 世界模糊发红了，左下角的血条和准星却依然像贴在显示器玻璃外面的剪纸一样干干净净，瞬间出戏！  
@@ -237,7 +237,7 @@ flowchart LR
 - **官方展牌原文**：
   > *Multiple Post Buffer Update widgets are applied to different layers of the UMG Widget in this example*
 
-![展台 #7 Layers 实拍](../images/maps/UI_SlatePostBuffer_03_stand_07.png)
+![展台 #7 Layers 实拍](../images/maps/UI_SlatePostBuffer_03_stand_07.webp)
 
 #### 1. 同一张 Widget 内嵌两道 `PostBufferUpdate` 栅栏的“景深递进层次感”
 当游戏主菜单上再弹出一层二级子菜单时，如何让**二级子菜单不仅模糊 3D 场景，还把底下一级主菜单的按钮和科技感扫描线一起虚化推远**，形成极具空间纵深的视觉焦点层次？拆解 `Widget_MenuLayers_Effect` 的 6 层 `Overlay_55` 架构：

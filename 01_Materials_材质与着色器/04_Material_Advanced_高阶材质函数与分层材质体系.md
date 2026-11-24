@@ -16,7 +16,7 @@
 3. **巨型载具/机甲的贴图精度极限**：一艘十米高的宇宙火箭或巨型机甲，哪怕给它贴一张 4096×4096 的独立贴图，玩家凑近到半米处看外壳时依然糊成马赛克！如何在极省显存的前提下实现 **“凑到鼻尖看都纤毫毕现的毫米级金属拉丝与划痕”**？
 4. **物理运动极限特效**：迎风猎猎作响的战旗难道要绑 50 根骨骼跑物理吗？每分钟转 3000 圈的赛车轮毂与直升机螺旋桨，为什么开引擎自带运动模糊反而会碎裂成风扇残影？
 
-![Material_Advanced 高阶材质体系展厅总览实拍](../images/maps/Material_Advanced_00_overview.png)
+![Material_Advanced 高阶材质体系展厅总览实拍](../images/maps/Material_Advanced_00_overview.webp)
 
 欢迎来到基础材质四部曲的收官殿堂——**`/Game/Maps/Material/Material_Advanced`**！这座浓缩了 **6 座精品展台** 的长廊，每一台都是 3A 游戏工业界久经考验的实战标准答案。
 
@@ -54,7 +54,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay1` | 坐标 `(1505, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Master Material` | `Instance` | `Instance`
 
-![展台 #2 Flexible Master Material 万能母材质与双实例变体实拍](../images/maps/Material_Advanced_01_stand_02.png)
+![展台 #2 Flexible Master Material 万能母材质与双实例变体实拍](../images/maps/Material_Advanced_01_stand_02.webp)
 
 #### 2.1 深度解剖 35 节点工业级母材质：`M_MasterMaterial`
 在展台最左侧 `SM_MatPreviewMesh_9` 上挂载的 `/Game/ExampleContent/Materials/Materials/M_MasterMaterial`，是虚幻官方给出的**“高扩展性通用母材质”标准模板**。MCP 完整导出了它的 **35 个材质表达式节点**，我们可以将其清晰拆解为 **5 大规范分组模块**：
@@ -132,7 +132,7 @@ flowchart LR
 - **空间元数据**：展牌 Label `BP_DemoDisplay3` | 坐标 `(3510, -900, 0)`
 - **展台内 3D 悬浮文字标签**：`Chrome Layer` | `Aluminium Layer` | `Copper Layer` | `Layer Blend` / `Copper` / `+` / `Aluminium` / `+` / `Chrome`
 
-![展台 #4 Material Layers 宇宙火箭三层金属材质合成实拍](../images/maps/Material_Advanced_02_stand_04.png)
+![展台 #4 Material Layers 宇宙火箭三层金属材质合成实拍](../images/maps/Material_Advanced_02_stand_04.webp)
 
 #### 4.1 解决大型资产精度悖论的终极方案：“低频烘焙网格贴图 + 高频无限平铺材质层”
 看着 `#4` 展台上并排矗立的 **4 枚精致宇宙火箭（`SM_ExampleMesh_Rocket`）**，请思考我们在开篇提出的那个 3A 核心命题：
@@ -177,7 +177,7 @@ flowchart LR
 
 - **空间元数据**：展牌 Label `BP_DemoDisplay4` | 坐标 `(4502, -900, 0)`
 
-![展台 #5 Vertex Animation 零骨骼 GPU 顶点风场飘扬旗帜实拍](../images/maps/Material_Advanced_03_stand_05.png)
+![展台 #5 Vertex Animation 零骨骼 GPU 顶点风场飘扬旗帜实拍](../images/maps/Material_Advanced_03_stand_05.webp)
 
 #### 5.1 为什么战场上一千面迎风招展的军旗，绝不能用 Chaos 布料模拟或骨骼动画？
 如果在大型攻城战里摆 1000 面开启实时物理布料（Cloth Simulation）的旗帜，CPU/GPU 碰撞与约束解算开销会异常昂贵；如果用骨骼动画，所有旗帜动作千篇一律且增加蒙皮带宽。

@@ -13,7 +13,7 @@
 
 直到你走进 `/Game/Maps/VFX/Niagara_Fluids` 这座长达 **165 米**（`X` 从 `502` 延伸至 `16502`）的殿堂——**请务必运行关卡（PIE）并亲自踩上每座展台前的触发区（`trigger1 ~ trigger13`）与地面压力踏板**！你将亲眼目睹实时翻滚自投影的彩色浓烟、纯粹由温度黑体辐射点燃的烈火、随挥舞火把拖曳惯性尾焰的局部解算器、实时荡漾船首波的浅水池，以及玩具小牛跃入水中激起千层晶莹浪花的 3D FLIP 破坝水池！
 
-![Niagara_Fluids 二维与三维气液流体力学实验室展厅总览实拍](../images/maps/Niagara_Fluids_00_overview.png)
+![Niagara_Fluids 二维与三维气液流体力学实验室展厅总览实拍](../images/maps/Niagara_Fluids_00_overview.webp)
 
 更震撼的是展台 `#1` 牌匾写下的第一条宣言：**这里没有一行藏在引擎 C++ 黑盒里的魔法代码！所有的平流、浮力、涡量限制、压力泊松迭代与等值面网格化，100% 是用你在第 02 章学过的 `Simulation Stages` + `Grid2DCollection / Grid3DCollection` 拼出来的纯白盒 Niagara 模块！**
 
@@ -95,7 +95,7 @@
 - **官方展牌原文**：
   > *"Gas Simulation tracks density and temperature in a grid as it moves according to a velocity field that produces fluid behavior. Useful for explosions, fire, smoke, dust, clouds, etc. 2D Gas: Fast and low memory usage. Good for games and select cinematic shots. Generally look flat and lack small scale detail. Often better for fire (ie: torches), and small explosion elements. Not good for large scale effects that take up a large 3D space. 3D Gas: More memory and computation than 2D. Best for hero real time or game use and cinematics. Elements have depth and fine control over visual features. Useful for simulating any gaseous medium at any scale if performance allows."*
 
-![展台 #2 Gas Simulations 左侧 2D 欧拉火盆烟火与右侧 3D 体素火盆烟火同台实拍对比](../images/maps/Niagara_Fluids_01_stand_02.png)
+![展台 #2 Gas Simulations 左侧 2D 欧拉火盆烟火与右侧 3D 体素火盆烟火同台实拍对比](../images/maps/Niagara_Fluids_01_stand_02.webp)
 
 #### 2.1 MCP 实测左右火盆双系统深拆（共 5 个 Actor，含唤醒框 `trigger13`）
 1. **左火盆 `S_Firepit4` + `2DGasIntro`**（`/Game/ExampleContent/Niagara/2DGas/2DGasIntro`）：
@@ -188,7 +188,7 @@
 - **官方展牌原文**：
   > *"Instead of only simulating density or temperature, it is possible to simulate colored smoke. Walk on the button to see particles advected (ie: traced) through the velocity field of the fluid while also sampling the color of the smoke."*
 
-![展台 #7 Colored Smoke - Particle Advection 多色彩烟交融与受流场平流牵引的彩色示踪粒子实拍](../images/maps/Niagara_Fluids_02_stand_07.png)
+![展台 #7 Colored Smoke - Particle Advection 多色彩烟交融与受流场平流牵引的彩色示踪粒子实拍](../images/maps/Niagara_Fluids_02_stand_07.webp)
 
 #### 7.1 MCP 实测三发射器架构与交互踏板深拆（共 3 个 Actor）
 - **交互按钮**：`BP_Button_Advection`（`BP_PressureButton_Advection`）切换用户参数 **`User.DisplayAdvection`**（默认 `0`）。
@@ -246,7 +246,7 @@
 - **官方展牌原文**：
   > *"Shallow water is a useful and fast method for effects like boat wakes, simple splashes, rain drops, and other things that don't require detailed 3D fluid flow."*
 
-![展台 #11 Shallow Water 二维浅水波方程实时解算移动球体船首 V 字尾迹与岸边反射波实拍](../images/maps/Niagara_Fluids_03_stand_11.png)
+![展台 #11 Shallow Water 二维浅水波方程实时解算移动球体船首 V 字尾迹与岸边反射波实拍](../images/maps/Niagara_Fluids_03_stand_11.webp)
 
 #### 11.1 MCP 实测资产与 4 张核心 RenderTarget 通道深拆
 - **陈列 Actor**：`2DLiquidWake` $\to$ `/Game/ExampleContent/Niagara/2DLiquid/2DShallowWaterWake`（唤醒框 `trigger5`）
